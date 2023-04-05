@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/easy-start-in-www/static/css/main.7acaea2f.css",
+    "main.js": "/easy-start-in-www/static/js/main.07d3183d.js",
+    "index.html": "/easy-start-in-www/index.html",
+    "main.7acaea2f.css.map": "/easy-start-in-www/static/css/main.7acaea2f.css.map",
+    "main.07d3183d.js.map": "/easy-start-in-www/static/js/main.07d3183d.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.7acaea2f.css",
+    "static/js/main.07d3183d.js"
+  ]
+}
