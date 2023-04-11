@@ -14,6 +14,8 @@ console.log("valueB:", valueB); // random string
 console.log("Number(valueB)", Number(valueB)); // NaN
 console.log("typeof Number(valueB)", typeof Number(valueB)); // "number"
 //! ---------------------------------------------------------------------------------------
+console.log((Math.random() * 100).toFixed(0)) // псевдослучайное число от 1 до 100
+console.log((Math.random() * (100 - 1) + 1).toFixed(0)); // псевдослучайное число от 1 до 100
 
 export const App = () => {
   return (
