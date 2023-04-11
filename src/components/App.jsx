@@ -6,7 +6,7 @@ console.log("valueA:", valueA); // 5
 console.log("Number(valueA):", Number(valueA)); // 5
 console.log("typeof Number(valueA):", typeof Number(valueA)); // "number"
 console.log("typeof Number(NaN):", typeof Number(NaN)); // "number"
-console.log("Number(NaN):", Number(NaN)); // "number"
+console.log("Number(NaN):", Number(NaN)); // NaN
 //! ---------------------------------------------------------------------------------------
 console.log("--------------------------------------------"); 
 const valueB = "random string";
