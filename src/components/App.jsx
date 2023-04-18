@@ -1,5 +1,16 @@
 import whel from 'images/roulette-wheel.png';
 
+import { SectionText } from 'components/HTML-Lesson/Html_2-1';
+
+
+
+
+//------------------------------------------------------------------------------------
+
+
+
+
+
 //! ---------------------------------------------------------------------------------------
 // const valueA = "5";
 // console.log("valueA:", valueA); // 5
@@ -18,6 +29,8 @@ import whel from 'images/roulette-wheel.png';
 // console.log((Math.random() * 100).toFixed(0)) // псевдослучайное число от 1 до 100
 // console.log((Math.random() * (100 - 1) + 1).toFixed(0)); // псевдослучайное число от 1 до 100
 //! ---------------------------------------------------------------------------------------
+
+
 console.log("--------------------------------------------"); 
 const cars = ['Audio', 'Volvo', 'Nissan', 'BMW', 'Mazda', 'Toyota'];
 const cars1 = cars
@@ -63,6 +76,11 @@ export const App = () => {
       <div>
         Easy Start in WWW (What? Where? When?) 
       </div>
+      {/*  ------------------- Lessons --------------- */}
+      <SectionText />
+
+
+
     </div>
   );
 };
