@@ -16,7 +16,7 @@ export const Logo = () => {
                 src={whel}
                 width="150"
             />
-            <div>
+            <div className={css.titleText}>
                 Easy Start in WWW (What? Where? When?) 
             </div>
         </div>
