@@ -19,7 +19,7 @@ export const SectionText = () => {
             {sectionText1}
             <br />
             <section className={css.section}>
-                <h1 className={css.sectionTitle}>Section title</h1>
+                <h1 className={`${css.sectionTitle} ${css.fontSizeColorTitle}`}>Section title</h1>
             </section>
         </>
     )

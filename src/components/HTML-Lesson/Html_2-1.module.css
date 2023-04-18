@@ -1,19 +1,28 @@
 /* import styled from '@emotion/styled'; */
 
+/* .p {
+    font-size: 50px;
+} */
 
 .section {
-    /* Другие стили */
-    border: 2px solid #3f51b5;
+    border: 2px solid #b63f3f;
+    padding: 20px;
+    font-size: 24px;
 }
 
+
+
 .sectionTitle {
-    /* Другие стили */
     color: #3f51b5;
 }
 
+.fontSizeColorTitle {
+    font-size: 90px;
+    color: #31741d;
+}
+
 .sectionTitle::before {
-    /* Другие стили */
-    background-color: #3f51b5;
+    background-color: #6ab53f;
 }
 
 
