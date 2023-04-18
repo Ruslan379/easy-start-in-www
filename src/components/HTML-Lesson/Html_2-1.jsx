@@ -59,6 +59,7 @@ export const SectionText = () => {
             </p>
             <p className={`${css.alert} ${css.warning}`}>Внимание, будут изменены тарифы</p>
             <p className={`${css.alert} ${css.error}`}>Ошибка проведения транзакции</p>
+            <p id={css.textId}>Текст с селектором id (#)</p>
         </>
     )
 }
