@@ -37,6 +37,7 @@
 /* Специфические стили для каждого типа */
 .success {
     color: green;
+    /* background-color:#b7ecb7 ; */
 }
 
 .warning {
@@ -45,7 +46,15 @@
 
 .error {
     color: red;
+    /* background-color: #eccab7; */
 }
 
+.successBackgroundColor {
+    background-color: #b7ecb7;
+}
+
+.errorBackgroundColor {
+    background-color: #eccab7;
+}
 
 /* ----------------------------- */

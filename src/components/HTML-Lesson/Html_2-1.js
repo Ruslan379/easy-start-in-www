@@ -35,7 +35,16 @@ export const SectionText = () => {
             </section>
             <br />
             <button
-                className={`${css.alert} ${isSuccess ? css.success : css.error}`}
+                className={
+                    `${css.alert} ${isSuccess
+                        ?
+                        `${css.success} ${css.successBackgroundColor}`
+                        :
+                        // css.error
+                        `${css.error} ${css.errorBackgroundColor}`
+                    }
+                    `
+                }
                 onClick={toggleTrigger}
             >
                 {isSuccess ? "Пополнение счёта выполнено" : "Пополнение счёта НЕ выполнено"}
