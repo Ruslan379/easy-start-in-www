@@ -3,11 +3,11 @@ import {
     // useEffect
 } from 'react';
 
-import css from './Html_2-1.module.css';
+import css from './Html_2-3.module.css';
 
 
 //-----------------------------------------------------
-export const SectionText = () => {
+export const HTML_2_3 = () => {
     const [isSuccess, setIsSuccess] = useState(false);
 
     const sectionText1 = (

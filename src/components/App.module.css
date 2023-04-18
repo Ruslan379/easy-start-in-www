@@ -6,12 +6,12 @@
     height: 100vh;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    /* justify-content: center; */
     align-items: center;
     /* font-size: 40px; */
     color: #010101;
 
-    /* padding: 20px; */
+    padding: 20px;
     /* margin-bottom: 20px; */
 
     /* border: 2px solid #ffad7a; */
@@ -20,3 +20,52 @@
     /* background-color: #faebe2; */
 }
 
+
+.titleTextBase {
+    padding-bottom: 20px;
+    text-decoration: overline;
+    line-height: 1.5;
+
+    color: #b80808;
+    text-shadow: 4px 4px 8px #555555;
+
+    font-size: 36px;
+    font-weight: 700;
+    font-family: Tahoma;
+}
+
+
+.titleText {
+    padding-bottom: 20px;
+    text-decoration: overline;
+    text-transform: capitalize;
+    /* text-align: justify; */
+    text-align: left;
+    text-indent: 100px;
+    line-height: 1.5;
+    letter-spacing: inherit;
+    letter-spacing: 4px;
+    word-spacing: 8px;
+    white-space: pre-wrap;
+
+    color: #b80808;
+    text-shadow: 12px 12px 12px #9e4949,
+        5px 5px 5px #696969;
+
+    font-size: 47px;
+    font-weight:  700;
+    /* font-style: oblique; */
+    font-style: italic;
+    /* font-family: Tahoma; */
+    font-family: 'Tangerine', cursive;
+}
+.titleText::first-letter {
+    font-family: 'Roboto', serif;
+    font-size: 40px;
+    color: #0013b9;
+
+}
+.titleText::selection {
+    color: #f5e874;
+    background-color: #a73fb5;
+}

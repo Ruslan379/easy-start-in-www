@@ -1,7 +1,7 @@
 
 
 import { Logo } from 'components/Logo/Logo';
-import { SectionText } from 'components/HTML-Lesson/Html_2-1';
+import { HTML_2_3 } from 'components/HTML-Lesson/Html_2-3';
 
 
 import css from './App.module.css';
@@ -67,7 +67,9 @@ export const App = () => {
     >
       <Logo />
       {/* ------------------- Lessons --------------- */}
-      <SectionText />
+      <p className={css.titleTextBase}>HTML+CSS (module_2-3)</p>
+      <HTML_2_3 />
+      <p className={css.titleText}>HTML+CSS (module_2-4)</p>
 
     </div>
   );
