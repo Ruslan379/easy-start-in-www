@@ -38,7 +38,7 @@ export const HTML_2_3 = () => {
                     `${css.buttonAlert} ${css.alert} ${
                         isSuccess
                         ?
-                        `${css.success} ${css.successBackgroundColor}`
+                        `${css.success} ${css.successBackgroundColor} ${css.buttonAlertBefore}`
                         :
                         // css.error
                         `${css.error} ${css.errorBackgroundColor}`

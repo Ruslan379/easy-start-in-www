@@ -1,4 +1,5 @@
 /* import styled from '@emotion/styled'; */
+/* import whel from 'images/roulette-wheel.png'; */
 
 
 :root {
@@ -36,7 +37,9 @@
 
 
 /* Общие стили для всех типов оповещений */
+
 .buttonAlert {
+    display: flex;
     border: none;
     /* font: inherit; */
     cursor: pointer;
@@ -59,10 +62,40 @@
     background-color: #cfcfcf;
 }
 
+/* .buttonAlert::before, */
+.buttonAlert::after {
+    display: none;
+    content: '';
+    width: 20px;
+    height: 20px;
+    /* margin: 0 auto; */
+    margin-left: 16px;
+    background-image: url("https://cdn-icons-png.flaticon.com/512/599/599516.png");
+    background-size: contain;
+}
+.buttonAlert::before {
+    display: none;
+    content: '';
+    width: 20px;
+    height: 20px;
+    /* margin: 0 auto; */
+    margin-right: 16px;
+    background-image: url("https://cdn-icons-png.flaticon.com/512/300/300516.png");
+    background-size: contain;
+}
+.buttonAlert:hover::after {
+    display: block;
+}
+.buttonAlertBefore::before {
+    display: block;
+}
+
+
 .alert {
     font-size: 12px;
     font-weight: 500;
 }
+
 
 /* Специфические стили для каждого типа */
 .success {
@@ -70,23 +103,28 @@
     /* background-color:#b7ecb7 ; */
 }
 
+
 .warning {
     padding: 10px;
     color: orange;
 }
+
 
 .error {
     color: red;
     /* background-color: #eccab7; */
 }
 
+
 .successBackgroundColor {
     background-color: #b7ecb7;
 }
 
+
 .errorBackgroundColor {
     background-color: #eccab7;
 }
+
 
 /* ! Базовый стиль и стиль при наведении*/
 .alert.warning:hover {
@@ -95,6 +133,7 @@
     font-weight: 700;
     background-color: rgb(255, 251, 189);
 }
+
 
 /* ! Селектор идентификатора */
 #textId {
