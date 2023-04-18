@@ -1,0 +1,22 @@
+/* import styled from '@emotion/styled'; */
+
+
+
+.Container {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    /* font-size: 40px; */
+    color: #010101;
+
+    /* padding: 20px; */
+    /* margin-bottom: 20px; */
+
+    /* border: 2px solid #ffad7a; */
+    /* border-radius: 20px; */
+    
+    /* background-color: #faebe2; */
+}
+

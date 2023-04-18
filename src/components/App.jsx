@@ -1,14 +1,12 @@
-import whel from 'images/roulette-wheel.png';
 
+
+import { Logo } from 'components/Logo/Logo';
 import { SectionText } from 'components/HTML-Lesson/Html_2-1';
 
 
-
+import css from './App.module.css';
 
 //------------------------------------------------------------------------------------
-
-
-
 
 
 //! ---------------------------------------------------------------------------------------
@@ -41,6 +39,7 @@ const arrayCutter = function (array) {
   return;
 };  
 arrayCutter(cars);
+console.log("--------------------------------------------"); 
 
 
 //! --------------------------------- ERROR -------------------------------------------
@@ -55,31 +54,20 @@ arrayCutter(cars);
 export const App = () => {
   return (
     <div
-    style={{
-          height: '100vh',
-          display: 'flex',
-          flexDirection: 'column',
-          justifyContent: 'center',
-          alignItems: 'center',
-          fontSize: 40,
-          color: '#010101'
-        }}>
-      <img
-        style={{
-          marginBottom: '40px',
-          
-        }}
-            alt={whel}
-            src={whel}
-            width="200"
-          />
-      <div>
-        Easy Start in WWW (What? Where? When?) 
-      </div>
-      {/*  ------------------- Lessons --------------- */}
+      className={css.Container}
+      // style={{
+      //     height: '100vh',
+      //     display: 'flex',
+      //     flexDirection: 'column',
+      //     justifyContent: 'center',
+      //     alignItems: 'center',
+      //     fontSize: 20,
+      //     color: '#010101'
+      // }}
+    >
+      <Logo />
+      {/* ------------------- Lessons --------------- */}
       <SectionText />
-
-
 
     </div>
   );

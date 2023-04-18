@@ -1,0 +1,30 @@
+/* import styled from '@emotion/styled'; */
+
+
+.logoContainer {
+    display: flex;
+    flex-direction: column;
+    /* justify-content: center; */
+    align-items: center;
+
+    padding: 20px;
+    margin-bottom: 20px;
+
+    font-size: 18px;
+    font-weight: 600;
+
+    border: 2px solid #ffad7a;
+    border-radius: 20px;
+    
+    background-color: #faebe2;
+    box-shadow: 12px 12px 18px rgba(59, 43, 14, 0.23);
+}
+
+
+
+.logoImage {
+    margin-bottom: 15px;
+    border-radius: 50%;
+    box-shadow: 9px 9px 12px rgba(44, 35, 18, 0.23);
+}
+
