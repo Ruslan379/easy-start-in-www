@@ -1,5 +1,11 @@
 /* import styled from '@emotion/styled'; */
 
+
+:root {
+    --section-title-color: #3f51b5;
+}
+
+
 /* .p {
     font-size: 50px;
 } */
@@ -13,7 +19,8 @@
 
 
 .sectionTitle {
-    color: #3f51b5;
+    /* color: #3f51b5; */
+    color: var(--section-title-color);
 }
 
 .fontSizeColorTitle {
@@ -81,6 +88,7 @@
     background-color: #eccab7;
 }
 
+/* ! Базовый стиль и стиль при наведении*/
 .alert.warning:hover {
     cursor: cell;
     color: tomato;
@@ -88,7 +96,7 @@
     background-color: rgb(255, 251, 189);
 }
 
-
+/* ! Селектор идентификатора */
 #textId {
     padding: 10px;
     color: tomato;
