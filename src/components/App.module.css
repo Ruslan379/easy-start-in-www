@@ -67,5 +67,59 @@
 }
 .titleText::selection {
     color: #f5e874;
-    background-color: #a73fb5;
+    background-color: #e100ff;
 }
+
+
+/*! Юля (вопрос 3)  */
+.titleTextQuestion {
+    font-size: 30px;
+    font-weight: 700;
+    color: rgb(112, 112, 112);
+}
+
+.socialText {
+    font-size: 20px;
+    font-weight: 700;
+    color: rgb(153, 0, 255);
+}
+/* ?------------------ Юля (вопрос 3) ---------------- */
+/*! --- ВСЕ потомки <a> внутри класса .mainLinks --- */
+.mainLinks a {
+    color: red;
+}
+
+/*! --- ВСЕ дети <a> внутри класса .socialLinks --- */
+.socialLinks > a {
+    color: green;
+}
+/* ?------------------------------------------------- */
+
+/* .socialLinks a {
+    color: green;
+} */
+
+/*! --- ПЕРВЫЙ сосед после <p> --- */
+/* p + a {
+    color: rgb(0, 204, 255);
+} */
+
+/*! --- ВСЕ соседи после <p> --- */
+/* p ~ a {
+    color: rgb(0, 204, 255);;
+} */
+/* ?------------------------------------------------- */
+
+
+
+
+
+
+
+
+
+
+
+/* .socialText + a {
+    color: rgb(0, 204, 255);
+} */

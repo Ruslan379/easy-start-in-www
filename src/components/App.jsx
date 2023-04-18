@@ -69,7 +69,42 @@ export const App = () => {
       {/* ------------------- Lessons --------------- */}
       <p className={css.titleTextBase}>HTML+CSS (module_2-3)</p>
       <HTML_2_3 />
+
       <p className={css.titleText}>HTML+CSS (module_2-4)</p>
+      {/* ------------------- Юля (вопрос 3) ------------------- */}
+      <p className={css.titleTextQuestion}>Юля (вопрос 3):</p>
+      <br/>
+      <div className={css.mainLinks}>
+        <a href="https://cdn-icons-png.flaticon.com/512/599/599516.png">Читайте наш блог!</a>
+            <ul className={css.socialLinks}>
+              <li className={css.socialItems}>
+                <p className={css.socialText}>Twitter</p>
+                <a href="https://www.google.com.ua">Twitter-1</a>
+                <br/>
+                <a href="https://www.google.com.ua">Twitter-2</a>
+                <br/>
+                <a href="https://www.google.com.ua">Twitter-3</a>
+              </li>
+              <li>
+                <p className={css.socialText}>Instagram</p>
+                <a href="https://www.google.com.ua">Instagram-1</a>
+                <br/>
+                <a href="https://www.google.com.ua">Instagram-2</a>
+                <br/>
+                <a href="https://www.google.com.ua">Instagram-3</a>
+              </li>
+              <li>
+                <p className={css.socialText}>Facebook</p>
+                <a href="https://www.google.com.ua">Facebook-1</a>
+                <br/>
+                <a href="https://www.google.com.ua">Facebook-2</a>
+                <br/>
+                <a href="https://www.google.com.ua">Facebook-3</a>
+              </li>
+            </ul>
+      </div>
+
+
 
     </div>
   );
