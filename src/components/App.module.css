@@ -19,8 +19,7 @@
     
     /* background-color: #faebe2; */
 }
-
-
+/* ----------------------------------------------- */
 .titleTextBase {
     padding-bottom: 20px;
     text-decoration: overline;
@@ -53,23 +52,24 @@
         5px 5px 5px #696969;
 
     font-size: 47px;
-    font-weight:  700;
+    font-weight: 700;
     /* font-style: oblique; */
     font-style: italic;
     /* font-family: Tahoma; */
     font-family: 'Tangerine', cursive;
 }
+
 .titleText::first-letter {
     font-family: 'Roboto', serif;
     font-size: 40px;
     color: #0013b9;
 
 }
+
 .titleText::selection {
     color: #f5e874;
     background-color: #e100ff;
 }
-
 
 /*! Юля (вопрос 3)  */
 .titleTextQuestion {
@@ -78,48 +78,114 @@
     color: rgb(112, 112, 112);
 }
 
-.socialText {
-    font-size: 20px;
-    font-weight: 700;
-    color: rgb(153, 0, 255);
+/* ! --- Общие стили для всех типов оповещений --- */
+.buttonAlert {
+    display: flex;
+    border: none;
+    /* font: inherit; */
+    cursor: pointer;
+    /* cursor: cell; */
+    outline: none;
+    align-items: center;
+    /* margin-left: auto; */
+    border-radius: 4px;
+    padding: 8px 12px;
+    /* background-color: #3b3b3b; */
+    /* color: #ffffff; */
+    /* font-weight: 500; */
+
+    box-shadow: 0px 4px 4px #00000026;
 }
-/* ?------------------ Юля (вопрос 3) ---------------- */
-/*! --- ВСЕ потомки <a> внутри класса .mainLinks --- */
-.mainLinks a {
+
+/* .buttonAlert:visited, */
+/* .buttonAlert:focus, */
+/* .buttonAlert:active, */
+.buttonAlert:hover {
+    background-color: #cfcfcf;
+}
+
+/* .buttonAlert::before, */
+.buttonAlert::after {
+    display: none;
+    content: '';
+    width: 20px;
+    height: 20px;
+    /* margin: 0 auto; */
+    margin-left: 16px;
+    background-image: url("https://cdn-icons-png.flaticon.com/512/599/599516.png");
+    background-size: contain;
+}
+
+.buttonAlert::before {
+    display: none;
+    content: '';
+    width: 20px;
+    height: 20px;
+    /* margin: 0 auto; */
+    margin-right: 16px;
+    background-image: url("https://cdn-icons-png.flaticon.com/512/300/300516.png");
+    background-size: contain;
+}
+
+.buttonAlert:hover::after {
+    display: block;
+}
+
+.buttonAlertBefore::before {
+    display: block;
+}
+
+
+.alert {
+    font-size: 12px;
+    font-weight: 500;
+}
+
+
+/* Специфические стили для каждого типа */
+.success {
+    color: green;
+    /* background-color:#b7ecb7 ; */
+}
+
+
+.warning {
+    padding: 10px;
+    color: orange;
+}
+
+
+.error {
     color: red;
+    /* background-color: #eccab7; */
 }
 
-/*! --- ВСЕ дети <a> внутри класса .socialLinks --- */
-.socialLinks > a {
-    color: green;
+
+.successBackgroundColor {
+    background-color: #b7ecb7;
 }
-/* ?------------------------------------------------- */
-
-/* .socialLinks a {
-    color: green;
-} */
-
-/*! --- ПЕРВЫЙ сосед после <p> --- */
-/* p + a {
-    color: rgb(0, 204, 255);
-} */
-
-/*! --- ВСЕ соседи после <p> --- */
-/* p ~ a {
-    color: rgb(0, 204, 255);;
-} */
-/* ?------------------------------------------------- */
 
 
+.errorBackgroundColor {
+    background-color: #eccab7;
+}
 
 
+/* ! Базовый стиль и стиль при наведении*/
+.alert.warning:hover {
+    cursor: cell;
+    color: tomato;
+    font-weight: 700;
+    background-color: rgb(255, 251, 189);
+}
 
 
+/* ! Селектор идентификатора */
+#textId {
+    padding: 10px;
+    color: tomato;
+    font-weight: 700;
+    background-color: rgb(255, 251, 189);
+}
 
-
-
-
-
-/* .socialText + a {
-    color: rgb(0, 204, 255);
-} */
+/* ----------------------------- */

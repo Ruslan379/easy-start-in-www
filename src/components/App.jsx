@@ -1,7 +1,11 @@
-
+import {
+    useState,
+    // useEffect
+} from 'react';
 
 import { Logo } from 'components/Logo/Logo';
 import { HTML_2_3 } from 'components/HTML-Lesson/Html_2-3';
+import { HtmlQuestion3Julia } from 'components/HTML-Lesson/Html_2-3_Question_Julia';
 
 
 import css from './App.module.css';
@@ -51,7 +55,17 @@ console.log("--------------------------------------------");
 
 
 
+
+
+
 export const App = () => {
+
+  const [trigger, setTrigger] = useState(false);
+  
+const toggleTrigger = () => {
+        setTrigger(!trigger);
+    }
+
   return (
     <div
       className={css.Container}
@@ -66,16 +80,37 @@ export const App = () => {
       // }}
     >
       <Logo />
-      {/* ------------------- Lessons --------------- */}
+      {/* --------------------- Lessons --------------------- */}
       <p className={css.titleTextBase}>HTML+CSS (module_2-3)</p>
       <HTML_2_3 />
 
       <p className={css.titleText}>HTML+CSS (module_2-4)</p>
-      {/* ------------------- Юля (вопрос 3) ------------------- */}
+      {/* ---------------- Юля (вопрос 3) ------------------- */}
       <p className={css.titleTextQuestion}>Юля (вопрос 3):</p>
-      <br/>
-      <div className={css.mainLinks}>
-        <a href="https://cdn-icons-png.flaticon.com/512/599/599516.png">Читайте наш блог!</a>
+      <br />
+      <button
+        className={
+            `${css.buttonAlert} ${css.alert} ${
+                trigger
+                ?
+                `${css.success} ${css.successBackgroundColor} ${css.buttonAlertBefore}`
+                :
+                // css.error
+                `${css.error} ${css.errorBackgroundColor}`
+                }
+            `
+        }
+          onClick={toggleTrigger}
+      >
+        {trigger ? "Вопрос ЮЛИ включен" : "Вопрос ЮЛИ выключен"}
+      </button>
+      <br />
+      {trigger && (
+        <HtmlQuestion3Julia />
+      )}
+      {/* <HtmlQuestion3Julia /> */}
+      {/* <div className={css.mainLinks}>
+        <a href="https://www.google.com.ua">Читайте наш блог!</a>
             <ul className={css.socialLinks}>
               <li className={css.socialItems}>
                 <p className={css.socialText}>Twitter</p>
@@ -102,9 +137,7 @@ export const App = () => {
                 <a href="https://www.google.com.ua">Facebook-3</a>
               </li>
             </ul>
-      </div>
-
-
+      </div> */}
 
     </div>
   );
