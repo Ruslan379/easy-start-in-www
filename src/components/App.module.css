@@ -170,22 +170,4 @@
     background-color: #eccab7;
 }
 
-
-/* ! Базовый стиль и стиль при наведении*/
-.alert.warning:hover {
-    cursor: cell;
-    color: tomato;
-    font-weight: 700;
-    background-color: rgb(255, 251, 189);
-}
-
-
-/* ! Селектор идентификатора */
-#textId {
-    padding: 10px;
-    color: tomato;
-    font-weight: 700;
-    background-color: rgb(255, 251, 189);
-}
-
 /* ----------------------------- */
