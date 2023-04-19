@@ -17,11 +17,23 @@
 }
 
 /*! --- ВСЕ дети <a> внутри класса .socialLinks --- */
-.socialLinks>a {
+.socialLinks > a {
     color: green;
 }
-
 /* ?------------------------------------------------- */
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 /* .socialLinks a {
     color: green;
