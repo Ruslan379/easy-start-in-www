@@ -5,15 +5,6 @@ import css from './JS_3-6.module.css';
 
 //-----------------------------------------------------
 export const JS_3_6 = () => {
-    // const rgb = [200, 255, 100];
-    // const [red, green, blue] = rgb;
-
-
-    // const rgbArr = {
-    //     red,
-    //     green,
-    //     blue
-    // }
 
     let rgbObj = null
     let rgbArr = []
@@ -33,38 +24,38 @@ export const JS_3_6 = () => {
             };
             console.log("rgbObj:", rgbObj);
             console.log("rgbArr:", rgbArr);
-            // rgbArr.push(rgbObj);
-            rgbArr = [...rgbArr, rgbObj];
+            // rgbArr.push(rgbObj); //! 1-variant
+            rgbArr = [...rgbArr, rgbObj]; //! 2-variant
         }
     };
 
     makeAnArray(10, 20, 30)
 
     console.log("JS_3_6:");
-    // console.log(`R:${red}, G:${green}, B:${blue}`); // "R:200,G:255,B:100"
-    console.log("rgbArr:", rgbArr); // rgbArr: {red: 200, green: 255, blue: 100}
+    console.log("rgbArr:", rgbArr); 
     
 
 
     return (
         <>
-        {/* {`R:${red},  G:${green},  B:${blue}`} */}
-        <ul className={css.rgbList}>
-            {rgbArr.map(({ red, green, blue }, index,) => (
-                <li key={index} className={css.rgbItem}>
-                    <p>{`----------- ${index} -----------`}</p>
-                    <p className={css.rgbText}>
-                        {`Red: ${red}`}
-                    </p>
-                    <p className={css.rgbText}>
-                        {`Green: ${green}`}
-                    </p>
-                    <p className={css.rgbText}>
-                        {`Blue: ${blue}`}
-                    </p>
-                </li>
-            ))}
-        </ul>
+            {/* {`R:${red},  G:${green},  B:${blue}`} */}
+            <p style={{color: "red"}}>{`<---- ${"JS_3_6"} ---->`}</p>
+            <ul className={css.rgbList}>
+                {rgbArr.map(({ red, green, blue }, index,) => (
+                    <li key={index} className={css.rgbItem}>
+                        <p>{`----------- ${index} -----------`}</p>
+                        <p className={css.rgbText}>
+                            {`Red: ${red}`}
+                        </p>
+                        <p className={css.rgbText}>
+                            {`Green: ${green}`}
+                        </p>
+                        <p className={css.rgbText}>
+                            {`Blue: ${blue}`}
+                        </p>
+                    </li>
+                ))}
+            </ul>
         </>
     )
 }

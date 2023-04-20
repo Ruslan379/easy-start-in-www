@@ -59,8 +59,11 @@ const [red, green, blue] = rgb;
 const rgbArr = {
   red,
   green,
-    blue
+  blue
 }
+
+// const {red, green, blue} = rgbArr;
+// const {red: red1, green: green1, blue: blue1} = rgbArr;
 
 console.log("App.js:");
 console.log(`R:${red}, G:${green}, B:${blue}`); // "R:200,G:255,B:100"
@@ -121,7 +124,7 @@ const toggleTrigger = () => {
         <HtmlQuestion3Julia />
       )}
       <p className={css.titleText}>Java Script (module_3-6)</p>
-      {`R:${red}, G:${green}, B:${blue}`}
+      {`App.js --> R:${red}, G:${green}, B:${blue}`}
       <JS_3_6 />
 
 
