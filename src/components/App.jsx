@@ -57,8 +57,14 @@ console.log("--------------------------------------------");
 //! -------------------------------- JS_3-6 (5 вопрос)---------------------------------------------
 const rgb = [200, 255, 100];
 
+//? Вариант 1
 const [red, green, blue] = rgb;
-//? Вариант 2:
+
+//? Вариант 2: -- будет ОШИБКА
+// let red, green, blue;
+// [red, green, blue] = rgb;
+
+//? Вариант 3: -- будет WARNING
 // var [red, green, blue] = rgb;
 
 const rgbArr = {
@@ -74,13 +80,18 @@ const rgbArr = {
 //! При дестуктуризации надо сделать переименование переменных:
 // const {red: redNew, green: greenNew, blue: blueNew} = rgbArr;
 
-//? Вариант 2:
+//? Вариант 2: -- Будет ОШИБКА
+// { red, green, blue } = rgbArr
+
+
+//? Вариант 3: -- будет WARNING
 //! WARNING in src\components\App.jsx
-  //! Line 81:7:   'red' is already defined    no-redeclare
-  //! Line 81:12:  'green' is already defined  no-redeclare
-  //! Line 81:19:  'blue' is already defined   no-redeclare
+//! Line 81:7:   'red' is already defined    no-redeclare
+//! Line 81:12:  'green' is already defined  no-redeclare
+//! Line 81:19:  'blue' is already defined   no-redeclare
 // var [red, green, blue] = rgb;
 // var { red, green, blue } = rgbArr;
+
 
 // console.log("App.js:");
 console.log(`R:${red}, G:${green}, B:${blue}`); // "R:200,G:255,B:100"
