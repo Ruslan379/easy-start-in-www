@@ -6,6 +6,7 @@ import {
 import { Logo } from 'components/Logo/Logo';
 import { HTML_2_3 } from 'components/HTML-Lesson/Html_2-3';
 import { HtmlQuestion3Julia } from 'components/HTML-Lesson/Html_2-3_Question_Julia';
+import { JS_3_6 } from 'components/JavaScript-Lesson/JS_3-6';
 
 
 import css from './App.module.css';
@@ -51,10 +52,21 @@ console.log("--------------------------------------------");
 //   <h2>Post Header</h2>
 //   <p>Post text</p>
 // );
+
+//! -------------------------------- JS_3-6 ---------------------------------------------
+const rgb = [200, 255, 100];
+const [red, green, blue] = rgb;
+const rgbArr = {
+  red,
+  green,
+    blue
+}
+
+console.log("App.js:");
+console.log(`R:${red}, G:${green}, B:${blue}`); // "R:200,G:255,B:100"
+console.log("rgbArr:", rgbArr); // rgbArr: {red: 200, green: 255, blue: 100}
+
 //! ---------------------------------------------------------------------------------------
-
-
-
 
 
 
@@ -108,36 +120,10 @@ const toggleTrigger = () => {
       {trigger && (
         <HtmlQuestion3Julia />
       )}
-      {/* <HtmlQuestion3Julia /> */}
-      {/* <div className={css.mainLinks}>
-        <a href="https://www.google.com.ua">Читайте наш блог!</a>
-            <ul className={css.socialLinks}>
-              <li className={css.socialItems}>
-                <p className={css.socialText}>Twitter</p>
-                <a href="https://www.google.com.ua">Twitter-1</a>
-                <br/>
-                <a href="https://www.google.com.ua">Twitter-2</a>
-                <br/>
-                <a href="https://www.google.com.ua">Twitter-3</a>
-              </li>
-              <li>
-                <p className={css.socialText}>Instagram</p>
-                <a href="https://www.google.com.ua">Instagram-1</a>
-                <br/>
-                <a href="https://www.google.com.ua">Instagram-2</a>
-                <br/>
-                <a href="https://www.google.com.ua">Instagram-3</a>
-              </li>
-              <li>
-                <p className={css.socialText}>Facebook</p>
-                <a href="https://www.google.com.ua">Facebook-1</a>
-                <br/>
-                <a href="https://www.google.com.ua">Facebook-2</a>
-                <br/>
-                <a href="https://www.google.com.ua">Facebook-3</a>
-              </li>
-            </ul>
-      </div> */}
+      <p className={css.titleText}>Java Script (module_3-6)</p>
+      {`R:${red}, G:${green}, B:${blue}`}
+      <JS_3_6 />
+
 
     </div>
   );
