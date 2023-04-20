@@ -7,6 +7,8 @@ import css from './JS_3-6.module.css';
 export const JS_3_6 = () => {
     console.log("JS_3-6:");
 
+    //! Деструктуризация массивов
+    console.log("Деструктуризация массивов:");
     let rgbObj = null
     let rgbArr = []
 
@@ -32,7 +34,6 @@ export const JS_3_6 = () => {
 
     makeAnArray(10, 20, 30)
 
-    
     console.log("rgbArr:", rgbArr); 
     
 
@@ -40,7 +41,8 @@ export const JS_3_6 = () => {
     return (
         <>
             {/* {`R:${red},  G:${green},  B:${blue}`} */}
-            <p style={{color: "tomato"}}>{`<---- ${"JS_3_6"} ---->`}</p>
+            <p style={{ color: "tomato" }}>{`<---- ${"JS_3-6"} ---->`}</p>
+            {/* Деструктуризация массивов */}
             <ul className={css.rgbList}>
                 {rgbArr.map(({ red, green, blue }, index,) => (
                     <li key={index} className={css.rgbItem}>

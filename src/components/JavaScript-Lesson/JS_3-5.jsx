@@ -53,7 +53,7 @@ export const JS_3_5 = () => {
 
     return (
         <>
-            <p style={{ color: "tomato" }}>{`<---- ${"JS_3_5"} ---->`}</p>
+            <p style={{ color: "tomato" }}>{`<---- ${"JS_3-5"} ---->`}</p>
 
             <p style={{ color: "red" }}>{`book: ${book}`}</p>
 

@@ -1,0 +1,27 @@
+/* import styled from '@emotion/styled'; */
+
+
+.rgbList {
+    list-style: none;
+}
+
+
+.rgbItem {
+    font-size: 24px;
+}
+
+p {
+    font-size: initial;
+}
+
+.rgbTextRed {
+    color: red;
+}
+
+.rgbTextGreen {
+    color: green;
+}
+
+.rgbTextBlue {
+    color: blue;
+}
