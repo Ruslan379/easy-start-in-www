@@ -17,6 +17,7 @@ export const JS_3_5 = () => {
 
     console.log("book:", book); // 'The Last Kingdom'
 
+    //! Обращение к свойствам объекта через квадратные скобки и через точку:
     const bookTitle1 = book["title"];
     console.log("book['title']:", bookTitle1); // 'The Last Kingdom'
 
@@ -39,6 +40,16 @@ export const JS_3_5 = () => {
     const bookAuthor = book[propKey];
     console.log("propKey='author' ---> book[propKey]:", bookAuthor); // 'Bernard Cornwell'
 
+    //! Изменение значения свойства:
+    book.rating = 9;
+    console.log("book.rating:", book.rating); // historical prose
+
+    //! Добавление свойств:
+    book.pageCount = 836;;
+    console.log("book.pageCount:", book.pageCount); // historical prose
+
+
+
 
     return (
         <>
@@ -55,7 +66,11 @@ export const JS_3_5 = () => {
             <p style={{ color: "blue" }}>{`book["genres"][0]: [${bookGenres3}]`}</p>
             <p style={{ color: "black" }}>{`book.genres[0]: [${bookGenres4}]`}</p>
 
-            <p style={{ color: "green" }}>{`propKey='author'--->book[propKey]: [${bookAuthor}]`}</p>
+            <p style={{ color: "orange" }}>{`propKey='author'--->book[propKey]: [${bookAuthor}]`}</p>
+
+            <p style={{ color: "red" }}>{`book.rating: [${book.rating}]`}</p>
+
+            <p style={{ color: "green" }}>{`book.pageCount: [${book.pageCount}]`}</p>
             
             
         </>
