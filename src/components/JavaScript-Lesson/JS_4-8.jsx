@@ -45,7 +45,9 @@ const tags = getTags(tweets);
     
 const countTags = tags => tags.reduce((acc, tag) => {
     if (!acc.hasOwnProperty(tag)) {
-    acc[tag] = 0;
+        console.log("tag:", tag);
+        acc[tag] = 0;
+        // acc.tag = 0; //! так получаем NaN
     }
     acc[tag] += 1;
     return acc;

@@ -51,6 +51,7 @@ export const JS_3_5 = () => {
     //! Перебор объекта 
         //! Добавление свойств:
     const newKey = "Question of Katerina";
+    // const newKey = "newQuestion";
     book[newKey] = 0;
     const booknewKey = book[newKey];
     console.log("newKey='Question of Katerina' ---> book[propKey]:", booknewKey);
