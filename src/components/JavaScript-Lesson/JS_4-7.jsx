@@ -29,7 +29,7 @@ export const JS_4_7 = () => {
     return (
         <>
             <p style={{ color: "tomato" }}>{`<---- ${"JS_4-7"} ---->`}</p>
-            {/* Псевдомассив arguments у стрелочных функцийв */}
+            {/* Псевдомассив arguments у стрелочных функций */}
             <ul className={css.rgbList}>
                 {argsArr.map((item, index,) => (
                     <li key={index} className={css.rgbItem}>

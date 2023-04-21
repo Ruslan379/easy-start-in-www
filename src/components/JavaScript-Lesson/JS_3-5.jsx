@@ -15,7 +15,7 @@ export const JS_3_5 = () => {
         rating: 8.38,
     };
 
-    console.log("book:", book); // 'The Last Kingdom'
+    console.log("book:", book); 
 
     //! Обращение к свойствам объекта через квадратные скобки и через точку:
     const bookTitle1 = book["title"];
@@ -45,10 +45,29 @@ export const JS_3_5 = () => {
     console.log("book.rating:", book.rating); // historical prose
 
     //! Добавление свойств:
-    book.pageCount = 836;;
+    book.pageCount = 836;
     console.log("book.pageCount:", book.pageCount); // historical prose
 
+    //! Перебор объекта
+    //! Вопрос Катерины
+    //? обавление свойств
+    const newKey = "Question of Katerina";
+    book[newKey] = 0;
+    const booknewKey = book[newKey];
+    console.log("newKey='Question of Katerina' ---> book[propKey]:", booknewKey);
+    console.log("book --> Question of Katerina:", book); 
 
+    const getTagStats = (acc, tag) => {
+        if (!acc.hasOwnProperty(tag)) {
+            acc[tag] = 0;
+        }
+        acc[tag] += 1; //* var-1: Question of Katerina: 1
+        // acc.tag += 1; //! var-2: Question of Katerina: 0 (значение свойтва НЕ УВЕЛИЧИТЬСЯ на 1)
+        console.log("book --> getTagStats:", book);
+        return acc;
+    };
+
+    getTagStats(book, newKey)
 
 
     return (
@@ -66,11 +85,18 @@ export const JS_3_5 = () => {
             <p style={{ color: "blue" }}>{`book["genres"][0]: [${bookGenres3}]`}</p>
             <p style={{ color: "black" }}>{`book.genres[0]: [${bookGenres4}]`}</p>
 
-            <p style={{ color: "orange" }}>{`propKey='author'--->book[propKey]: [${bookAuthor}]`}</p>
+            <p style={{ color: "orange" }}>{`propKey='author'--->book[propKey]: ${bookAuthor}`}</p>
 
-            <p style={{ color: "red" }}>{`book.rating: [${book.rating}]`}</p>
+            <p style={{ color: "red" }}>{`book.rating: ${book.rating}`}</p>
 
-            <p style={{ color: "green" }}>{`book.pageCount: [${book.pageCount}]`}</p>
+            <p style={{ color: "green" }}>{`book.pageCount: ${book.pageCount}`}</p>
+
+            <p style={{ color: "tomato" }}>{`<---- ${"Вопрос Катерины"} ---->`}</p>
+
+            {/* <p style={{ color: "green" }}>{`book[Question of Katerina]: ${book[Question of Katerina]}`}</p> //! так НЕЛЬЗЯ!!! */} 
+            {/* <p style={{ color: "green" }}>{`book[Question of Katerina]: ${book.Question of Katerina}`}</p> //! и так НЕЛЬЗЯ!!! */} 
+            <p style={{ color: "green" }}>{`book["Question of Katerina"]: ${book["Question of Katerina"]}`}</p> 
+            <p style={{ color: "green" }}>{`book[newKey]: ${book[newKey]}`}</p>
             
             
         </>
