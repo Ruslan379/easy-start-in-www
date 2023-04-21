@@ -27,6 +27,10 @@ export const HTML_2_3 = () => {
 
     return (
         <>
+            <div>
+                <span className={css.spanBlock}>Это строковый элемент-1 (span)</span>
+                <span className={css.spanBlock}>Это строковый элемент-2 (span)</span>
+            </div>
             {sectionText1}
             <br />
             <section className={css.section}>

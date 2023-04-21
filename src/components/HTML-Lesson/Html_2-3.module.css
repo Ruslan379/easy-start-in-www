@@ -11,6 +11,22 @@
     font-size: 50px;
 } */
 
+.spanBlock {
+    display: flex;
+    width: 450px;
+    height: 80px;
+    justify-content: center;
+    align-items: center;
+
+    /* padding: 10px; */
+    margin-bottom: 10px; 
+
+    outline: 2px solid #ff0095;
+    border: 5px solid #100452;
+
+    font-size: 24px;
+}
+
 .section {
     border: 2px solid #b63f3f;
     padding: 20px;
