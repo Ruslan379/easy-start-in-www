@@ -9,6 +9,7 @@ import { HtmlQuestion3Julia } from 'components/HTML-Lesson/Html_2-3_Question_Jul
 import { JS_3_6 } from 'components/JavaScript-Lesson/JS_3-6';
 import { JS_3_5 } from 'components/JavaScript-Lesson/JS_3-5';
 import { JS_4_7 } from 'components/JavaScript-Lesson/JS_4-7';
+import { JS_4_8 } from 'components/JavaScript-Lesson/JS_4-8';
 
 
 import css from './App.module.css';
@@ -160,6 +161,8 @@ const toggleTrigger = () => {
       <JS_3_6 />
       <p className={css.titleText}>Java Script (module_4-7)</p>
       <JS_4_7 />
+      <p className={css.titleText}>Java Script (module_4-8)</p>
+      <JS_4_8 />
 
 
     </div>
