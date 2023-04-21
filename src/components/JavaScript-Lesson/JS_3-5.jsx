@@ -60,6 +60,7 @@ export const JS_3_5 = () => {
     const getTagStats = (acc, tag) => {
         if (!acc.hasOwnProperty(tag)) {
             acc[tag] = 0;
+            return acc;
         }
         acc[tag] += 1; //* var-1: Question of Katerina: 1
         // acc.tag += 1; //! var-2: Question of Katerina: 0 (значение свойтва НЕ УВЕЛИЧИТЬСЯ на 1)
