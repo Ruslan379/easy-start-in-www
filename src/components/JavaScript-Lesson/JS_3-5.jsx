@@ -48,22 +48,22 @@ export const JS_3_5 = () => {
     book.pageCount = 836;
     console.log("book.pageCount:", book.pageCount); // historical prose
 
-    //! Перебор объекта
-    //! Вопрос Катерины
-    //? обавление свойств
+    //! Перебор объекта 
+        //! Добавление свойств:
     const newKey = "Question of Katerina";
     book[newKey] = 0;
     const booknewKey = book[newKey];
     console.log("newKey='Question of Katerina' ---> book[propKey]:", booknewKey);
     console.log("book --> Question of Katerina:", book); 
 
+    //! Вопрос Катерины:
     const getTagStats = (acc, tag) => {
         if (!acc.hasOwnProperty(tag)) {
             acc[tag] = 0;
             return acc;
         }
         acc[tag] += 1; //* var-1: Question of Katerina: 1
-        // acc.tag += 1; //! var-2: Question of Katerina: 0 (значение свойтва НЕ УВЕЛИЧИТЬСЯ на 1)
+        // acc.tag += 1; //! var-2: Question of Katerina: 0 (значение свойтва НЕ УВЕЛИЧИТСЯ на 1)
         console.log("book --> getTagStats:", book);
         return acc;
     };
