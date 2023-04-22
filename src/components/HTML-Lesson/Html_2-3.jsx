@@ -8,6 +8,7 @@ import css from './Html_2-3.module.css';
 
 //-----------------------------------------------------
 export const HTML_2_3 = () => {
+    console.log("HTML_2-3:");
     const [isSuccess, setIsSuccess] = useState(false);
 
     const sectionText1 = (
@@ -27,6 +28,7 @@ export const HTML_2_3 = () => {
 
     return (
         <>
+            <p style={{ color: "tomato" }}>{`<---- ${"HTML_2-3"} ---->`}</p>
             <div>
                 <span className={css.spanBlock}>Это строковый элемент-1 (span)</span>
                 <span className={css.spanBlock}>Это строковый элемент-2 (span)</span>
