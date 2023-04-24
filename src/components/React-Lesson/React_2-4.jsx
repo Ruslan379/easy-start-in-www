@@ -24,8 +24,14 @@ export const React_2_4 = () => {
             console.log("ControlledForm --> componentDidMount");
         }
 
-        componentDidUpdate() {
+        componentDidUpdate(prevProps, prevState) {
             console.log("ControlledForm --> componentDidUpdate");
+            if (this.state.inputValue !== prevState) { 
+            console.log("Обновилось поле inputValue");
+            console.log("prevProps:", prevProps);
+            console.log("prevState:", prevState);
+            console.log("this.state:", this.state.inputValue);
+            }
         }
 
         render() {
@@ -69,6 +75,7 @@ export const React_2_4 = () => {
 
         componentDidUpdate() {
             console.log("ComplexForm --> componentDidUpdate");
+            
         }
 
         componentWillUnmount() {
@@ -104,10 +111,38 @@ export const React_2_4 = () => {
         }
     }
 
-    // ReactDOM.render(
-    //     <SignUpForm onSubmit={values => console.log(values)} />,
-    //     document.getElementById("root")
-    // );
+//! Вопрос Юлии №4
+    class MyComponent4 extends Component {
+        constructor(props) {
+            super(props);
+            this.state = {
+            data: []
+            };
+        }
+
+        componentDidMount() {
+            console.log("componentDidMount(Вопрос Юлии №4) --> componentDidMount")
+            const { data } = this.state;
+            data.push(1);
+            this.setState({ data: [...data, 2] });
+        }
+
+        render() {
+            console.log("Вопрос Юлии №4");
+            return (
+            <div>
+                <h1>{this.props.title}</h1>
+                {this.state.data.map((item, index) => (
+                    <p
+                        key={index}
+                    >
+                        {`index: ${index} --> item: ${item}`}
+                    </p>
+                ))}
+            </div>
+            );
+        }
+    }
 
     
     return (
@@ -116,6 +151,8 @@ export const React_2_4 = () => {
             <ControlledForm />
             <br />
             <ComplexForm />
+            <br />
+            <MyComponent4 />
         </>
     )
 }
