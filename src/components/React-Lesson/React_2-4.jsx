@@ -10,7 +10,7 @@ export const React_2_4 = () => {
     console.log("React_3-5:");
 
     //! Контролируемые элементы
-    class React24 extends Component {
+    class ControlledForm extends Component {
         state = {
         inputValue: "",
         };
@@ -20,7 +20,17 @@ export const React_2_4 = () => {
             console.log("inputValue:", evt.target.value);
         };
 
+        componentDidMount() {
+            console.log("ControlledForm --> componentDidMount");
+        }
+
+        componentDidUpdate() {
+            console.log("ControlledForm --> componentDidUpdate");
+        }
+
         render() {
+            console.log("ControlledForm --> Render");
+
             const { inputValue } = this.state;
             return (
             <input type="text" value={inputValue} onChange={this.handleChange} />
@@ -31,35 +41,36 @@ export const React_2_4 = () => {
 
 
     //! Сложные формы
-    class SignUpForm extends Component {
+    class ComplexForm extends Component {
         state = {
-        inputValue: "",
+        login: "",
         };
 
     // Отвечает за обновление состояния
         handleChange = evt => {
-            this.setState({ inputValue: evt.target.value });
+            this.setState({ login: evt.target.value });
+            console.log("login:", evt.target.value);
         };
 
         // Вызывается при отправке формы
         handleSubmit = evt => {
             evt.preventDefault();
             console.log(`Signed up as: ${this.state.login}`);
-
-        //! Проп который передается форме для вызова при сабмите (пока отключен)
-        // this.props.onSubmit({ ...this.state });
+            //! Проп который передается форме для вызова при сабмите (пока отключен)
+            // this.props.onSubmit({ ...this.state });
         };
 
         componentDidMount() {
-            console.log("SignUpForm --> componentDidMount");
+            console.log("ComplexForm --> componentDidMount");
         }
 
         componentDidUpdate() {
-            console.log("SignUpForm --> componentDidUpdate");
+            console.log("ComplexForm --> componentDidUpdate");
         }
 
         render() {
-            console.log("SignUpForm --> Render");
+            console.log("ComplexForm --> Render");
+
             const { login } = this.state;
 
             return (
@@ -89,9 +100,9 @@ export const React_2_4 = () => {
     return (
         <>
             <p style={{ color: "tomato" }}>{`<---- ${"React_2-4"} ---->`}</p>
-            <React24 />
+            <ControlledForm />
             <br />
-            <SignUpForm />
+            <ComplexForm />
         </>
     )
 }
