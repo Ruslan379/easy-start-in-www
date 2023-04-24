@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 
 
-// import css from './React_2-4.module.css';
+import css from './React_2-4.module.css';
 
 
 //-----------------------------------------------------
@@ -43,7 +43,8 @@ export const React_2_4 = () => {
     //! Сложные формы
     class ComplexForm extends Component {
         state = {
-        login: "",
+            login: "",
+            trigger: true,
         };
 
     // Отвечает за обновление состояния
@@ -58,6 +59,8 @@ export const React_2_4 = () => {
             console.log(`Signed up as: ${this.state.login}`);
             //! Проп который передается форме для вызова при сабмите (пока отключен)
             // this.props.onSubmit({ ...this.state });
+            this.setState({ trigger: false });
+            
         };
 
         componentDidMount() {
@@ -68,13 +71,23 @@ export const React_2_4 = () => {
             console.log("ComplexForm --> componentDidUpdate");
         }
 
+        componentWillUnmount() {
+            console.log("ComplexForm --> componentWillUnmount");
+        }
+
+        
+
         render() {
             console.log("ComplexForm --> Render");
+            console.log(`trigger: ${this.state.trigger}`)
 
             const { login } = this.state;
+            const { trigger } = this.state;
 
             return (
-                <form onSubmit={this.handleSubmit}>
+                <form
+                    className={trigger ? css.complexFormForm :css.complexFormFormNone1}
+                    onSubmit={this.handleSubmit}>
                     <label>
                         Name
                     <input
