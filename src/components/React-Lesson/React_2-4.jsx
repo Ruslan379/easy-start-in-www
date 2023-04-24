@@ -7,6 +7,7 @@ import React, { Component } from 'react';
 //-----------------------------------------------------
 export const React_2_4 = () => {
     console.log("React_2-4:");
+    console.log("React_3-5:");
 
     //! Контролируемые элементы
     class React24 extends Component {
@@ -32,12 +33,12 @@ export const React_2_4 = () => {
     //! Сложные формы
     class SignUpForm extends Component {
         state = {
-        login: "",
+        inputValue: "",
         };
 
     // Отвечает за обновление состояния
-        handleChange = e => {
-            this.setState({ login: e.target.value });
+        handleChange = evt => {
+            this.setState({ inputValue: evt.target.value });
         };
 
         // Вызывается при отправке формы
@@ -45,11 +46,20 @@ export const React_2_4 = () => {
             evt.preventDefault();
             console.log(`Signed up as: ${this.state.login}`);
 
-        // Проп который передается форме для вызова при сабмите
-        this.props.onSubmit({ ...this.state });
+        //! Проп который передается форме для вызова при сабмите (пока отключен)
+        // this.props.onSubmit({ ...this.state });
         };
 
+        componentDidMount() {
+            console.log("SignUpForm --> componentDidMount");
+        }
+
+        componentDidUpdate() {
+            console.log("SignUpForm --> componentDidUpdate");
+        }
+
         render() {
+            console.log("SignUpForm --> Render");
             const { login } = this.state;
 
             return (
