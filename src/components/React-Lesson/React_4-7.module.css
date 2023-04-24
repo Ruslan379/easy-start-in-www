@@ -1,0 +1,22 @@
+/* import styled from '@emotion/styled'; */
+
+
+.complexFormForm {
+    display: flex;
+    width: 450px;
+    height: 80px;
+    justify-content: center;
+    align-items: center;
+
+    /* padding: 10px; */
+    margin-bottom: 10px; 
+
+    outline: 2px solid #ff0095;
+    border: 5px solid #100452;
+
+    font-size: 24px;
+}
+
+.complexFormFormNone {
+    display: none;
+}

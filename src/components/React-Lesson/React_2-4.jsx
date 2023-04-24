@@ -22,6 +22,9 @@ export const React_2_4 = () => {
 
         componentDidMount() {
             console.log("ControlledForm --> componentDidMount");
+            const { inputValue } = this.state;
+            this.setState({ inputValue: inputValue + 1 });
+            console.log("componentDidMount --> this.state:", this.state.inputValue);
         }
 
         componentDidUpdate(prevProps, prevState) {
@@ -30,7 +33,7 @@ export const React_2_4 = () => {
             console.log("Обновилось поле inputValue");
             console.log("prevProps:", prevProps);
             console.log("prevState:", prevState);
-            console.log("this.state:", this.state.inputValue);
+            console.log("componentDidUpdate --> this.state:", this.state.inputValue);
             }
         }
 
