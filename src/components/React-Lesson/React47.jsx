@@ -5,7 +5,7 @@ import { useState } from "react";
 
 
 //-----------------------------------------------------
-export const React_4_7 = () => {
+export const React47 = () => {
     console.log("React_4-7:");
 
     const [value, setValue] = useState(0);

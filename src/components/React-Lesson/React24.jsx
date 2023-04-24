@@ -5,7 +5,7 @@ import css from './React_2-4.module.css';
 
 
 //-----------------------------------------------------
-export const React_2_4 = () => {
+export const React24 = () => {
     console.log("React_2-4:");
     console.log("React_3-5:");
 

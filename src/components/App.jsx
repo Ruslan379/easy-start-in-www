@@ -13,8 +13,8 @@ import { JS_4_7 } from 'components/JavaScript-Lesson/JS_4-7';
 import { JS_4_8 } from 'components/JavaScript-Lesson/JS_4-8';
 
 
-import { React_2_4 } from 'components/React-Lesson/React_2-4';
-import { React_4_7 } from 'components/React-Lesson/React_4-7';
+import { React24 } from 'components/React-Lesson/React24';
+import { React47 } from 'components/React-Lesson/React47';
 
 
 import css from './App.module.css';
@@ -169,9 +169,9 @@ const toggleTrigger = () => {
       <p className={css.titleText}>Java Script (module_4-8)</p>
       <JS_4_8 />
       <p className={css.titleText}>React (module_2-4)</p>
-      <React_2_4 />
+      <React24 />
       <p className={css.titleText}>React (module_4-7)</p>
-      <React_4_7 />
+      <React47 />
 
 
     </div>
