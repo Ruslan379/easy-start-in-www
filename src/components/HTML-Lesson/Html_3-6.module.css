@@ -7,9 +7,9 @@
 
     /* ! Making ul.menu a Flex container  */
     display: flex;
-    /* flex-direction: column; */
     /* flex-wrap: wrap; */
     gap: 8px;
+    /* flex-direction: column; */
     justify-content:  center;
     /* justify-content: flex-start; */
     /* align-items: center; */
