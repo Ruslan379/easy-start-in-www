@@ -6,6 +6,7 @@ import {
 import { Logo } from 'components/Logo/Logo';
 import { HTML_2_3 } from 'components/HTML-Lesson/Html_2-3';
 import { HtmlQuestion3Julia } from 'components/HTML-Lesson/Html_2-3_Question_Julia';
+import { HTML_36 } from 'components/HTML-Lesson/Html_3-6';
 
 import { JS_3_6 } from 'components/JavaScript-Lesson/JS_3-6';
 import { JS_3_5 } from 'components/JavaScript-Lesson/JS_3-5';
@@ -159,6 +160,8 @@ const toggleTrigger = () => {
       {trigger && (
         <HtmlQuestion3Julia />
       )}
+      <p className={css.titleText}>HTML+CSS (module_3-6)</p>
+      <HTML_36 />
       <p className={css.titleText}>Java Script (module_3-5)</p>
       <JS_3_5 />
       <p className={css.titleText}>Java Script (module_3-6)</p>
