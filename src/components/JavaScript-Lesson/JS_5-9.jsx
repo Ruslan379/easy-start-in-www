@@ -64,8 +64,6 @@ export const JS_5_9 = () => {
         username: "Resort hotel",
         showThis() {
             const foo = () => {
-            // Стрелки запоминают контекст во время объявления,
-            // из родительской области видимости
             console.log("this in foo: ", this);
         };
 
@@ -74,6 +72,7 @@ export const JS_5_9 = () => {
         },
     };
 
+    
     console.log("hotel: ", hotel); // hotel: {username: 'Resort hotel', showThis: ƒ}
 
     hotel.showThis();
