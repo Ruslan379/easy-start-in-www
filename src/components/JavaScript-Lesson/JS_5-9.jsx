@@ -72,12 +72,29 @@ export const JS_5_9 = () => {
         },
     };
 
-    
+
     console.log("hotel: ", hotel); // hotel: {username: 'Resort hotel', showThis: ƒ}
 
     hotel.showThis();
     // this in foo: {username: 'Resort hotel', showThis: ƒ}
     // this in showThis: {username: 'Resort hotel',showThis: ƒ}
+
+    // const p = new Rectangle();
+    
+    class Rectangle {
+        constructor(height1, width1) {
+            this.height = height1;
+            this.width = width1
+        }
+        showThis() {
+            console.log("this in foo: ");
+        }
+    }
+
+    
+    const p = new Rectangle(10,20);
+    p.showThis()
+    console.log(p.height);
 
     return (
         <>
