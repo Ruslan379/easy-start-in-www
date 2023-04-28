@@ -39,23 +39,23 @@ export const JS_5_9 = () => {
     user.showContext(); // this in showThis: {username: "Mango", showContext: ƒ}
 
     //! this в callback-функциях
-    // console.log("this в callback-функциях:");
+    console.log("this в callback-функциях:");
 
-    // const customer = {
-    //     firstName: "Jacob",
-    //     lastName: "Mercer",
-    //     getFullName() {
-    //         return `${this.firstName} ${this.lastName}`;
-    //     },
-    // };
+    const customer = {
+        firstName: "Jacob",
+        lastName: "Mercer",
+        getFullName() {
+            return `${this.firstName} ${this.lastName}`;
+        },
+    };
 
-    // function makeMessage(callback) {
-    //   // callback() это вызов метода getFullName без объекта
-    //     console.log(`Обрабатываем заявку от ${callback()}.`);
-    // }
+    function makeMessage(callback) {
+      // callback() это вызов метода getFullName без объекта
+        console.log(`Обрабатываем заявку от ${callback()}.`);
+    }
 
     // makeMessage(customer.getFullName); //! Будет ошибка при вызове функции: Cannot read properties of undefined (reading 'firstName')
-
+    makeMessage(customer.getFullName.bind(customer)); // Обрабатываем заявку от Jacob Mercer. 
 
     //! this в стрелочных функциях
     console.log("this в стрелочных функциях:");
