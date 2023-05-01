@@ -222,21 +222,42 @@ export const App = () => {
             <Outlet />
           </div>
         } >
-        <Route path="module-35" element={
-          <>
-            <p className={css.titleText}>Java Script (module_3-5)</p>
-            <JS_3_5 />
-            <p className={css.titleText}>Java Script (module_3-6)</p>
-            {`App.js --> R:${red}, G:${green}, B:${blue}`}
-            <JS_3_6 />
-            <p className={css.titleText}>Java Script (module_4-7)</p>
-            <JS_4_7 />
-            <p className={css.titleText}>Java Script (module_4-8)</p>
-            <JS_4_8 />
-            <p className={css.titleText}>Java Script (module_5-9)</p>
-            <JS_5_9 />
-          </>
-        } />
+          <Route path="module-35" element={
+            <div>
+              <p className={css.titleText}>Java Script (module_3-5)</p>
+                <JS_3_5 />
+            </div>
+          } />
+          <Route path="module-36" element={
+            <div>
+              <p className={css.titleText}>Java Script (module_3-6)</p>
+              {`App.js --> R:${red}, G:${green}, B:${blue}`}
+              <JS_3_6 />
+            </div>
+          } />
+          <Route path="module-47" element={
+            <div>
+              <p className={css.titleText}>Java Script (module_4-7)</p>
+              <JS_4_7 />
+            </div>
+          } />
+          <Route path="module-48" element={
+            <div>
+              <p className={css.titleText}>Java Script (module_4-8)</p>
+              <JS_4_8 />
+            </div>
+          } />
+          <Route path="module-59" element={
+            <div>
+              <p className={css.titleText}>Java Script (module_5-9)</p>
+              <JS_5_9 />
+            </div>
+          } />
+            
+            
+            
+
+    
 
         {/* <Route path="/javascript" element={
           <>

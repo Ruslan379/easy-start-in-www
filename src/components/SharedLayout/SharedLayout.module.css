@@ -19,6 +19,16 @@
     /* background-color: #faebe2; */
 }
 /* ----------------------------------------------- */
+.navLinkHome {
+    color: black;
+    text-decoration: none;
+    font-size: 30px;
+    font-weight: 700;
+    color: rgb(31, 85, 0);
+    margin-bottom: 10px;
+}
+
+
 .navFlex {
     display: flex;
     gap: 50px;

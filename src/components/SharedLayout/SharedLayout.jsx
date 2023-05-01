@@ -31,9 +31,10 @@ export const SharedLayout = () => {
       // }}
     >
       <Logo />
-      <NavLink className={css.navLink} to="/">H O M E</NavLink>
+
+      <NavLink className={css.navLinkHome} to="/">H O M E</NavLink>
+
       <nav className={css.navFlex}>
-        {/* <NavLink className={css.navLink} to="/">HOME</NavLink> */}
         <div className={css.navBlock}>
           <NavLink className={css.navLink} to="/htmlcss">HTML+CSS</NavLink>
           <NavLink to="/htmlcss/module-23">Module_2-3</NavLink>
@@ -41,13 +42,13 @@ export const SharedLayout = () => {
           <NavLink to="/htmlcss/question-julia">Юля (вопрос 3)</NavLink>
           <NavLink to="/htmlcss/module-36">Module_3-6</NavLink>
         </div>
-        {/* <NavLink className={css.navLink} to="/javascript">Java Script</NavLink> */}
         <div className={css.navBlock}>
           <NavLink className={css.navLink} to="/javascript">Java Script</NavLink>
           <NavLink to="/javascript/module-35">Module_3-5</NavLink>
-          <NavLink to="/javascript/module-24">Module_2-4</NavLink>
-          <NavLink to="/javascript/question-julia">Юля (вопрос 3)</NavLink>
           <NavLink to="/javascript/module-36">Module_3-6</NavLink>
+          <NavLink to="/javascript/module-47">Module_4-7</NavLink>
+          <NavLink to="/javascript/module-48">Module_4-8</NavLink>
+          <NavLink to="/javascript/module-59">Module_5-9</NavLink>
         </div>
         <NavLink className={css.navLink} to="/react">React</NavLink>
         <NavLink className={css.navLink} to="/node">Node</NavLink>
