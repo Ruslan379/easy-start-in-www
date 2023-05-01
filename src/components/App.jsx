@@ -150,6 +150,7 @@ export const App = () => {
       <Route path="*" element={<NotFound />} />
       <Route path="/" element={<SharedLayout />} >
         <Route index element={<Home />} />
+
         <Route path="/htmlcss" element={
           <div>
             <p className={css.titleTextBase}>HTML+CSS</p>
@@ -253,46 +254,48 @@ export const App = () => {
               <JS_5_9 />
             </div>
           } />
-            
-            
-            
-
-    
-
-        {/* <Route path="/javascript" element={
-          <>
-            <p className={css.titleText}>Java Script (module_3-5)</p>
-            <JS_3_5 />
-            <p className={css.titleText}>Java Script (module_3-6)</p>
-            {`App.js --> R:${red}, G:${green}, B:${blue}`}
-            <JS_3_6 />
-            <p className={css.titleText}>Java Script (module_4-7)</p>
-            <JS_4_7 />
-            <p className={css.titleText}>Java Script (module_4-8)</p>
-            <JS_4_8 />
-            <p className={css.titleText}>Java Script (module_5-9)</p>
-            <JS_5_9 />
-          </>
-        } /> */}
-      </Route>
-
+        </Route>
 
         <Route path="/react" element={
-          <>
-            <p className={css.titleText}>React (module_2-4)</p>
-            <React24 />
+          <div>
+            <p className={css.titleTextBase}>React</p>
+            <Outlet />
+          </div>
+        } >
+          <Route path="module-24" element={
+          <div>
+              <p className={css.titleText}>React (module_2-4)</p>
+              <React24 />
+          </div>
+          } />
+          <Route path="module-47" element={
+          <div>
             <p className={css.titleText}>React (module_4-7)</p>
             <React47 />
-          </>
-        } />
+        </div>
+          } />
+        </Route>
+
         <Route path="/node" element={
-          <>
-            <p className={css.titleText}>Node.js (module_1-1)</p>
-            {/* <Node11 /> */}
+          <div>
+            <p className={css.titleTextBase}>Node.js</p>
+            <Outlet />
+          </div>
+        } >
+          <Route path="module-11" element={
+          <div>
+              <p className={css.titleText}>Node.js (module_1-1)</p>
+              {/* <Node11 /> */}
+          </div>
+          } />
+          <Route path="module-12" element={
+          <div>
             <p className={css.titleText}>Node.js (module_1-2)</p>
             {/* <Node12 /> */}
-          </>
-        } />
+        </div>
+          } />
+        </Route>
+
         {/* <Route path="*" element={<NotFound />} /> */}
       </Route> 
     </Routes> 
