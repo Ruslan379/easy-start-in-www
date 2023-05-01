@@ -3,7 +3,15 @@ import {
     // useEffect
 } from 'react';
 
+import {
+  Route,
+  Routes,
+  // Link,
+  NavLink
+} from 'react-router-dom';
+
 import { Logo } from 'components/Logo/Logo';
+import { NotFound } from "page/NotFound";
 import { HTML_2_3 } from 'components/HTML-Lesson/Html_2-3';
 import { HtmlQuestion3Julia } from 'components/HTML-Lesson/Html_2-3_Question_Julia';
 import { HTML_36 } from 'components/HTML-Lesson/Html_3-6';
@@ -132,54 +140,92 @@ const toggleTrigger = () => {
       //     color: '#010101'
       // }}
     >
-      <Logo />
-      {/* --------------------- Lessons --------------------- */}
-      <p className={css.titleTextBase}>HTML+CSS (module_2-3)</p>
-      <HTML_2_3 />
-
-      <p className={css.titleText}>HTML+CSS (module_2-4)</p>
-      {/* ---------------- Юля (вопрос 3) ------------------- */}
-      <p className={css.titleTextQuestion}>Юля (вопрос 3):</p>
-      <br />
-      <button
-        className={
-            `${css.buttonAlert} ${css.alert} ${
-                trigger
-                ?
-                `${css.success} ${css.successBackgroundColor} ${css.buttonAlertBefore}`
-                :
-                // css.error
-                `${css.error} ${css.errorBackgroundColor}`
-                }
-            `
+      <nav className={css.navBlock}>
+        <NavLink className={css.navLink} to="/" end>HOME</NavLink>
+        <NavLink className={css.navLink} to="/htmlcss">HTML+CSS</NavLink>
+        <NavLink className={css.navLink} to="/javascript">Java Script</NavLink>
+        <NavLink className={css.navLink} to="/react">React</NavLink>
+        <NavLink className={css.navLink} to="/node">Node</NavLink>
+      </nav>
+      
+      <Routes>
+        {/* <Logo /> */}
+        <Route path="/" element={<Logo />} />
+        {/* --------------------- Lessons --------------------- */}
+        <Route path="/htmlcss" element={
+          <>
+            <p className={css.titleTextBase}>HTML+CSS (module_2-3)</p>
+            <HTML_2_3 />
+          
+            <p className={css.titleText}>HTML+CSS (module_2-4)</p>
+            {/* ---------------- Юля (вопрос 3) ------------------- */}
+            <p className={css.titleTextQuestion}>Юля (вопрос 3):</p>
+            <br />
+            <button
+              className={
+                  `${css.buttonAlert} ${css.alert} ${
+                      trigger
+                      ?
+                      `${css.success} ${css.successBackgroundColor} ${css.buttonAlertBefore}`
+                      :
+                      // css.error
+                      `${css.error} ${css.errorBackgroundColor}`
+                      }
+                  `
+              }
+                onClick={toggleTrigger}
+            >
+              {trigger ? "Вопрос ЮЛИ включен" : "Вопрос ЮЛИ выключен"}
+            </button>
+            <br />
+            {trigger && (
+              <HtmlQuestion3Julia />
+            )}
+            <p className={css.titleText}>HTML+CSS (module_3-6)</p>
+            <HTML_36 />
+        </>
         }
-          onClick={toggleTrigger}
-      >
-        {trigger ? "Вопрос ЮЛИ включен" : "Вопрос ЮЛИ выключен"}
-      </button>
-      <br />
-      {trigger && (
-        <HtmlQuestion3Julia />
-      )}
-      <p className={css.titleText}>HTML+CSS (module_3-6)</p>
-      <HTML_36 />
-      <p className={css.titleText}>Java Script (module_3-5)</p>
-      <JS_3_5 />
-      <p className={css.titleText}>Java Script (module_3-6)</p>
-      {`App.js --> R:${red}, G:${green}, B:${blue}`}
-      <JS_3_6 />
-      <p className={css.titleText}>Java Script (module_4-7)</p>
-      <JS_4_7 />
-      <p className={css.titleText}>Java Script (module_4-8)</p>
-      <JS_4_8 />
-      <p className={css.titleText}>Java Script (module_5-9)</p>
-      <JS_5_9 />
-      <p className={css.titleText}>React (module_2-4)</p>
-      <React24 />
-      <p className={css.titleText}>React (module_4-7)</p>
-      <React47 />
+        />
 
+        <Route path="/javascript" element={
+          <>
+            <p className={css.titleText}>Java Script (module_3-5)</p>
+            <JS_3_5 />
+            <p className={css.titleText}>Java Script (module_3-6)</p>
+            {`App.js --> R:${red}, G:${green}, B:${blue}`}
+            <JS_3_6 />
+            <p className={css.titleText}>Java Script (module_4-7)</p>
+            <JS_4_7 />
+            <p className={css.titleText}>Java Script (module_4-8)</p>
+            <JS_4_8 />
+            <p className={css.titleText}>Java Script (module_5-9)</p>
+            <JS_5_9 />
+          </>
+        }
+        />
 
+        <Route path="/react" element={
+          <>
+            <p className={css.titleText}>React (module_2-4)</p>
+            <React24 />
+            <p className={css.titleText}>React (module_4-7)</p>
+            <React47 />
+          </>
+        }
+        />
+
+        <Route path="/node" element={
+          <>
+            <p className={css.titleText}>Node.js (module_1-1)</p>
+            {/* <Node11 /> */}
+            <p className={css.titleText}>Node.js (module_1-2)</p>
+            {/* <Node12 /> */}
+          </>
+        }
+        />
+        
+        <Route path="*" element={<NotFound />} />
+      </Routes>    
     </div>
   );
 };
