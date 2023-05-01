@@ -6,9 +6,9 @@ import css from './Home.module.css';
 //------------------------------------------------------
 export const Home = () => {
     return (
-        <div className={css.logoContainer}>
+        <div className={css.logoHomeContainer}>
             <img
-                className={css.logoImage}
+                className={css.logoHomeImage}
                 alt={whel}
                 src={whel}
                 width="100"
