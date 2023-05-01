@@ -1,12 +1,8 @@
 import {
-  Route,
-  Routes,
-  // Link,
   NavLink,
   Outlet 
 } from 'react-router-dom';
 
-// import { useParams } from "react-router-dom";
 
 import { Logo } from 'components/Logo/Logo';
 
@@ -34,8 +30,10 @@ export const SharedLayout = () => {
       //     color: '#010101'
       // }}
     >
+      <Logo />
+      <NavLink className={css.navLink} to="/">H O M E</NavLink>
       <nav className={css.navFlex}>
-        <NavLink className={css.navLink} to="/">HOME</NavLink>
+        {/* <NavLink className={css.navLink} to="/">HOME</NavLink> */}
         <div className={css.navBlock}>
           <NavLink className={css.navLink} to="/htmlcss">HTML+CSS</NavLink>
           <NavLink to="/htmlcss/module-23">Module_2-3</NavLink>
@@ -43,20 +41,20 @@ export const SharedLayout = () => {
           <NavLink to="/htmlcss/question-julia">Юля (вопрос 3)</NavLink>
           <NavLink to="/htmlcss/module-36">Module_3-6</NavLink>
         </div>
-        <NavLink className={css.navLink} to="/javascript">Java Script</NavLink>
+        {/* <NavLink className={css.navLink} to="/javascript">Java Script</NavLink> */}
+        <div className={css.navBlock}>
+          <NavLink className={css.navLink} to="/javascript">Java Script</NavLink>
+          <NavLink to="/javascript/module-35">Module_3-5</NavLink>
+          <NavLink to="/javascript/module-24">Module_2-4</NavLink>
+          <NavLink to="/javascript/question-julia">Юля (вопрос 3)</NavLink>
+          <NavLink to="/javascript/module-36">Module_3-6</NavLink>
+        </div>
         <NavLink className={css.navLink} to="/react">React</NavLink>
         <NavLink className={css.navLink} to="/node">Node</NavLink>
       </nav>
+
+      <Outlet />
       
-      <Routes>
-        <Route path="/" element={
-          <>
-            <Logo />
-            <Outlet />
-          </>
-        } >
-        </Route>
-      </Routes>    
     </div>
   );
 };

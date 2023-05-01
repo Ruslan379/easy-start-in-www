@@ -14,9 +14,9 @@ import {
 // import { useParams } from "react-router-dom";
 
 import { SharedLayout } from 'components/SharedLayout/SharedLayout';
+import { Home } from 'components/Home/Home';
+import { NotFound } from "page/NotFound";
 
-import { Logo } from 'components/Logo/Logo';
-// import { NotFound } from "page/NotFound";
 import { HTML_2_3 } from 'components/HTML-Lesson/Html_2-3';
 import { HtmlQuestion3Julia } from 'components/HTML-Lesson/Html_2-3_Question_Julia';
 import { HTML_36 } from 'components/HTML-Lesson/Html_3-6';
@@ -27,10 +27,8 @@ import { JS_4_7 } from 'components/JavaScript-Lesson/JS_4-7';
 import { JS_4_8 } from 'components/JavaScript-Lesson/JS_4-8';
 import { JS_5_9 } from 'components/JavaScript-Lesson/JS_5-9';
 
-
 import { React24 } from 'components/React-Lesson/React24';
 import { React47 } from 'components/React-Lesson/React47';
-
 
 import css from './App.module.css';
 
@@ -149,8 +147,9 @@ export const App = () => {
 
   return (
     <Routes>
+      <Route path="*" element={<NotFound />} />
       <Route path="/" element={<SharedLayout />} >
-        <Route index element={<Logo />} />
+        <Route index element={<Home />} />
         <Route path="/htmlcss" element={
           <div>
             <p className={css.titleTextBase}>HTML+CSS</p>
@@ -202,23 +201,29 @@ export const App = () => {
         </div>
           } />
         </Route>
-        <Route path="/javascript" element={
-          <>
-            <form
-                    // className={trigger ? css.complexFormForm :css.complexFormFormNone1}
-                    onSubmit={handleSubmit}>
-                    <label>
-                        Module Java Script:
-                    <input
-                        type="text"
-                        placeholder="Enter module"
-                        value={module}
-                        onChange={handleChange}
-                    />
-                    </label>
 
-                    <button type="submit">ModuleJS {module}</button>
-                </form>
+        <Route path="/javascript" element={
+          <div>
+            <p className={css.titleTextBase}>Java Script</p>
+            <form
+              // className={trigger ? css.complexFormForm :css.complexFormFormNone1}
+              onSubmit={handleSubmit}>
+                <label>
+                    Module Java Script:
+                <input
+                    type="text"
+                    placeholder="Enter module"
+                    value={module}
+                    onChange={handleChange}
+                />
+                </label>
+                <button type="submit">Module JS</button>
+            </form>
+            <Outlet />
+          </div>
+        } >
+        <Route path="module-35" element={
+          <>
             <p className={css.titleText}>Java Script (module_3-5)</p>
             <JS_3_5 />
             <p className={css.titleText}>Java Script (module_3-6)</p>
@@ -232,6 +237,25 @@ export const App = () => {
             <JS_5_9 />
           </>
         } />
+
+        {/* <Route path="/javascript" element={
+          <>
+            <p className={css.titleText}>Java Script (module_3-5)</p>
+            <JS_3_5 />
+            <p className={css.titleText}>Java Script (module_3-6)</p>
+            {`App.js --> R:${red}, G:${green}, B:${blue}`}
+            <JS_3_6 />
+            <p className={css.titleText}>Java Script (module_4-7)</p>
+            <JS_4_7 />
+            <p className={css.titleText}>Java Script (module_4-8)</p>
+            <JS_4_8 />
+            <p className={css.titleText}>Java Script (module_5-9)</p>
+            <JS_5_9 />
+          </>
+        } /> */}
+      </Route>
+
+
         <Route path="/react" element={
           <>
             <p className={css.titleText}>React (module_2-4)</p>
