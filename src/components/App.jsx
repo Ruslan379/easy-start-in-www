@@ -7,14 +7,16 @@ import {
   Route,
   Routes,
   // Link,
-  NavLink,
+  // NavLink,
   Outlet 
 } from 'react-router-dom';
 
 // import { useParams } from "react-router-dom";
 
+import { SharedLayout } from 'components/SharedLayout/SharedLayout';
+
 import { Logo } from 'components/Logo/Logo';
-import { NotFound } from "page/NotFound";
+// import { NotFound } from "page/NotFound";
 import { HTML_2_3 } from 'components/HTML-Lesson/Html_2-3';
 import { HtmlQuestion3Julia } from 'components/HTML-Lesson/Html_2-3_Question_Julia';
 import { HTML_36 } from 'components/HTML-Lesson/Html_3-6';
@@ -146,36 +148,9 @@ export const App = () => {
   // console.log(`moduleId:${moduleId}`); 
 
   return (
-    <div
-      className={css.Container}
-      // style={{
-      //     height: '100vh',
-      //     display: 'flex',
-      //     flexDirection: 'column',
-      //     justifyContent: 'center',
-      //     alignItems: 'center',
-      //     fontSize: 20,
-      //     color: '#010101'
-      // }}
-    >
-      <nav className={css.navFlex}>
-        <NavLink className={css.navLink} to="/" end>HOME</NavLink>
-        <div className={css.navBlock}>
-          <NavLink className={css.navLink} to="/htmlcss">HTML+CSS</NavLink>
-          <NavLink to="/htmlcss/module-23">Module_2-3</NavLink>
-          <NavLink to="/htmlcss/module-24">Module_2-4</NavLink>
-          <NavLink to="/htmlcss/question-julia">Юля (вопрос 3)</NavLink>
-          <NavLink to="/htmlcss/module-36">Module_3-6</NavLink>
-        </div>
-        <NavLink className={css.navLink} to="/javascript">Java Script</NavLink>
-        <NavLink className={css.navLink} to="/react">React</NavLink>
-        <NavLink className={css.navLink} to="/node">Node</NavLink>
-      </nav>
-      
-      <Routes>
-        {/* <Logo /> */}
-        <Route path="/" element={<Logo />} />
-        {/* --------------------- Lessons --------------------- */}
+    <Routes>
+      <Route path="/" element={<SharedLayout />} >
+        <Route index element={<Logo />} />
         <Route path="/htmlcss" element={
           <div>
             <p className={css.titleTextBase}>HTML+CSS</p>
@@ -227,7 +202,6 @@ export const App = () => {
         </div>
           } />
         </Route>
-        
         <Route path="/javascript" element={
           <>
             <form
@@ -258,14 +232,6 @@ export const App = () => {
             <JS_5_9 />
           </>
         } />
-
-        {/* <Route path="/javascript/:moduleId" element={
-          <>
-            <p className={css.titleText}>Java Script (module_3-5)</p>
-            <JS_3_5 />
-          </>
-        } /> */}
-
         <Route path="/react" element={
           <>
             <p className={css.titleText}>React (module_2-4)</p>
@@ -274,7 +240,6 @@ export const App = () => {
             <React47 />
           </>
         } />
-
         <Route path="/node" element={
           <>
             <p className={css.titleText}>Node.js (module_1-1)</p>
@@ -283,9 +248,8 @@ export const App = () => {
             {/* <Node12 /> */}
           </>
         } />
-        
-        <Route path="*" element={<NotFound />} />
-      </Routes>    
-    </div>
+        {/* <Route path="*" element={<NotFound />} /> */}
+      </Route> 
+    </Routes> 
   );
 };
