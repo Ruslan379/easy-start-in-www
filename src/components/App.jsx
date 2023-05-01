@@ -188,13 +188,11 @@ export const App = () => {
               <HTML_2_3 />
             </div>
           } />
-        
           <Route path="module-24" element={
           <div>
             <p className={css.titleText}>HTML+CSS (module_2-4)</p>
           </div>
           } />
-
           <Route path="question-julia" element={
             <div>
               {/* ---------------- Юля (вопрос 3) ------------------- */}
@@ -222,19 +220,14 @@ export const App = () => {
               )}
             </div>
           } />
-
           <Route path="module-36" element={
           <div>
             <p className={css.titleText}>HTML+CSS (module_3-6)</p>
             <HTML_36 />
         </div>
           } />
-    
         </Route>
         
-
-
-
         <Route path="/javascript" element={
           <>
             <form
