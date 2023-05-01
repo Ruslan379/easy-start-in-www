@@ -7,8 +7,11 @@ import {
   Route,
   Routes,
   // Link,
-  NavLink
+  NavLink,
+  Outlet 
 } from 'react-router-dom';
+
+// import { useParams } from "react-router-dom";
 
 import { Logo } from 'components/Logo/Logo';
 import { NotFound } from "page/NotFound";
@@ -120,12 +123,27 @@ console.log("rgbArr:", rgbArr); // rgbArr: {red: 200, green: 255, blue: 100}
 
 
 export const App = () => {
+  // const { moduleId } = useParams();
 
   const [trigger, setTrigger] = useState(false);
+  const [module, setModule] = useState(0);
   
-const toggleTrigger = () => {
-        setTrigger(!trigger);
-    }
+  const toggleTrigger = () => {
+    setTrigger(!trigger);
+  }
+  
+  const handleChange = evt => {
+    setModule(evt.target.value);
+    // console.log("module:", evt.target.value);
+  };
+
+        // Вызывается при отправке формы
+  const handleSubmit = evt => {
+    evt.preventDefault();
+    console.log(`Signed up as: ${module}`);
+  };
+
+  // console.log(`moduleId:${moduleId}`); 
 
   return (
     <div
@@ -140,9 +158,15 @@ const toggleTrigger = () => {
       //     color: '#010101'
       // }}
     >
-      <nav className={css.navBlock}>
+      <nav className={css.navFlex}>
         <NavLink className={css.navLink} to="/" end>HOME</NavLink>
-        <NavLink className={css.navLink} to="/htmlcss">HTML+CSS</NavLink>
+        <div className={css.navBlock}>
+          <NavLink className={css.navLink} to="/htmlcss">HTML+CSS</NavLink>
+          <NavLink to="/htmlcss/module-23">Module_2-3</NavLink>
+          <NavLink to="/htmlcss/module-24">Module_2-4</NavLink>
+          <NavLink to="/htmlcss/question-julia">Юля (вопрос 3)</NavLink>
+          <NavLink to="/htmlcss/module-36">Module_3-6</NavLink>
+        </div>
         <NavLink className={css.navLink} to="/javascript">Java Script</NavLink>
         <NavLink className={css.navLink} to="/react">React</NavLink>
         <NavLink className={css.navLink} to="/node">Node</NavLink>
@@ -153,42 +177,81 @@ const toggleTrigger = () => {
         <Route path="/" element={<Logo />} />
         {/* --------------------- Lessons --------------------- */}
         <Route path="/htmlcss" element={
-          <>
-            <p className={css.titleTextBase}>HTML+CSS (module_2-3)</p>
-            <HTML_2_3 />
-          
+          <div>
+            <p className={css.titleTextBase}>HTML+CSS</p>
+            <Outlet />
+          </div>
+        } >
+          <Route path="module-23" element={
+            <div>
+              <p className={css.titleText}>HTML+CSS (module_2-3)</p>
+              <HTML_2_3 />
+            </div>
+          } />
+        
+          <Route path="module-24" element={
+          <div>
             <p className={css.titleText}>HTML+CSS (module_2-4)</p>
-            {/* ---------------- Юля (вопрос 3) ------------------- */}
-            <p className={css.titleTextQuestion}>Юля (вопрос 3):</p>
-            <br />
-            <button
-              className={
-                  `${css.buttonAlert} ${css.alert} ${
-                      trigger
-                      ?
-                      `${css.success} ${css.successBackgroundColor} ${css.buttonAlertBefore}`
-                      :
-                      // css.error
-                      `${css.error} ${css.errorBackgroundColor}`
-                      }
-                  `
-              }
-                onClick={toggleTrigger}
-            >
-              {trigger ? "Вопрос ЮЛИ включен" : "Вопрос ЮЛИ выключен"}
-            </button>
-            <br />
-            {trigger && (
-              <HtmlQuestion3Julia />
-            )}
+          </div>
+          } />
+
+          <Route path="question-julia" element={
+            <div>
+              {/* ---------------- Юля (вопрос 3) ------------------- */}
+              <p className={css.titleTextQuestion}>Юля (вопрос 3):</p>
+              <br />
+              <button
+                className={
+                    `${css.buttonAlert} ${css.alert} ${
+                        trigger
+                        ?
+                        `${css.success} ${css.successBackgroundColor} ${css.buttonAlertBefore}`
+                        :
+                        // css.error
+                        `${css.error} ${css.errorBackgroundColor}`
+                        }
+                    `
+                }
+                  onClick={toggleTrigger}
+              >
+                {trigger ? "Вопрос ЮЛИ включен" : "Вопрос ЮЛИ выключен"}
+              </button>
+              <br />
+              {trigger && (
+                <HtmlQuestion3Julia />
+              )}
+            </div>
+          } />
+
+          <Route path="module-36" element={
+          <div>
             <p className={css.titleText}>HTML+CSS (module_3-6)</p>
             <HTML_36 />
-        </>
-        }
-        />
+        </div>
+          } />
+    
+        </Route>
+        
+
+
 
         <Route path="/javascript" element={
           <>
+            <form
+                    // className={trigger ? css.complexFormForm :css.complexFormFormNone1}
+                    onSubmit={handleSubmit}>
+                    <label>
+                        Module Java Script:
+                    <input
+                        type="text"
+                        placeholder="Enter module"
+                        value={module}
+                        onChange={handleChange}
+                    />
+                    </label>
+
+                    <button type="submit">ModuleJS {module}</button>
+                </form>
             <p className={css.titleText}>Java Script (module_3-5)</p>
             <JS_3_5 />
             <p className={css.titleText}>Java Script (module_3-6)</p>
@@ -201,8 +264,14 @@ const toggleTrigger = () => {
             <p className={css.titleText}>Java Script (module_5-9)</p>
             <JS_5_9 />
           </>
-        }
-        />
+        } />
+
+        {/* <Route path="/javascript/:moduleId" element={
+          <>
+            <p className={css.titleText}>Java Script (module_3-5)</p>
+            <JS_3_5 />
+          </>
+        } /> */}
 
         <Route path="/react" element={
           <>
@@ -211,8 +280,7 @@ const toggleTrigger = () => {
             <p className={css.titleText}>React (module_4-7)</p>
             <React47 />
           </>
-        }
-        />
+        } />
 
         <Route path="/node" element={
           <>
@@ -221,8 +289,7 @@ const toggleTrigger = () => {
             <p className={css.titleText}>Node.js (module_1-2)</p>
             {/* <Node12 /> */}
           </>
-        }
-        />
+        } />
         
         <Route path="*" element={<NotFound />} />
       </Routes>    
