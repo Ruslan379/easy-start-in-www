@@ -207,7 +207,7 @@ export const App = () => {
           <div>
             <p className={css.titleTextBase}>Java Script</p>
             <form
-              // className={trigger ? css.complexFormForm :css.complexFormFormNone1}
+              className={css.globalForm}
               onSubmit={handleSubmit}>
                 <label className={css.labelForm}>
                     Module Java Script:
