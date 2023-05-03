@@ -209,9 +209,9 @@ export const App = () => {
             <form
               // className={trigger ? css.complexFormForm :css.complexFormFormNone1}
               onSubmit={handleSubmit}>
-                <label>
+                <label className={css.labelForm}>
                     Module Java Script:
-                <input
+                <input className={css.inputForm}
                   // type="text"
                   type="number"
                   placeholder="Enter module"
@@ -225,10 +225,12 @@ export const App = () => {
                 />
                 </label>
               <button
+                className={css.buttonSubmit}
                 type="submit"
-                disabled={!module} //! пока не блокировать
+                disabled={!module} 
               >
-                Module JS
+                {/* Module JS */}
+                {module ? "Module JS" : "Inactive..."} 
               </button>
             </form>
             <Outlet />

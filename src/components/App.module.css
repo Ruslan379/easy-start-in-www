@@ -37,7 +37,6 @@
     display: flex;
     gap: 5px;
     flex-direction: column;
-
 }
 
 .titleTextBase {
@@ -53,6 +52,7 @@
     font-family: Tahoma;
     text-align: center;
 }
+
 
 
 .titleText {
@@ -84,13 +84,37 @@
     font-family: 'Roboto', serif;
     font-size: 40px;
     color: #0013b9;
-
 }
 
 .titleText::selection {
     color: #f5e874;
     background-color: #e100ff;
 }
+
+
+.labelForm {
+    margin-right: 10px;
+    font-weight: 700;
+    color: rgb(0, 114, 19);
+}
+
+.inputForm {
+    margin-left: 10px;
+    font-weight: 700;
+    color: rgb(146, 95, 0);
+}
+
+.buttonSubmit {
+    background-color: rgb(0, 255, 13);
+    color: #000000;
+}
+
+.buttonSubmit:disabled {
+    background-color: rgb(255, 0, 0);
+    color: #ffffff;
+}
+
+
 
 /*! Юля (вопрос 3)  */
 .titleTextQuestion {
