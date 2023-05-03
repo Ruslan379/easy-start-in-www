@@ -214,6 +214,9 @@ export const App = () => {
                 <input
                     type="text"
                     placeholder="Enter module"
+                    required
+                    minLength="2"
+                    maxLength="4"
                     value={module}
                     onChange={handleChange}
                 />

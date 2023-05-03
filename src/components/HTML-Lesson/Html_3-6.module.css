@@ -3,16 +3,16 @@
 
 .menu {
     width: 600px;
-    height: 200px;
+    height: 100px;
 
     /* ! Making ul.menu a Flex container  */
     display: flex;
     /* flex-wrap: wrap; */
-    gap: 8px;
+    gap: 24px;
     /* flex-direction: column; */
     justify-content:  center;
     /* justify-content: flex-start; */
-    /* align-items: center; */
+    align-items: center;
 
 
     padding: 10px;
