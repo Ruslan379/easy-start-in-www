@@ -220,7 +220,7 @@ export const App = () => {
                   maxLength="4"
                   min="9"
                   max="12"
-                  value={module}
+                  // value={module}
                   onChange={handleChange}
                 />
                 </label>
