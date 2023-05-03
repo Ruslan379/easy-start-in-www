@@ -212,16 +212,24 @@ export const App = () => {
                 <label>
                     Module Java Script:
                 <input
-                    type="text"
-                    placeholder="Enter module"
-                    required
-                    minLength="2"
-                    maxLength="4"
-                    value={module}
-                    onChange={handleChange}
+                  // type="text"
+                  type="number"
+                  placeholder="Enter module"
+                  required
+                  minLength="2"
+                  maxLength="4"
+                  min="9"
+                  max="12"
+                  value={module}
+                  onChange={handleChange}
                 />
                 </label>
-                <button type="submit">Module JS</button>
+              <button
+                type="submit"
+                disabled={!module} //! пока не блокировать
+              >
+                Module JS
+              </button>
             </form>
             <Outlet />
           </div>
