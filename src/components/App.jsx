@@ -155,7 +155,7 @@ export const App = () => {
     evt.preventDefault();
     // setModule(evt.currentTarget.elements.module.value);
     // setClasses(evt.currentTarget.elements.classes.value);
-    console.log(`Module:${module}, Class:${classes}`);
+    console.log( `SUBMIT --> Module:${module}, Class:${classes}`);
     // console.log(`Class: ${classes}`);
   };
 

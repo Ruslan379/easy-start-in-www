@@ -92,10 +92,21 @@
 }
 
 .globalForm {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 400px;
+    height: 120px;
+    justify-content: center;
+    align-items: flex-end;
+    /* outline: 2px solid tomato; */
+    border: 2px solid blue;
+    border-radius: 10px;
     font-family: Georgia, 'Times New Roman', Times, serif;
 }
 .globalForm:focus-within {
-    border-color: #2196f3;
+    border-color: tomato;
+    border-radius: 10px;
 }
 
 .labelForm {
@@ -132,6 +143,16 @@
 
 .inputForm:out-of-range {
     border-color: #ff0000;
+}
+
+.buttonSubmit {
+    margin-right: auto;
+    margin-left: auto;
+    cursor: pointer;
+    /* outline: none; */
+    border: none;
+    border-radius: 4px;
+    padding: 8px 12px;
 }
 
 .buttonSubmit:enabled {
