@@ -131,23 +131,37 @@ export const App = () => {
 
   const [trigger, setTrigger] = useState(false);
   const [module, setModule] = useState(0);
+  const [classes, setClasses] = useState(0);
   
   const toggleTrigger = () => {
     setTrigger(!trigger);
   }
   
-  const handleChange = evt => {
+  //todo OLD
+  // const handleChange = evt => {
+  //   setModule(evt.target.value); 
+  // };
+
+  const handleChangeModule = evt => {
     setModule(evt.target.value);
-    // console.log("module:", evt.target.value);
   };
 
-        // Вызывается при отправке формы
+  const handleChangeClass = evt => {
+    setClasses(evt.target.value);
+  };
+
+  // Вызывается при отправке формы
   const handleSubmit = evt => {
     evt.preventDefault();
-    console.log(`Signed up as: ${module}`);
+    // setModule(evt.currentTarget.elements.module.value);
+    // setClasses(evt.currentTarget.elements.classes.value);
+    console.log(`Module:${module}, Class:${classes}`);
+    // console.log(`Class: ${classes}`);
   };
 
   // console.log(`moduleId:${moduleId}`); 
+  console.log(`module:${module}`);
+  console.log(`classes:${classes}`);
 
   return (
     <Routes>
@@ -218,14 +232,30 @@ export const App = () => {
                 <input className={css.inputForm}
                   // type="text"
                   type="number"
+                  name="module"
                   placeholder="Enter module"
                   required
                   minLength="2"
                   maxLength="4"
-                  min="9"
-                  max="12"
+                  min="1"
+                  max="11"
                   // value={module}
-                  onChange={handleChange}
+                  onChange={handleChangeModule}
+                />
+                </label>
+              
+                <label className={css.labelForm}>
+                  Class Java Script:
+                <input className={css.inputForm}
+                  // type="text"
+                  type="number"
+                  name="classes"
+                  placeholder="Enter class"
+                  required
+                  min="1"
+                  max="22"
+                  // value={classes}
+                  onChange={handleChangeClass}
                 />
                 </label>
               <button
