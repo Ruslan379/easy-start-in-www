@@ -26,6 +26,10 @@ import { JS_3_5 } from 'components/JavaScript-Lesson/JS_3-5';
 import { JS_4_7 } from 'components/JavaScript-Lesson/JS_4-7';
 import { JS_4_8 } from 'components/JavaScript-Lesson/JS_4-8';
 import { JS_5_9 } from 'components/JavaScript-Lesson/JS_5-9';
+import { JS_611 } from 'components/JavaScript-Lesson/JS_611';
+import { JS_612 } from 'components/JavaScript-Lesson/JS_612';
+import { JS_713 } from 'components/JavaScript-Lesson/JS_713';
+import { JS_714 } from 'components/JavaScript-Lesson/JS_714';
 
 import { React24 } from 'components/React-Lesson/React24';
 import { React47 } from 'components/React-Lesson/React47';
@@ -265,6 +269,30 @@ export const App = () => {
             <div>
               <p className={css.titleText}>Java Script (module_5-9)</p>
               <JS_5_9 />
+            </div>
+          } />
+          <Route path="module-611" element={
+            <div>
+              <p className={css.titleText}>Java Script (module_6-11)</p>
+              <JS_611 />
+            </div>
+          } />
+          <Route path="module-612" element={
+            <div>
+              <p className={css.titleText}>Java Script (module_6-12)</p>
+              <JS_612 />
+            </div>
+          } />
+          <Route path="module-713" element={
+            <div>
+              <p className={css.titleText}>Java Script (module_7-13)</p>
+              <JS_713 />
+            </div>
+          } />
+          <Route path="module-714" element={
+            <div>
+              <p className={css.titleText}>Java Script (module_7-14)</p>
+              <JS_714 />
             </div>
           } />
         </Route>
