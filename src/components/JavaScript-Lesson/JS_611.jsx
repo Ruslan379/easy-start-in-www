@@ -52,6 +52,21 @@ export const JS_611 = () => {
     // firstMenuItem.style.color = 'tomato';
     console.log("firstMenuItem:", firstMenuItem);
 
+    //! Свойства и атрибуты
+    console.log("Свойства и атрибуты:");
+
+    const message = document.querySelector("#message");
+    // console.log(message.value); // Default textarea message
+
+    //===================================================
+    const activeLink = document.querySelector(".btn.active");
+    // console.log(activeLink.href); // https://s.codepen.io/about
+
+    //===================================================
+    const image = document.querySelector(".image");
+    // console.log(image.src); // https://placeimg.com/640/480/animals
+    // image.src = 'https://placeimg.com/640/480/tech';
+
     return (
         <>
             <p style={{ color: "tomato" }}>{`<---- ${"JS_6-11"} ---->`}</p>
@@ -72,6 +87,25 @@ export const JS_611 = () => {
                 <li className={css.menuItem}>gallery</li>
                 <li>blog</li>
             </ul>
+            {/* Свойства и атрибуты */}
+            <h3 style={{ color: "blue" }}>{`Свойства и атрибуты`}</h3>
+            <textarea
+                id="message"
+                className={css.materializeTxtarea}
+                defaultValue="Default textarea message"
+                rows="5"
+            >
+                {/* Default textarea message */}
+            </textarea>
+            <div>
+                <a href="/home">home</a>
+                <a href="/about">about</a>
+                <a href="/gallery">gallery</a>
+            </div>
+
+            <br/>
+            <img src="https://placeimg.com/640/480/animals" alt="" width="320" />
+
             
         </>
     )
