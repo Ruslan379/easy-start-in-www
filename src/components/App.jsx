@@ -222,7 +222,7 @@ export const App = () => {
         </Route>
 
         <Route path="/javascript" element={
-          <div>
+          <>
             <p className={css.titleTextBase}>Java Script</p>
             <form
               className={css.globalForm}
@@ -268,7 +268,7 @@ export const App = () => {
               </button>
             </form>
             <Outlet />
-          </div>
+          </>
         } >
           <Route path="module-35" element={
             <div>
@@ -328,10 +328,10 @@ export const App = () => {
         </Route>
 
         <Route path="/react" element={
-          <div>
+          <>
             <p className={css.titleTextBase}>React</p>
             <Outlet />
-          </div>
+          </>
         } >
           <Route path="module-24" element={
           <div>
@@ -348,10 +348,10 @@ export const App = () => {
         </Route>
 
         <Route path="/node" element={
-          <div>
+          <>
             <p className={css.titleTextBase}>Node.js</p>
             <Outlet />
-          </div>
+          </>
         } >
           <Route path="module-11" element={
           <div>
