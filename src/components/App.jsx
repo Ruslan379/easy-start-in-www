@@ -30,6 +30,7 @@ import { JS_611 } from 'components/JavaScript-Lesson/JS_611';
 import { JS_612 } from 'components/JavaScript-Lesson/JS_612';
 import { JS_713 } from 'components/JavaScript-Lesson/JS_713';
 import { JS_714 } from 'components/JavaScript-Lesson/JS_714';
+import { JS_917 } from 'components/JavaScript-Lesson/JS_917';
 
 import { React24 } from 'components/React-Lesson/React24';
 import { React47 } from 'components/React-Lesson/React47';
@@ -323,6 +324,12 @@ export const App = () => {
             <div>
               <p className={css.titleText}>Java Script (module_7-14)</p>
               <JS_714 />
+            </div>
+          } />
+          <Route path="module-917" element={
+            <div>
+              <p className={css.titleText}>Java Script (module_9-17)</p>
+              <JS_917 />
             </div>
           } />
         </Route>
