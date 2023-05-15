@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 
 
-import css from './React_2-4.module.css';
+import css from './React24.module.css';
 
 
 //-----------------------------------------------------
