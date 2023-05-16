@@ -28,9 +28,6 @@ export const TaskList = () => {
 
 
     return (
-
-
-
         <ul className={css.list}>
             {visibleTasks.map(task => (
                 <li key={task.id}>
