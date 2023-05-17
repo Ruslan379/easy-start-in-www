@@ -12,7 +12,6 @@ import css from "./TaskList.module.css";
 
 
 
-
 const getVisibleTasks = (tasks, statusFilter) => {
     switch (statusFilter) {
         case statusFilters.active:
@@ -23,6 +22,7 @@ const getVisibleTasks = (tasks, statusFilter) => {
             return tasks;
     }
 };
+
 
 export const TaskList = () => {
     //! Получаем массив задач из состояния Redux
