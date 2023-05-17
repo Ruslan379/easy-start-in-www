@@ -16,25 +16,61 @@ const initialState = {
 export const rootReducer = (state = initialState, action) => {
     // Редюсер различает экшены по значению свойства type
     switch (action.type) {
-        // В зависимости от типа экшена будет выполняться разная логика
-        case "tasks/addTask": {
-            // Нужно вернуть новый объект состояния
+        //! В зависимости от типа экшена будет выполняться разная логика
+        // case "tasks/addTask": {
+        //     //! Нужно вернуть новый объект состояния
+        //     return {
+        //         //! в котором есть все данные существующего состояния
+        //         ...state,
+        //         //! и новый массив задач
+        //         tasks: [
+        //             //! в котором есть все существующие задачи
+        //             ...state.tasks,
+        //             //! и объект новой задачи
+        //             action.payload,
+        //         ],
+        //     };
+        // };
+
+        //! Добавление задачи
+        case "tasks/addTask":
             return {
-                // в котором есть все данные существующего состояния
                 ...state,
-                // и новый массив задач
-                tasks: [
-                    // в котором есть все существующие задачи
-                    ...state.tasks,
-                    // и объект новой задачи
-                    action.payload,
-                ],
+                tasks: [...state.tasks, action.payload],
             };
-        }
+        //! Удаление задачи
+        case "tasks/deleteTask":
+            return {
+                ...state,
+                tasks: state.tasks.filter(task => task.id !== action.payload),
+            };
+        //! Переключение статуса
+        case "tasks/toggleCompleted":
+            return {
+                ...state,
+                tasks: state.tasks.map(task => {
+                    if (task.id !== action.payload) {
+                        return task;
+                    }
+                    return {
+                        ...task,
+                        completed: !task.completed,
+                    };
+                }),
+            };
+        //! Изменение фильтра
+        case "filters/setStatusFilter":
+            return {
+                ...state,
+                filters: {
+                    ...state.filters,
+                    status: action.payload,
+                },
+            };
         default:
-            // Каждый редюсер получает все экшены отправленные в стор.
-            // Если редюсер не должен обрабатывать какой-то тип экшена,
-            // необходимо вернуть существующее состояние без изменений.
+            //! Каждый редюсер получает все экшены отправленные в стор.
+            //! Если редюсер не должен обрабатывать какой-то тип экшена,
+            //! необходимо вернуть существующее состояние без изменений.
             return state;
     }
 };
