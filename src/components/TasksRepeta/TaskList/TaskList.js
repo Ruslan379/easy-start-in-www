@@ -41,7 +41,10 @@ export const TaskList = () => {
     return (
         <ul className={css.list}>
             {visibleTasks.map(task => (
-                <li key={task.id}>
+                <li
+                    className={css.listItem}
+                    key={task.id}
+                >
                     <Task task={task} />
                 </li>
             ))}
