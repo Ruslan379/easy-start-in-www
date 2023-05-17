@@ -4,6 +4,7 @@ import { nanoid } from "nanoid";
 
 //! Генераторы экшенов
 export const addTask = text => {
+    console.log("tasks/addTask-->text:", text);
     return {
         type: "tasks/addTask",
         payload: {
@@ -15,6 +16,7 @@ export const addTask = text => {
 };
 
 export const deleteTask = taskId => {
+    console.log("tasks/deleteTask-->taskId:", taskId);
     return {
         type: "tasks/deleteTask",
         payload: taskId,
@@ -22,6 +24,7 @@ export const deleteTask = taskId => {
 };
 
 export const toggleCompleted = taskId => {
+    console.log("tasks/toggleCompleted-->taskId:", taskId);
     return {
         type: "tasks/toggleCompleted",
         payload: taskId,
@@ -29,6 +32,7 @@ export const toggleCompleted = taskId => {
 };
 
 export const setStatusFilter = value => {
+    console.log("filters/setStatusFilter-->value:", value);
     return {
         type: "filters/setStatusFilter",
         payload: value,
