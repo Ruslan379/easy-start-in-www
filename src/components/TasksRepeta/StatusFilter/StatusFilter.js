@@ -3,6 +3,10 @@ import { useSelector } from "react-redux";
 
 //! Импортируем объект значений фильтра
 import { statusFilters } from "../../../redux/Repeta/constants";
+import {
+    // selectAllTasks,
+    selectFiltersStatus,
+} from "../../../redux/Repeta/selectors";
 import { Button } from "components/TasksRepeta/Button/Button";
 
 import css from "./StatusFilter.module.css";
@@ -11,7 +15,8 @@ import css from "./StatusFilter.module.css";
 
 export const StatusFilter = () => {
     //! Получаем значение фильтра из состояния Redux
-    const filter = useSelector(state => state.filters.status);
+    // const filter = useSelector(state => state.tasks); //todo OLD
+    const filter = useSelector(selectFiltersStatus);
 
 
     return (
