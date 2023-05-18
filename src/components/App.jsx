@@ -355,7 +355,7 @@ export const App = () => {
           } />
           <Route path="module-611" element={
           <div>
-            <p className={css.titleText}>React (module_6-11)</p>
+            <p className={css.titleText}>React (module_6-11(12))</p>
             <React611 />
         </div>
           } />

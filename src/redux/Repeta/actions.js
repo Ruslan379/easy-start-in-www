@@ -1,47 +1,77 @@
-
+//! Redux Toolkit 
 import { nanoid } from "nanoid";
+import { createAction } from "@reduxjs/toolkit";
 
 
-//* Генераторы экшенов
 //! Добавление задачи
-export const addTask = text => {
-    console.log("tasks/addTask-->text:", text);
+export const addTask = createAction("tasks/addTask", text => {
     return {
-        type: "tasks/addTask",
         payload: {
+            text,
             id: nanoid(),
             completed: false,
-            text,
         },
     };
-};
+});
 
 //! Удаление задачи
-export const deleteTask = taskId => {
-    console.log("tasks/deleteTask-->taskId:", taskId);
-    return {
-        type: "tasks/deleteTask",
-        payload: taskId,
-    };
-};
+export const deleteTask = createAction("tasks/deleteTask");
 
 //! Переключение статуса
-export const toggleCompleted = taskId => {
-    console.log("tasks/toggleCompleted-->taskId:", taskId);
-    return {
-        type: "tasks/toggleCompleted",
-        payload: taskId,
-    };
-};
+export const toggleCompleted = createAction("tasks/toggleCompleted");
 
 //! Изменение фильтра
-export const setStatusFilter = value => {
-    console.log("filters/setStatusFilter-->value:", value);
-    return {
-        type: "filters/setStatusFilter",
-        payload: value,
-    };
-};
+export const setStatusFilter = createAction("filters/setStatusFilter");
+
+
+
+
+
+
+//! Redux
+// import { nanoid } from "nanoid";
+
+
+// //* Генераторы экшенов
+// //! Добавление задачи
+// export const addTask = text => {
+//     console.log("tasks/addTask-->text:", text);
+//     return {
+//         type: "tasks/addTask",
+//         payload: {
+//             id: nanoid(),
+//             completed: false,
+//             text,
+//         },
+//     };
+// };
+
+// //! Удаление задачи
+// export const deleteTask = taskId => {
+//     console.log("tasks/deleteTask-->taskId:", taskId);
+//     return {
+//         type: "tasks/deleteTask",
+//         payload: taskId,
+//     };
+// };
+
+// //! Переключение статуса
+// export const toggleCompleted = taskId => {
+//     console.log("tasks/toggleCompleted-->taskId:", taskId);
+//     return {
+//         type: "tasks/toggleCompleted",
+//         payload: taskId,
+//     };
+// };
+
+// //! Изменение фильтра
+// export const setStatusFilter = value => {
+//     console.log("filters/setStatusFilter-->value:", value);
+//     return {
+//         type: "filters/setStatusFilter",
+//         payload: value,
+//     };
+// };
 
 
 //todo ----- Экшены (actions) -----
