@@ -2,7 +2,8 @@
 import { nanoid } from "nanoid";
 
 
-//! Генераторы экшенов
+//* Генераторы экшенов
+//! Добавление задачи
 export const addTask = text => {
     console.log("tasks/addTask-->text:", text);
     return {
@@ -15,6 +16,7 @@ export const addTask = text => {
     };
 };
 
+//! Удаление задачи
 export const deleteTask = taskId => {
     console.log("tasks/deleteTask-->taskId:", taskId);
     return {
@@ -23,6 +25,7 @@ export const deleteTask = taskId => {
     };
 };
 
+//! Переключение статуса
 export const toggleCompleted = taskId => {
     console.log("tasks/toggleCompleted-->taskId:", taskId);
     return {
@@ -31,6 +34,7 @@ export const toggleCompleted = taskId => {
     };
 };
 
+//! Изменение фильтра
 export const setStatusFilter = value => {
     console.log("filters/setStatusFilter-->value:", value);
     return {
@@ -40,7 +44,7 @@ export const setStatusFilter = value => {
 };
 
 
-//! Экшены (actions)
+//todo ----- Экшены (actions) -----
 // const action = {
 //     type: "Action type", //! строка, которая описывает тип события в интерфейсе
 //     payload: "Payload value", //!  данные - передают в необязательном свойстве
