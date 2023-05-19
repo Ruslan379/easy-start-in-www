@@ -14,7 +14,7 @@ import {
 
 
 export const React611 = () => {
-    console.log("React_6-11:");
+    console.log("React_6-11(12):");
 
     console.log("React_6-11-->statusFilters:", statusFilters);
 
@@ -30,7 +30,7 @@ export const React611 = () => {
 
     return (
         <>
-            <p style={{ color: "tomato", textAlign : "center" }}>{`<---- ${"React_6-11"} ---->`}</p>
+            <p style={{ color: "tomato", textAlign : "center" }}>{`<---- ${"React_6-11(12)"} ---->`}</p>
             <AppRepeta />
         </>
     )
