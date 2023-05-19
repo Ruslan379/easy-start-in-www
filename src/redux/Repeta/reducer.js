@@ -1,4 +1,4 @@
-//! Redux Toolkit - 2 (createReducer)
+//! Redux Toolkit - 2 (createReducer + Immer)
 import { createReducer } from "@reduxjs/toolkit";
 import { statusFilters } from "./constants";
 import {
@@ -16,41 +16,73 @@ const tasksInitialState = [
     { id: 4, text: "Build amazing apps", completed: false },
 ];
 
-//? Tasks
+//* Tasks
 export const tasksReducer = createReducer(tasksInitialState, {
     //! Добавление задачи
-    [addTask]: (state, action) => { return [...state, action.payload] },
+    // [addTask]: (state, action) => { return [...state, action.payload] }, //! 1-вариант
+    // [addTask]: (state, action) => [...state, action.payload], //! 2-вариант
+    //? ✅ Immer заменит это на операцию обновления
+    [addTask]: (state, action) => {
+        state.push(action.payload);
+    },
+
     //! Удаление задачи
-    [deleteTask]: (state, action) => { return state.filter(task => task.id !== action.payload) },
+    // [deleteTask]: (state, action) => { return state.filter(task => task.id !== action.payload) },
+    //? ✅ Immer заменит это на операцию обновления - 1-вариант
+    // [deleteTask]: (state, action) => {
+    //     const index = state.findIndex(task => task.id === action.payload);
+    //     state.splice(index, 1);
+    // },
+    //? ✅ Immer заменит это на операцию обновления - 2-вариант
+    // [deleteTask]: (state, action) => {
+    //     return state.filter(task => task.id !== action.payload);
+    // },
+    //? ✅ Immer заменит это на операцию обновления - 3-вариант
+    [deleteTask]: (state, action) => state.filter(task => task.id !== action.payload),
+
     //! Переключение статуса
+    // [toggleCompleted]: (state, action) => {
+    //     return state.map(task => {
+    //         if (task.id !== action.payload) {
+    //             return task;
+    //         }
+    //         return { ...task, completed: !task.completed };
+    //     })
+    // },
+    //? ✅ Immer заменит это на операцию обновления
     [toggleCompleted]: (state, action) => {
-        return state.map(task => {
-            if (task.id !== action.payload) {
-                return task;
+        for (const task of state) {
+            if (task.id === action.payload) {
+                task.completed = !task.completed;
             }
-            return { ...task, completed: !task.completed };
-        })
+        }
     },
 });
 
 
 
 
-//? Filters
+//* Filters
 const filtersInitialState = {
     status: statusFilters.all,
 };
 
 export const filtersReducer = createReducer(filtersInitialState, {
     //! Изменение фильтра
+    // [setStatusFilter]: (state, action) => {
+    //     return {
+    //         ...state,
+    //         status: action.payload,
+    //     };
+    // },
+    //? ✅ Immer заменит это на операцию обновления
     [setStatusFilter]: (state, action) => {
-        return {
-            ...state,
-            status: action.payload,
-        };
+        state.status = action.payload;
     },
 });
 //!______________________________________________________________________________
+
+
 
 
 
