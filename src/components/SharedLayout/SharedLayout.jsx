@@ -61,6 +61,7 @@ export const SharedLayout = () => {
           <NavLink to="/react/module-24">Module_2-4</NavLink>
           <NavLink to="/react/module-47">Module_4-7</NavLink>
           <NavLink to="/react/module-611">Module_6-11(12)</NavLink>
+          <NavLink to="/react/module-713">Module_7-13(14)</NavLink>
         </div>
         <div className={css.navBlock}>
           <NavLink className={css.navLink} to="/node">Node.js</NavLink>
