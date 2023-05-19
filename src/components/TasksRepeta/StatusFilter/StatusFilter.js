@@ -1,7 +1,8 @@
 //! Импортируем хук
 import { useSelector, useDispatch } from "react-redux";
 //! Импортируем генератор экшена
-import { setStatusFilter } from "../../../redux/Repeta/actions";
+// import { setStatusFilter } from "../../../redux/Repeta/actions"; //todo OLD
+import { setStatusFilter } from "../../../redux/Repeta/filtersSlice";
 //! Импортируем объект значений фильтра
 import { statusFilters } from "../../../redux/Repeta/constants";
 import {

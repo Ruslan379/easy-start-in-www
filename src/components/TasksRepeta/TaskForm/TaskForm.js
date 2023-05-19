@@ -1,7 +1,8 @@
 //! Импортируем хук
 import { useDispatch } from "react-redux";
 //! Импортируем генератор экшена
-import { addTask } from "../../../redux/Repeta/actions";
+// import { addTask } from "../../../redux/Repeta/actions"; //todo OLD
+import { addTask } from "../../../redux/Repeta/tasksSlice";
 import { Button } from "components/TasksRepeta/Button/Button";
 import css from "./TaskForm.module.css";
 

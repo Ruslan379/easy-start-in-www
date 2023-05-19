@@ -1,7 +1,9 @@
 //! Redux Toolkit 
 import { configureStore } from "@reduxjs/toolkit";
 // import { rootReducer } from "./Repeta/reducer"; //todo OLD-1
-import { tasksReducer, filtersReducer } from "./Repeta/reducer";
+// import { tasksReducer, filtersReducer } from "./Repeta/reducer"; //todo OLD-2
+import { tasksReducer } from "./Repeta/tasksSlice";
+import { filtersReducer } from "./Repeta/filtersSlice";
 
 
 
