@@ -1,14 +1,14 @@
 {
   "files": {
-    "main.css": "/easy-start-in-www/static/css/main.96073302.css",
-    "main.js": "/easy-start-in-www/static/js/main.ea8b785e.js",
+    "main.css": "/easy-start-in-www/static/css/main.1e4fe2b5.css",
+    "main.js": "/easy-start-in-www/static/js/main.957a27a0.js",
     "static/media/roulette-wheel.png": "/easy-start-in-www/static/media/roulette-wheel.4474b774ebe43239b1c9.png",
     "index.html": "/easy-start-in-www/index.html",
-    "main.96073302.css.map": "/easy-start-in-www/static/css/main.96073302.css.map",
-    "main.ea8b785e.js.map": "/easy-start-in-www/static/js/main.ea8b785e.js.map"
+    "main.1e4fe2b5.css.map": "/easy-start-in-www/static/css/main.1e4fe2b5.css.map",
+    "main.957a27a0.js.map": "/easy-start-in-www/static/js/main.957a27a0.js.map"
   },
   "entrypoints": [
-    "static/css/main.96073302.css",
-    "static/js/main.ea8b785e.js"
+    "static/css/main.1e4fe2b5.css",
+    "static/js/main.957a27a0.js"
   ]
 }
