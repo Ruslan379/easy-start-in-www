@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { fetchTasks } from "redux/TaskAsyncThunk/asyncThunkOperations";
+import { fetchAllTasks } from "redux/TaskAsyncThunk/asyncThunkOperations";
 import { getAsyncThunkTasks } from "redux/TaskAsyncThunk/asyncThunkSelectors";
 
 import { Layout } from "components/TasksRepeta/Layout/Layout";
@@ -11,7 +11,7 @@ export const AppRepetaAsyncThunk = () => {
 
 
     useEffect(() => {
-        dispatch(fetchTasks());
+        dispatch(fetchAllTasks());
     }, [dispatch]);
 
     return (
