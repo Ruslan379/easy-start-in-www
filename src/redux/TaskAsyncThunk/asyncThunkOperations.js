@@ -22,8 +22,11 @@ export const fetchTasks = () => async dispatch => {
         dispatch(fetchingInProgress());
         //! HTTP-запрос
         const response = await axios.get("/tasks");
-        //! Обработка данных
-        dispatch(fetchingSuccess(response.data));
+        setTimeout(() => {
+            //! Обработка данных
+            dispatch(fetchingSuccess(response.data));
+        }, 3000);
+
     } catch (e) {
         //! Обработка ошибки
         dispatch(fetchingError(e.message));
