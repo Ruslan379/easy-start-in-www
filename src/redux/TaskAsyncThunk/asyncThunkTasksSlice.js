@@ -2,13 +2,21 @@
 import { createSlice } from "@reduxjs/toolkit";
 // import { nanoid } from "nanoid";
 
-const tasksSlice = createSlice({
-    name: "tasks",
-    initialState: {
-        items: [],
-        isLoading: false,
-        error: null,
-    },
+const tasksInitialState = {
+    items: [],
+    isLoading: false,
+    error: null,
+};
+
+
+const asyncThunkTasksSlice = createSlice({
+    name: "asyncThunkTasks",
+    // initialState: {
+    //     items: [],
+    //     isLoading: false,
+    //     error: null,
+    // },
+    initialState: tasksInitialState,
     reducers: {
         //! Выполнится в момент старта HTTP-запроса
         fetchingInProgress(state) {
@@ -30,5 +38,9 @@ const tasksSlice = createSlice({
 
 
 //! Экспортируем генераторы экшенов и редюсер
-export const { fetchingInProgress, fetchingSuccess, fetchingError } = tasksSlice.actions;
-export const tasksReducer = tasksSlice.reducer;
+export const {
+    fetchingInProgress,
+    fetchingSuccess,
+    fetchingError
+} = asyncThunkTasksSlice.actions;
+export const asyncTasksReducer = asyncThunkTasksSlice.reducer;

@@ -4,6 +4,7 @@ import { configureStore } from "@reduxjs/toolkit";
 // import { tasksReducer, filtersReducer } from "./Repeta/reducer"; //todo OLD-2
 import { tasksReducer } from "./Repeta/tasksSlice";
 import { filtersReducer } from "./Repeta/filtersSlice";
+import { asyncTasksReducer } from "./TaskAsyncThunk/asyncThunkTasksSlice";
 
 
 
@@ -16,6 +17,7 @@ export const store = configureStore({
     reducer: {
         tasks: tasksReducer,
         filters: filtersReducer,
+        asyncThunkTasks: asyncTasksReducer
     },
 });
 

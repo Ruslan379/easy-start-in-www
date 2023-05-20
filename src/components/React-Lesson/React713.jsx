@@ -1,13 +1,10 @@
 import { useSelector } from "react-redux";
 
-import { AppRepeta } from "components/TasksRepeta/AppRepeta";
+import { AppRepetaAsyncThunk } from "components/TasksRepetaAsyncThunk/AppRepetaAsyncThunk";
 import { statusFilters } from "../../redux/Repeta/constants"; 
-import {
-    selectAllTasks,
-    selectFiltersStatus,
-} from "../../redux/Repeta/selectors";
+import { getAsyncThunkTasks} from "../../redux/TaskAsyncThunk/asyncThunkSelectors";
 
-// import css from './React713.module.css';
+// import css from './React714.module.css';
 
 
 //-----------------------------------------------------
@@ -20,18 +17,14 @@ export const React713 = () => {
 
     //! Получаем необходимую часть состояния state
     // const stateTasks = useSelector(state => state.tasks); //todo OLD
-    const stateTasks = useSelector(selectAllTasks);
-    console.log("state.tasks:", stateTasks);
-
-    // const stateFiltersStatus = useSelector(state => state.filters.status); //todo OLD
-    const stateFiltersStatus = useSelector(selectFiltersStatus);
-    console.log("state.filters.status:", stateFiltersStatus);
+    const stateAsyncThunkTasks = useSelector(getAsyncThunkTasks);
+    console.log("state.asyncThunkTasks:", stateAsyncThunkTasks);
 
 
     return (
         <>
             <p style={{ color: "tomato", textAlign : "center" }}>{`<---- ${"React_7-13(14)"} ---->`}</p>
-            <AppRepeta />
+            <AppRepetaAsyncThunk />
         </>
     )
 }
