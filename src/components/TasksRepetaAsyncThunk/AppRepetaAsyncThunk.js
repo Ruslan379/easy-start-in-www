@@ -19,7 +19,8 @@ export const AppRepetaAsyncThunk = () => {
             <div>
                 {isLoading && <b>Loading tasks...</b>}
                 {error && <b>{error}</b>}
-                <p>{items.length > 0 && JSON.stringify(items, null, 2)}</p>
+                {!isLoading && <p>{items.length > 0 && JSON.stringify(items, null, 2)}</p>}
+
             </div>
         </Layout>
     );
