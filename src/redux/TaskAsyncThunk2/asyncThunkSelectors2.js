@@ -1,4 +1,7 @@
-export const getAsyncThunkTasks = state => state.asyncThunkTasks;
+export const getAllState = state => state;
+
+export const getAsyncThunkTasks2 = state => state.tasks2;
+
 
 
 
