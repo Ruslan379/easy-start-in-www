@@ -1,6 +1,5 @@
-// ! Redux AsyncThunk - 4 (extraReducers)
 import { createSlice } from "@reduxjs/toolkit";
-// Импортируем операцию
+//! Импортируем операцию
 import { fetchAllTasks } from "./asyncThunkOperations";
 
 
@@ -10,7 +9,7 @@ const tasksInitialState = {
     error: null,
 };
 
-
+// ! Redux AsyncThunk - 4 (extraReducers)
 const asyncThunkTasksSlice = createSlice({
     name: "asyncThunkTasks",
     initialState: tasksInitialState,
@@ -40,9 +39,8 @@ export const asyncTasksReducer = asyncThunkTasksSlice.reducer;
 
 
 
-
-// ! Redux AsyncThunk - 3 (createSlice + Immer)
 //todo OLD
+// ! Redux AsyncThunk - 3 (createSlice + Immer)
 // const asyncThunkTasksSlice = createSlice({
 //     name: "asyncThunkTasks",
 //     // initialState: {

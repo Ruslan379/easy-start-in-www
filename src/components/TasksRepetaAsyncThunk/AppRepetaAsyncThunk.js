@@ -8,6 +8,7 @@ import { Layout } from "components/TasksRepeta/Layout/Layout";
 export const AppRepetaAsyncThunk = () => {
     const dispatch = useDispatch();
     const { items, isLoading, error } = useSelector(getAsyncThunkTasks);
+    console.log("items:", items);
 
 
     useEffect(() => {
