@@ -36,6 +36,7 @@ import { React24 } from 'components/React-Lesson/React24';
 import { React47 } from 'components/React-Lesson/React47';
 import { React611 } from 'components/React-Lesson/React611';
 import { React713 } from 'components/React-Lesson/React713';
+import { React7132 } from 'components/React-Lesson/React7132';
 
 import css from './App.module.css';
 
@@ -365,6 +366,7 @@ export const App = () => {
               <p className={css.titleText}>React (module_7-13(14))</p>
               {/* <React611 /> */}
               <React713 />
+              <React7132 />
           </div>
           } />
         </Route>
