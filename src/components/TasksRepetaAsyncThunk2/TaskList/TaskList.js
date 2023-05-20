@@ -1,10 +1,11 @@
 import { useSelector } from "react-redux";
-//! Импортируем объект значений фильтра
-import { statusFilters } from "../../../redux/Repeta/constants";
+
+import { statusFilters } from "../../../redux/TaskAsyncThunk2/asyncThunkConstants2";
+
 import {
-    selectAllTasks,
-    selectFiltersStatus,
-} from "../../../redux/Repeta/selectors";
+    getTasks,
+    getStatusFilter,
+} from "../../../redux/TaskAsyncThunk2/asyncThunkSelectors2";
 
 import { Task } from "components/TasksRepetaAsyncThunk2/Task/Task";
 
@@ -27,11 +28,11 @@ const getVisibleTasks = (tasks, statusFilter) => {
 export const TaskList = () => {
     //! Получаем массив задач из состояния Redux
     // const tasks = useSelector(state => state.tasks); //todo OLD
-    const tasks = useSelector(selectAllTasks);
+    const tasks = useSelector(getTasks);
 
     //! Получаем значение фильтра из состояния Redux
     // const statusFilter = useSelector(state => state.filters.status); //todo OLD
-    const statusFilter = useSelector(selectFiltersStatus);
+    const statusFilter = useSelector(getStatusFilter);
     console.log("statusFilter:", statusFilter);
 
     //! Вычисляем массив задач которые необходимо отображать в интерфейсе

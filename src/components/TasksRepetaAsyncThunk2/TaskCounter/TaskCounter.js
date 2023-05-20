@@ -1,8 +1,5 @@
 import { useSelector } from "react-redux";
-import {
-    selectAllTasks,
-    // selectFiltersStatus,
-} from "../../../redux/Repeta/selectors";
+import { getTasks } from "../../../redux/TaskAsyncThunk2/asyncThunkSelectors2";
 
 
 import css from "./TaskCounter.module.css";
@@ -10,7 +7,7 @@ import css from "./TaskCounter.module.css";
 export const TaskCounter = () => {
     //! Получаем массив задач из состояния Redux
     // const tasks = useSelector(state => state.tasks); //todo OLD
-    const tasks = useSelector(selectAllTasks);
+    const tasks = useSelector(getTasks);
 
     //! На базе состояния Redux получаем производные данные
     const count = tasks.reduce(
