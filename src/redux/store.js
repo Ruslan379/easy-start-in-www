@@ -4,7 +4,11 @@ import { configureStore } from "@reduxjs/toolkit";
 // import { tasksReducer, filtersReducer } from "./Repeta/reducer"; //todo OLD-2
 import { tasksReducer } from "./Repeta/tasksSlice";
 import { filtersReducer } from "./Repeta/filtersSlice";
+
 import { asyncTasksReducer } from "./TaskAsyncThunk/asyncThunkTasksSlice";
+
+import { asyncTasksReducer2 } from "./TaskAsyncThunk2/asyncThunkTasksSlice2";
+import { filtersReducer2 } from "./TaskAsyncThunk2/asyncThunkFiltersSlice2";
 
 
 
@@ -17,7 +21,11 @@ export const store = configureStore({
     reducer: {
         tasks: tasksReducer,
         filters: filtersReducer,
-        asyncThunkTasks: asyncTasksReducer
+
+        asyncThunkTasks: asyncTasksReducer,
+
+        tasks2: asyncTasksReducer2,
+        filters2: filtersReducer2,
     },
 });
 

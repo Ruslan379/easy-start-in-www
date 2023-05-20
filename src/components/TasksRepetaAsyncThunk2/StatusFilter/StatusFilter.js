@@ -1,14 +1,10 @@
-//! Импортируем хук
 import { useSelector, useDispatch } from "react-redux";
-//! Импортируем генератор экшена
-// import { setStatusFilter } from "../../../redux/Repeta/actions"; //todo OLD
-import { setStatusFilter } from "../../../redux/Repeta/filtersSlice";
-//! Импортируем объект значений фильтра
-import { statusFilters } from "../../../redux/Repeta/constants";
-import {
-    // selectAllTasks,
-    selectFiltersStatus,
-} from "../../../redux/Repeta/selectors";
+
+import { statusFilters } from "../../../redux/TaskAsyncThunk2/asyncThunkConstants2";
+
+import { getStatusFilter } from "../../../redux/TaskAsyncThunk2/asyncThunkSelectors2";
+import { setStatusFilter2 } from "../../../redux/TaskAsyncThunk2/asyncThunkFiltersSlice2";
+
 import { Button } from "components/TasksRepetaAsyncThunk2/Button/Button";
 
 import css from "./StatusFilter.module.css";
@@ -16,17 +12,10 @@ import css from "./StatusFilter.module.css";
 
 
 export const StatusFilter = () => {
-    //! Получаем ссылку на функцию отправки экшенов
     const dispatch = useDispatch();
+    const filter = useSelector(getStatusFilter);
 
-    //! Получаем значение фильтра из состояния Redux
-    // const filter = useSelector(state => state.tasks); //todo OLD
-    const filter = useSelector(selectFiltersStatus);
-
-    //! Вызываем генератор экшена и передаём значение фильтра
-    //! Отправляем результат - экшен изменения фильтра
-    const handleFilterChange = filter => dispatch(setStatusFilter(filter));
-
+    const handleFilterChange = filter => dispatch(setStatusFilter2(filter));
 
     return (
         <div className={css.wrapper}>

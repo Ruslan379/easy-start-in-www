@@ -1,79 +1,58 @@
 import { createSlice } from "@reduxjs/toolkit";
-//! Импортируем операцию
-import { fetchAllTasks } from "./asyncThunkOperations2";
+import { fetchTasks, addTask, deleteTask, toggleCompleted } from "./asyncThunkOperations2";
 
-
-const tasksInitialState = {
-    items: [],
-    isLoading: false,
-    error: null,
+const handlePending = state => {
+    state.isLoading = true;
 };
 
-// ! Redux AsyncThunk - 4 (extraReducers)
-const asyncThunkTasksSlice = createSlice({
-    name: "asyncThunkTasks",
-    initialState: tasksInitialState,
-    // initialState: {
-    //     items: [],
-    //     isLoading: false,
-    //     error: null,
-    // },
+const handleRejected = (state, action) => {
+    state.isLoading = false;
+    state.error = action.payload;
+};
+
+const asyncThunkTasksSlice2 = createSlice({
+    name: "tasks2",
+    initialState: {
+        items: [],
+        isLoading: false,
+        error: null,
+    },
     extraReducers: {
-        [fetchAllTasks.pending](state) {
-            state.isLoading = true;
-        },
-        [fetchAllTasks.fulfilled](state, action) {
+        [fetchTasks.pending]: handlePending,
+        [fetchTasks.fulfilled](state, action) {
             state.isLoading = false;
             state.error = null;
             state.items = action.payload;
         },
-        [fetchAllTasks.rejected](state, action) {
+        [fetchTasks.rejected]: handleRejected,
+        [addTask.pending]: handlePending,
+        [addTask.fulfilled](state, action) {
             state.isLoading = false;
-            state.error = action.payload;
+            state.error = null;
+            state.items.push(action.payload);
         },
+        [addTask.rejected]: handleRejected,
+        [deleteTask.pending]: handlePending,
+        [deleteTask.fulfilled](state, action) {
+            state.isLoading = false;
+            state.error = null;
+            const index = state.items.findIndex(
+                task => task.id === action.payload.id
+            );
+            state.items.splice(index, 1);
+        },
+        [deleteTask.rejected]: handleRejected,
+        [toggleCompleted.pending]: handlePending,
+        [toggleCompleted.fulfilled](state, action) {
+            state.isLoading = false;
+            state.error = null;
+            const index = state.items.findIndex(
+                task => task.id === action.payload.id
+            );
+            state.items.splice(index, 1, action.payload);
+        },
+        [toggleCompleted.rejected]: handleRejected,
     },
 });
 
-export const asyncTasksReducer = asyncThunkTasksSlice.reducer;
-
-
-
-
-//todo OLD
-// ! Redux AsyncThunk - 3 (createSlice + Immer)
-// const asyncThunkTasksSlice = createSlice({
-//     name: "asyncThunkTasks",
-//     // initialState: {
-//     //     items: [],
-//     //     isLoading: false,
-//     //     error: null,
-//     // },
-//     initialState: tasksInitialState,
-//     reducers: {
-//         //! Выполнится в момент старта HTTP-запроса
-//         fetchingInProgress(state) {
-//             state.isLoading = true;
-//         },
-//         //! Выполнится если HTTP-запрос завершился успешно
-//         fetchingSuccess(state, action) {
-//             state.isLoading = false;
-//             state.error = null;
-//             state.items = action.payload;
-//         },
-//         //! Выполнится если HTTP-запрос завершился с ошибкой
-//         fetchingError(state, action) {
-//             state.isLoading = false;
-//             state.error = action.payload;
-//         },
-//     },
-// });
-
-
-// //! Экспортируем генераторы экшенов и редюсер
-// export const {
-//     fetchingInProgress,
-//     fetchingSuccess,
-//     fetchingError
-// } = asyncThunkTasksSlice.actions;
-
-// export const asyncTasksReducer = asyncThunkTasksSlice.reducer;
+export const asyncTasksReducer2 = asyncThunkTasksSlice2.reducer;
