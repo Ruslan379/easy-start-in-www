@@ -30,7 +30,7 @@ export const fetchAllTasks = createAsyncThunk(
 );
 
 
-//todo OLD- 1
+//todo OLD- 2
 // export const fetchAllTasks = () => async dispatch => {
 //     try {
 //         //! Индикатор загрузки
