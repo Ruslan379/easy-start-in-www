@@ -18,6 +18,7 @@ const asyncThunkTasksSlice2 = createSlice({
         error: null,
     },
     extraReducers: {
+        //! Получение всех задач
         [fetchTasks.pending]: handlePending,
         [fetchTasks.fulfilled](state, action) {
             state.isLoading = false;
@@ -25,6 +26,7 @@ const asyncThunkTasksSlice2 = createSlice({
             state.items = action.payload;
         },
         [fetchTasks.rejected]: handleRejected,
+        //! Добавление задачи
         [addTask.pending]: handlePending,
         [addTask.fulfilled](state, action) {
             state.isLoading = false;
@@ -32,6 +34,7 @@ const asyncThunkTasksSlice2 = createSlice({
             state.items.push(action.payload);
         },
         [addTask.rejected]: handleRejected,
+        //! Удаление задачи
         [deleteTask.pending]: handlePending,
         [deleteTask.fulfilled](state, action) {
             state.isLoading = false;
@@ -42,6 +45,7 @@ const asyncThunkTasksSlice2 = createSlice({
             state.items.splice(index, 1);
         },
         [deleteTask.rejected]: handleRejected,
+        //! Переключение статуса
         [toggleCompleted.pending]: handlePending,
         [toggleCompleted.fulfilled](state, action) {
             state.isLoading = false;

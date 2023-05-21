@@ -10,6 +10,7 @@ const filtersSlice2 = createSlice({
     name: "filters2",
     initialState: filtersInitialState,
     reducers: {
+        //! Изменение фильтра
         setStatusFilter2(state, action) {
             state.status = action.payload;
         },
