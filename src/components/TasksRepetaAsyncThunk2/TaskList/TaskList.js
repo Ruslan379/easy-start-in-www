@@ -31,7 +31,7 @@ export const TaskList = () => {
     //! Получаем массив задач из состояния Redux
     // const tasks = useSelector(state => state.tasks); //todo OLD-OLD
     const tasks = useSelector(getTasks); //todo OLD
-    console.log("tasks:", tasks); //todo OLD
+    console.log("TaskList-->tasks:", tasks); //todo OLD
 
     //! Получаем значение фильтра из состояния Redux
     // const statusFilter = useSelector(state => state.filters.status); //todo OLD-OLD
@@ -44,6 +44,7 @@ export const TaskList = () => {
 
     //* NEW - Вычисляем массив задач, используя Составные селекторы
     const visibleTasks2 = useSelector(selectVisibleTasks);
+    console.log("visibleTasks2:", visibleTasks2); //todo OLD
 
     return (
         <ul className={css.list}>

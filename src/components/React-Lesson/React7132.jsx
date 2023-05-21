@@ -11,9 +11,9 @@ import { getAllState} from "../../redux/TaskAsyncThunk2/asyncThunkSelectors2";
 
 
 export const React7132 = () => {
-    console.log("React_7-13(AsyncThunk):");
+    console.log("React_7-13_14(AsyncThunk):");
 
-    console.log("React_7-13(AsyncThunk)-->statusFilters2:", statusFilters);
+    console.log("React_7-13_14(AsyncThunk)-->statusFilters2:", statusFilters);
 
     //! Получаем необходимую часть состояния state
     // const stateTasks = useSelector(state => state.tasks); //todo OLD
@@ -23,7 +23,7 @@ export const React7132 = () => {
 
     return (
         <>
-            <p style={{ color: "tomato", textAlign : "center" }}>{`<---- ${"React_7-13(AsyncThunk)"} ---->`}</p>
+            <p style={{ color: "tomato", textAlign : "center" }}>{`<---- ${"React_7-13_14(AsyncThunk)"} ---->`}</p>
             <AppRepeta2 />
         </>
     )
