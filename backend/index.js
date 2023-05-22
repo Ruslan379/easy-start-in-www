@@ -14,13 +14,15 @@ const {
     usersExport2: usersExportNew2
 } = require("./trainingModule");
 
-//! Работа с файлами - readFile()
+//! Работа с файлами
 const {
     // appFilesOld,
     // appFilesPromises,
     // asyncAwaitReadFile,
-    // asyncAwaitReadFileUtf8
-} = require('./app');
+    // asyncAwaitReadFileUtf8,
+    // appendText,
+    // writeText,
+} = require('./trainingModule/files/filesOperations.js');
 
 
 //----------------------------------------------------------
