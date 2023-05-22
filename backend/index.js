@@ -14,16 +14,24 @@ const {
     usersExport2: usersExportNew2
 } = require("./trainingModule");
 
+//! Работа с файлами - readFile()
+const {
+    // appFilesOld,
+    // appFilesPromises,
+    // asyncAwaitReadFile,
+    // asyncAwaitReadFileUtf8
+} = require('./app');
+
 
 //----------------------------------------------------------
 console.log("");
-console.log("Welcome to Node.js again!!!".bgRed.yellow);
+console.log("----------- Welcome to Node.js again!!! -----------".bgRed.yellow);
 console.log("");
 
 //! getCurrentMounth
 console.log("Get Current Mounth:".yellow);
 const currentMounth = getCurrentMounth(); //! 1
-console.log(`Now1 ${currentMounth} month`.bgCyan); //! 1
+console.log(`Now1 ${currentMounth} month`.bgRed.green); //! 1
 console.log(`Now2 ${currentMounth2} month`.bgGreen.red); //! 2
 console.log("");
 
@@ -44,9 +52,11 @@ console.log("");
 //! usersExport1 + usersExport2 - Вариант 2
 console.log("usersExport1 + usersExport2 - Вариант 2:".yellow);
 console.log("usersExportNew1:".bgBlue, usersExportNew1);
+console.log("");
 console.log("usersExportNew2:".bgRed, usersExportNew2);
 console.log("");
 
 const { admins2, clients2 } = usersExportNew2;
 console.log("admins2:".bgCyan, admins2);
 console.log("clients2:".bgMagenta, clients2);
+console.log("");
