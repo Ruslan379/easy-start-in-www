@@ -28,7 +28,7 @@ const getById = async (id) => {
 const add = async (data) => {
     const allWords = await getAll();
     const newWord = {
-        id: nanoid,
+        id: nanoid(),
         ...data,
         translationUa: [],
         memorize: false
