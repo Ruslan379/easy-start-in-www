@@ -1,16 +1,16 @@
+require("colors");
+const yargs = require("yargs");
+const { hideBin } = require("yargs/helpers");
 //! Работа с Vocabuary
-const vocabuary = require(".");
-console.log("vocabuary:".bgRed, vocabuary);
+const vocabuary = require("./trainingModule/vocabulary");
 
-const {
-    getAll
-} = require(".");
+
 
 
 //--------------------------------------------
 const invokeAction = async ({ action, id, word, translationRu }) => {
     switch (action) {
-        case "read":
+        case "getAll":
             const allVocabuary = await vocabuary.getAll();
             console.log("allVocabuary:".bgGreen, allVocabuary);
             break;
@@ -32,13 +32,15 @@ const invokeAction = async ({ action, id, word, translationRu }) => {
             // console.log(`Word by ID=${id} deleted`.bgRed.black);
             console.log("deleteWord:".bgRed.yellow, deleteWord);
             break;
+        default:
+            return console.log("Unknow action");
     };
 };
 
 
 //? Вызовы функции invokeAction:
 //! Получить ВСЕ слова
-// invokeAction({ action: "read" });
+// invokeAction({ action: "getAll" });
 
 //! Получить слово по id
 // invokeAction({ action: "getById", id: "YxhM4QDxPeA3SmPHcEZPJ" });
@@ -62,10 +64,13 @@ const invokeAction = async ({ action, id, word, translationRu }) => {
 
 
 
-//? CLI:
-// const actionIdex = process.argv.indexOf("--action");
-// if (actionIdex !== -1) {
-//     const action = process.argv[actionIdex + 1];
-//     console.log("action:".bgRed.yellow, action);
-//     invokeAction({ action })
-// }
+//? CLI process.argv:
+const actionIdex = process.argv.indexOf("--action");
+if (actionIdex !== -1) {
+    const action = process.argv[actionIdex + 1];
+    console.log("action:".bgRed.yellow, action);
+    invokeAction({ action })
+}
+
+//? CLI yargs:
+
