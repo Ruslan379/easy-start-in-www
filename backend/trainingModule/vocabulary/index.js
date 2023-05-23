@@ -29,7 +29,7 @@ const getById = async (id) => {
 const add = async (data) => {
     const allWords = await getAll();
 
-    //! --------- Проверка на добалениее имеющегося слова ----------
+    //? --------- Проверка на добалениее имеющегося слова ----------
     // allWords.map(item => {
     //     if (item.word === data.word) {
     //         console.log(`Слово ${data.word} уже есть в словаре!`.red);
@@ -46,7 +46,7 @@ const add = async (data) => {
         console.log("");
         return;
     }
-    //! __________Проверка на добалениее имеющегося слова__________
+    //? __________Проверка на добалениее имеющегося слова__________
 
     const newWord = {
         id: nanoid(),
@@ -62,11 +62,32 @@ const add = async (data) => {
 };
 
 
+//! Изменить слово по id
+const apdateById = async (id, data) => {
+    const allWords = await getAll();
+    const index = allWords.findIndex(item => item.id === id);
+
+    if (index === -1) {
+        return null;
+    };
+
+    allWords[index] = {
+        id,
+        ...data,
+        translationUa: [],
+        memorize: false
+    };
+    await fs.writeFile(vocabularyEnUaRuPath, JSON.stringify(allWords, null, 2));
+    console.log(`Слово ${data.word} изменено!`.yellow);
+    return allWords[index];
+};
+
 
 
 module.exports = {
     getAll,
     getById,
     add,
+    apdateById,
 
 }
