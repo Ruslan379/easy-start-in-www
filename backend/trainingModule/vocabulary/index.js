@@ -82,6 +82,18 @@ const apdateById = async (id, data) => {
     return allWords[index];
 };
 
+//! Удалить слово по id
+const deleteById = async (id) => {
+    const allWords = await getAll();
+    const index = allWords.findIndex(item => item.id === id);
+
+    if (index === -1) {
+        return null;
+    };
+    const [deleteWord] = allWords.splice(index, 1);
+    await fs.writeFile(vocabularyEnUaRuPath, JSON.stringify(allWords, null, 2));
+    return deleteWord;
+};
 
 
 module.exports = {
@@ -89,5 +101,5 @@ module.exports = {
     getById,
     add,
     apdateById,
-
+    deleteById
 }
