@@ -15,14 +15,26 @@ const {
 } = require("./trainingModule");
 
 //! Работа с файлами
-const {
-    // appFilesOld,
-    // appFilesPromises,
-    // asyncAwaitReadFile,
-    // asyncAwaitReadFileUtf8,
-    // appendText,
-    // writeText,
-} = require('./trainingModule/files/filesOperations.js');
+// const {
+//     // appFilesOld,
+//     // appFilesPromises,
+//     // asyncAwaitReadFile,
+//     // asyncAwaitReadFileUtf8,
+//     // appendText,
+//     // writeText,
+// } = require('./trainingModule/files/filesOperations.js');
+
+
+//! Работа с Vocabuary
+// const vocabuary = require("./trainingModule/vocabulary");
+// console.log("vocabuary:".bgRed, vocabuary);
+
+// const {
+//     getAll
+// } = require("./trainingModule/vocabulary");
+
+console.log("");
+const vocabuaryMain = require("./trainingModule/vocabulary/vocabularyRun.js");
 
 
 //----------------------------------------------------------
