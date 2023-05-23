@@ -24,9 +24,30 @@ const getById = async (id) => {
     return result || null;
 };
 
+
 //! Добавить слово 
 const add = async (data) => {
     const allWords = await getAll();
+
+    //! --------- Проверка на добалениее имеющегося слова ----------
+    // allWords.map(item => {
+    //     if (item.word === data.word) {
+    //         console.log(`Слово ${data.word} уже есть в словаре!`.red);
+    //         return
+    //     }
+    //     return
+    // });
+
+    const newAddWord = allWords.find(item => item.word === data.word);
+    console.log("newAddWord:".bgGreen.blue, newAddWord);
+
+    if (newAddWord) {
+        console.log(`Слово ${data.word} уже есть в словаре!`.red);
+        console.log("");
+        return;
+    }
+    //! __________Проверка на добалениее имеющегося слова__________
+
     const newWord = {
         id: nanoid(),
         ...data,
@@ -34,7 +55,9 @@ const add = async (data) => {
         memorize: false
     };
     allWords.push(newWord);
-    await fs.writeFile(vocabularyEnUaRuPath, JSON.stringify(allWords))
+    await fs.writeFile(vocabularyEnUaRuPath, JSON.stringify(allWords, null, 2));
+    console.log(`Слово ${data.word} добавлено в  словарь!`.green);
+    console.log("");
     return newWord;
 };
 

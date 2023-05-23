@@ -1,95 +1,106 @@
 [
-    {
-        "id": "u9kgwNWGi3uUUwh0b8V49",
-        "word": "bound",
-        "translationRu": [
-            "граница"
-        ],
-        "translationUa": [],
-        "memorize": false
-    },
-    {
-        "id": "YxhM4QDxPeA3SmPHcEZPJ",
-        "word": "sing",
-        "translationRu": [
-            "петь",
-            "пой"
-        ],
-        "translationUa": [],
-        "memorize": false
-    },
-    {
-        "id": "zCd_RioNMOBaQwAXnc8Px",
-        "word": "swim",
-        "translationRu": [
-            "плавать",
-            "купаться"
-        ],
-        "translationUa": [],
-        "memorize": false
-    },
-    {
-        "id": "ck89qe3HriUDHe09TBoJ8",
-        "word": "come",
-        "translationRu": [
-            "приходить",
-            "приехать",
-            "прийти",
-            "приходите"
-        ],
-        "translationUa": [],
-        "memorize": false
-    },
-    {
-        "id": "e1Tpn_I3wBkLREY6wG0lb",
-        "word": "funny",
-        "translationRu": [
-            "забавный",
-            "смешной"
-        ],
-        "translationUa": [],
-        "memorize": false
-    },
-    {
-        "id": "Op8ApLTY0-Vn2cR0vDIwG",
-        "word": "loss",
-        "translationRu": [
-            "потеря",
-            "утрата"
-        ],
-        "translationUa": [],
-        "memorize": false
-    },
-    {
-        "id": "dkJSszfrRVtLVR_MfRqcu",
-        "word": "late",
-        "translationRu": [
-            "поздно",
-            "поздний"
-        ],
-        "translationUa": [],
-        "memorize": false
-    },
-    {
-        "id": "CTHE0f1kkWwqS5sL2tI8",
-        "word": "walk",
-        "translationRu": [
-            "ходить",
-            "прогулка"
-        ],
-        "translationUa": [
-            "ходити",
-            "прогулянка"
-        ],
-        "memorize": false
-    },
-    {
-        "word": "sight",
-        "translationRu": [
-            "взгляд",
-            "достопримечательность"
-        ],
-        "translationUa": [],
-        "memorize": false
-    }
+  {
+    "id": "u9kgwNWGi3uUUwh0b8V49",
+    "word": "bound",
+    "translationRu": [
+      "граница"
+    ],
+    "translationUa": [],
+    "memorize": false
+  },
+  {
+    "id": "YxhM4QDxPeA3SmPHcEZPJ",
+    "word": "sing",
+    "translationRu": [
+      "петь",
+      "пой"
+    ],
+    "translationUa": [],
+    "memorize": false
+  },
+  {
+    "id": "zCd_RioNMOBaQwAXnc8Px",
+    "word": "swim",
+    "translationRu": [
+      "плавать",
+      "купаться"
+    ],
+    "translationUa": [],
+    "memorize": false
+  },
+  {
+    "id": "ck89qe3HriUDHe09TBoJ8",
+    "word": "come",
+    "translationRu": [
+      "приходить",
+      "приехать",
+      "прийти",
+      "приходите"
+    ],
+    "translationUa": [],
+    "memorize": false
+  },
+  {
+    "id": "e1Tpn_I3wBkLREY6wG0lb",
+    "word": "funny",
+    "translationRu": [
+      "забавный",
+      "смешной"
+    ],
+    "translationUa": [],
+    "memorize": false
+  },
+  {
+    "id": "Op8ApLTY0-Vn2cR0vDIwG",
+    "word": "loss",
+    "translationRu": [
+      "потеря",
+      "утрата"
+    ],
+    "translationUa": [],
+    "memorize": false
+  },
+  {
+    "id": "dkJSszfrRVtLVR_MfRqcu",
+    "word": "late",
+    "translationRu": [
+      "поздно",
+      "поздний"
+    ],
+    "translationUa": [],
+    "memorize": false
+  },
+  {
+    "id": "CTHE0f1kkWwqS5sL2tI8",
+    "word": "walk",
+    "translationRu": [
+      "ходить",
+      "прогулка"
+    ],
+    "translationUa": [
+      "ходити",
+      "прогулянка"
+    ],
+    "memorize": false
+  },
+  {
+    "id": "pwgBEz6dRegaxgM81534B",
+    "word": "sight",
+    "translationRu": [
+      "взгляд",
+      "достопримечательность"
+    ],
+    "translationUa": [],
+    "memorize": false
+  },
+  {
+    "id": "5AoyLgrMXjrgySNKBCEAG",
+    "word": "origin",
+    "translationRu": [
+      "источник",
+      "происхождение"
+    ],
+    "translationUa": [],
+    "memorize": false
+  }
 ]

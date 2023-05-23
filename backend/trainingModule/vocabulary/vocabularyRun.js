@@ -19,7 +19,6 @@ const invokeAction = async ({ action, id, word, translationRu }) => {
             return console.log("wordById:".bgGreen.blue, wordById);
         case "add":
             const newWord = await vocabuary.add({ word, translationRu });
-            console.log(`Word by ID=${id}`.bgGreen.black);
             return console.log("newWord:".bgGreen.blue, newWord);
 
     }
@@ -30,5 +29,9 @@ const invokeAction = async ({ action, id, word, translationRu }) => {
 
 //! Вызовы функции invokeAction:
 // invokeAction({ action: "read" });
-invokeAction({ action: "getById", id: "YxhM4QDxPeA3SmPHcEZPJ" });
+// invokeAction({ action: "getById", id: "YxhM4QDxPeA3SmPHcEZPJ" });
+
 // invokeAction({ action: "add", word: "sight", translationRu: ["взгляд", "достопримечательность"] });
+invokeAction({ action: "add", word: "origin", translationRu: ["источник", "происхождение"] });
+
+invokeAction({ action: "read" });
