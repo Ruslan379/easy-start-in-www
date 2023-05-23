@@ -19,8 +19,9 @@ const getAll = async () => {
 
 //! Получить слово по id
 const getById = async (id) => {
+    const wordsId = String(id);
     const allWords = await getAll();
-    const result = allWords.find(item => item.id === id);
+    const result = allWords.find(item => item.id === wordsId);
     return result || null;
 };
 
@@ -64,8 +65,9 @@ const add = async (data) => {
 
 //! Изменить слово по id
 const apdateById = async (id, data) => {
+    const wordsId = String(id);
     const allWords = await getAll();
-    const index = allWords.findIndex(item => item.id === id);
+    const index = allWords.findIndex(item => item.id === wordsId);
 
     if (index === -1) {
         return null;
@@ -84,8 +86,9 @@ const apdateById = async (id, data) => {
 
 //! Удалить слово по id
 const deleteById = async (id) => {
+    const wordsId = String(id);
     const allWords = await getAll();
-    const index = allWords.findIndex(item => item.id === id);
+    const index = allWords.findIndex(item => item.id === wordsId);
 
     if (index === -1) {
         return null;

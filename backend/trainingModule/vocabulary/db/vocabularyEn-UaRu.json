@@ -102,5 +102,15 @@
         ],
         "translationUa": [],
         "memorize": false
+    },
+    {
+        "id": "1",
+        "word": "origin2",
+        "translationRu": [
+            "источник2",
+            "происхождение2"
+        ],
+        "translationUa": [],
+        "memorize": false
     }
 ]

@@ -1,6 +1,11 @@
 require("colors");
+//! yargs
 const yargs = require("yargs");
 const { hideBin } = require("yargs/helpers");
+
+//! commander
+const { program } = require("commander");
+
 //! Работа с Vocabuary
 const vocabuary = require("./trainingModule/vocabulary");
 
@@ -73,4 +78,22 @@ if (actionIdex !== -1) {
 }
 
 //? CLI yargs:
+// const arr = hideBin(process.argv)
+// console.log("arr:".bgGreen.yellow, arr);
+// const { argv } = yargs(arr);
+// console.log("argv:".bgGreen.black, argv);
+// invokeAction(argv);
+
+//? CLI commander:
+program
+    .option("-a, --action, <type>")
+    .option("-i, --id, <type>")
+    .option("-w, --word, <type>")
+    .option("-t, --translationRu, <type>");
+
+program.parse();
+
+const option = program.opts();
+console.log("option:".bgGreen.black, option);
+invokeAction(option);
 
