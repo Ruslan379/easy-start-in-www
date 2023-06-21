@@ -23,7 +23,7 @@
 
 .logoShadowContainer {
     border-radius: 50%;
-    box-shadow: 15px 15px 15px rgb(44 35 18 / 23%);
+    box-shadow: 15px 15px 15px rgba(44, 35, 18, 0.23);
     outline: 1px solid orange;
 }
 
@@ -64,6 +64,8 @@
     /* letter-spacing: 4px; */
     /* word-spacing: 8px; */
     /* white-space: pre-wrap; */
+
+    margin-top: 24px;
 
     color: #c01d1d;
     text-shadow: 4px 4px 8px #555555;
