@@ -116,7 +116,7 @@
 
 //! "Сливаем" все массивы dayAsArray, monthAsArray, yearAsArray в один массив allAsArray:
 
-//! "Сливаем" все массивы стейтов ****AddNumberAsArray в один массив allAddNumberAsArray:
+//! "Сливаем" все массивы стейтов ****AddNumberAsArray и Дня рождения (allAsArray) в один массив allAddNumberAsArray:
 
 //! ----------- firstAddNumber I-----------:
 
