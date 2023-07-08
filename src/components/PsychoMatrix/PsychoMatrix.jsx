@@ -8,7 +8,6 @@ import css from './PsychoMatrix.module.css';
 //-----------------------------------------------------
 export const PsychoMatrix = () => {
     console.log('PsychoMatrix:');
-    // console.log("book:", book);
 
     // const [trigger, setTrigger] = useState(false);
 
@@ -41,7 +40,7 @@ export const PsychoMatrix = () => {
     const handleSubmit = evt => {
         evt.preventDefault();
         const form = evt.currentTarget;
-        console.log('Вызывается при отправке формы');
+        console.log('Вызывается при отправке формы:');
 
         //todo OLD
         // setDay(form.elements.day.value);
@@ -59,18 +58,19 @@ export const PsychoMatrix = () => {
             month,
             year
         });
+        console.log(`SUBMIT--> День:${day}, Месяц:${month}, Год:${year}`); //!
         setDay(0);
         setMonth(0);
         setYear(0);
 
-        // console.log(`SUBMIT --> День:${day}, Месяц:${month}, Год:${year}`);
         // console.log("dateOfBirth:", dateOfBirth);
-        form.reset();
+
         // evt.currentTarget.reset();
+        form.reset();
     };
 
-    console.log(`SUBMIT --> День:${day}, Месяц:${month}, Год:${year}`);
-    console.log("dateOfBirth:", dateOfBirth);
+    console.log(`After SUBMIT--> День:${day}, Месяц:${month}, Год:${year}`); //!
+    console.log("After SUBMIT--> dateOfBirth:", dateOfBirth); //!
 
 
 
@@ -98,7 +98,7 @@ export const PsychoMatrix = () => {
                         required
                         min="1"
                         max="31"
-                        // value={module}
+                        // value={day}
                         onChange={handleChangeDay}
                     />
                 </label>
@@ -110,13 +110,12 @@ export const PsychoMatrix = () => {
                     <input
                         className={css.inputForm}
                         type="number"
-                        // name="classes"
                         name="month"
                         placeholder="Месяц"
                         required
                         min="1"
                         max="12"
-                        // value={classes}
+                        // value={month}
                         onChange={handleChangeMonth}
                     />
                 </label>
@@ -133,7 +132,7 @@ export const PsychoMatrix = () => {
                         required
                         min="1000"
                         max="2024"
-                        // value={classes}
+                        // value={year}
                         onChange={handleChangeYear}
                     />
                 </label>
@@ -142,7 +141,7 @@ export const PsychoMatrix = () => {
                     className={css.buttonSubmit}
                     type="submit"
                     disabled={!(day && month && year)}>
-                    {/* Module JS */}
+                    {/* Submit */}
                     {day ? 'Submit' : 'Inactive...'}
                 </button>
             </form>
