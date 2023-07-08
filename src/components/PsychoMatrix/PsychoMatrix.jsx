@@ -23,17 +23,17 @@ export const PsychoMatrix = () => {
     const [dateOfBirth, setDateOfBirth] = useState({});
 
 
-    // const handleChangeDay = evt => {
-    //     setDay(evt.target.value);
-    // };
+    const handleChangeDay = evt => {
+        setDay(evt.target.value);
+    };
 
-    // const handleChangeMonth = evt => {
-    //     setMonth(evt.target.value);
-    // };
+    const handleChangeMonth = evt => {
+        setMonth(evt.target.value);
+    };
 
-    // const handleChangeYear = evt => {
-    //     setYear(evt.target.value);
-    // };
+    const handleChangeYear = evt => {
+        setYear(evt.target.value);
+    };
 
 
 
@@ -43,14 +43,25 @@ export const PsychoMatrix = () => {
         const form = evt.currentTarget;
         console.log('Вызывается при отправке формы');
 
-        setDay(form.elements.day.value);
-        setMonth(form.elements.month.value);
-        setYear(form.elements.year.value);
+        //todo OLD
+        // setDay(form.elements.day.value);
+        // setMonth(form.elements.month.value);
+        // setYear(form.elements.year.value);
+        // setDateOfBirth({
+        //     day: form.elements.day.value,
+        //     month: form.elements.month.value,
+        //     year: form.elements.year.value
+        // });
+
+        //! NEW
         setDateOfBirth({
-            day: form.elements.day.value,
-            month: form.elements.month.value,
-            year: form.elements.year.value
+            day,
+            month,
+            year
         });
+        setDay(0);
+        setMonth(0);
+        setYear(0);
 
         // console.log(`SUBMIT --> День:${day}, Месяц:${month}, Год:${year}`);
         // console.log("dateOfBirth:", dateOfBirth);
@@ -74,7 +85,7 @@ export const PsychoMatrix = () => {
                 <label
                     className={css.labelForm}
                 >
-                    (Module) Число:
+                    Число:
                     <input
                         className={css.inputForm}
                         // type="text"
@@ -87,15 +98,15 @@ export const PsychoMatrix = () => {
                         required
                         min="1"
                         max="31"
-                    // value={module}
-                    // onChange={handleChangeDay}
+                        // value={module}
+                        onChange={handleChangeDay}
                     />
                 </label>
 
                 <label
                     className={css.labelForm}
                 >
-                    (Class) Месяц:
+                    Месяц:
                     <input
                         className={css.inputForm}
                         type="number"
@@ -105,8 +116,8 @@ export const PsychoMatrix = () => {
                         required
                         min="1"
                         max="12"
-                    // value={classes}
-                    // onChange={handleChangeMonth}
+                        // value={classes}
+                        onChange={handleChangeMonth}
                     />
                 </label>
 
@@ -120,16 +131,19 @@ export const PsychoMatrix = () => {
                         name="year"
                         placeholder="Год"
                         required
-                        min="1"
+                        min="1000"
                         max="2024"
-                    // value={classes}
-                    // onChange={handleChangeYear}
+                        // value={classes}
+                        onChange={handleChangeYear}
                     />
                 </label>
 
-                <button className={css.buttonSubmit} type="submit" disabled={!module}>
+                <button
+                    className={css.buttonSubmit}
+                    type="submit"
+                    disabled={!(day && month && year)}>
                     {/* Module JS */}
-                    {module ? 'Module JS' : 'Inactive...'}
+                    {day ? 'Submit' : 'Inactive...'}
                 </button>
             </form>
             {/* <Outlet /> */}
