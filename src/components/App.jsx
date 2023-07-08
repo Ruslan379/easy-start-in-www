@@ -1,6 +1,6 @@
 import {
-    useState,
-    // useEffect
+  useState,
+  // useEffect
 } from 'react';
 
 import {
@@ -8,7 +8,7 @@ import {
   Routes,
   // Link,
   // NavLink,
-  Outlet 
+  Outlet
 } from 'react-router-dom';
 
 // import { useParams } from "react-router-dom";
@@ -38,6 +38,8 @@ import { React611 } from 'components/React-Lesson/React611';
 import { React713 } from 'components/React-Lesson/React713';
 import { React7132 } from 'components/React-Lesson/React7132';
 
+import { PsychoMatrix } from 'components/PsychoMatrix/PsychoMatrix';
+
 import css from './App.module.css';
 
 //------------------------------------------------------------------------------------
@@ -63,7 +65,7 @@ console.log("App.js:");
 //! ---------------------------------------------------------------------------------------
 
 
-console.log("--------------------------------------------"); 
+console.log("--------------------------------------------");
 const cars = ['Audio', 'Volvo', 'Nissan', 'BMW', 'Mazda', 'Toyota'];
 const cars1 = cars
 
@@ -71,9 +73,9 @@ const arrayCutter = function (array) {
   array.splice(3, array.length - 1);
   console.log(cars1);
   return;
-};  
+};
 arrayCutter(cars);
-console.log("--------------------------------------------"); 
+console.log("--------------------------------------------");
 
 
 //! --------------------------------- ERROR -------------------------------------------
@@ -136,11 +138,11 @@ export const App = () => {
   const [trigger, setTrigger] = useState(false);
   const [module, setModule] = useState(0);
   const [classes, setClasses] = useState(0);
-  
+
   const toggleTrigger = () => {
     setTrigger(!trigger);
   }
-  
+
   //todo OLD
   // const handleChange = evt => {
   //   setModule(evt.target.value); 
@@ -159,7 +161,7 @@ export const App = () => {
     evt.preventDefault();
     // setModule(evt.currentTarget.elements.module.value);
     // setClasses(evt.currentTarget.elements.classes.value);
-    console.log( `SUBMIT --> Module:${module}, Class:${classes}`);
+    console.log(`SUBMIT --> Module:${module}, Class:${classes}`);
     // console.log(`Class: ${classes}`);
   };
 
@@ -186,9 +188,9 @@ export const App = () => {
             </div>
           } />
           <Route path="module-24" element={
-          <div>
-            <p className={css.titleText}>HTML+CSS (module_2-4)</p>
-          </div>
+            <div>
+              <p className={css.titleText}>HTML+CSS (module_2-4)</p>
+            </div>
           } />
           <Route path="question-julia" element={
             <div>
@@ -197,17 +199,16 @@ export const App = () => {
               <br />
               <button
                 className={
-                    `${css.buttonAlert} ${css.alert} ${
-                        trigger
-                        ?
-                        `${css.success} ${css.successBackgroundColor} ${css.buttonAlertBefore}`
-                        :
-                        // css.error
-                        `${css.error} ${css.errorBackgroundColor}`
-                        }
+                  `${css.buttonAlert} ${css.alert} ${trigger
+                    ?
+                    `${css.success} ${css.successBackgroundColor} ${css.buttonAlertBefore}`
+                    :
+                    // css.error
+                    `${css.error} ${css.errorBackgroundColor}`
+                  }
                     `
                 }
-                  onClick={toggleTrigger}
+                onClick={toggleTrigger}
               >
                 {trigger ? "Вопрос ЮЛИ включен" : "Вопрос ЮЛИ выключен"}
               </button>
@@ -218,10 +219,10 @@ export const App = () => {
             </div>
           } />
           <Route path="module-36" element={
-          <div>
-            <p className={css.titleText}>HTML+CSS (module_3-6)</p>
-            <HTML_36 />
-        </div>
+            <div>
+              <p className={css.titleText}>HTML+CSS (module_3-6)</p>
+              <HTML_36 />
+            </div>
           } />
         </Route>
 
@@ -231,8 +232,8 @@ export const App = () => {
             <form
               className={css.globalForm}
               onSubmit={handleSubmit}>
-                <label className={css.labelForm}>
-                    Module Java Script:
+              <label className={css.labelForm}>
+                Module Java Script:
                 <input className={css.inputForm}
                   // type="text"
                   type="number"
@@ -246,10 +247,10 @@ export const App = () => {
                   // value={module}
                   onChange={handleChangeModule}
                 />
-                </label>
-              
-                <label className={css.labelForm}>
-                  Class Java Script:
+              </label>
+
+              <label className={css.labelForm}>
+                Class Java Script:
                 <input className={css.inputForm}
                   // type="text"
                   type="number"
@@ -261,14 +262,14 @@ export const App = () => {
                   // value={classes}
                   onChange={handleChangeClass}
                 />
-                </label>
+              </label>
               <button
                 className={css.buttonSubmit}
                 type="submit"
-                disabled={!module} 
+                disabled={!module}
               >
                 {/* Module JS */}
-                {module ? "Module JS" : "Inactive..."} 
+                {module ? "Module JS" : "Inactive..."}
               </button>
             </form>
             <Outlet />
@@ -277,7 +278,7 @@ export const App = () => {
           <Route path="module-35" element={
             <div>
               <p className={css.titleText}>Java Script (module_3-5)</p>
-                <JS_3_5 />
+              <JS_3_5 />
             </div>
           } />
           <Route path="module-36" element={
@@ -344,29 +345,29 @@ export const App = () => {
           </>
         } >
           <Route path="module-24" element={
-          <div>
+            <div>
               <p className={css.titleText}>React (module_2-4)</p>
               <React24 />
-          </div>
+            </div>
           } />
           <Route path="module-47" element={
-          <div>
-            <p className={css.titleText}>React (module_4-7)</p>
-            <React47 />
-          </div>
+            <div>
+              <p className={css.titleText}>React (module_4-7)</p>
+              <React47 />
+            </div>
           } />
           <Route path="module-611" element={
-          <div>
-            <p className={css.titleText}>React (module_6-11(12))</p>
-            <React611 />
-          </div>
+            <div>
+              <p className={css.titleText}>React (module_6-11(12))</p>
+              <React611 />
+            </div>
           } />
           <Route path="module-713" element={
-          <div>
+            <div>
               <p className={css.titleText}>React (module_7-13(14))</p>
               <React713 />
               <React7132 />
-          </div>
+            </div>
           } />
         </Route>
 
@@ -377,21 +378,35 @@ export const App = () => {
           </>
         } >
           <Route path="module-11" element={
-          <div>
+            <div>
               <p className={css.titleText}>Node.js (module_1-1)</p>
               {/* <Node11 /> */}
-          </div>
+            </div>
           } />
           <Route path="module-12" element={
-          <div>
-            <p className={css.titleText}>Node.js (module_1-2)</p>
-            {/* <Node12 /> */}
-        </div>
+            <div>
+              <p className={css.titleText}>Node.js (module_1-2)</p>
+              {/* <Node12 /> */}
+            </div>
+          } />
+        </Route>
+
+        <Route path="/matrix" element={
+          <>
+            <p className={css.titleTextBase}>Matrix</p>
+            <Outlet />
+          </>
+        } >
+          <Route path="psychomatrix" element={
+            <div>
+              <p className={css.titleText}>Psycho-Matrix</p>
+              <PsychoMatrix />
+            </div>
           } />
         </Route>
 
         {/* <Route path="*" element={<NotFound />} /> */}
-      </Route> 
-    </Routes> 
+      </Route>
+    </Routes>
   );
 };

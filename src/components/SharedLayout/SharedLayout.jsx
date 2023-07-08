@@ -69,6 +69,10 @@ export const SharedLayout = () => {
           <NavLink to="/node/module-12">Module_1-2</NavLink>
           <NavLink to="/node/module-23">Module_2-3</NavLink>
         </div>
+        <div className={css.navBlock}>
+          <NavLink className={css.navLink} to="/matrix">Matrix</NavLink>
+          <NavLink to="/matrix/psychomatrix">Psycho Matrix</NavLink>
+        </div>
       </nav>
 
       <Outlet />
