@@ -114,15 +114,15 @@
 
 //!
 
-//! "Сливаем" все массивы стейтов ****AddNumberAsArray и Дня рождения (dateOfBirthAsArray) в один массив allAddNumberAsArray:
-
-//! ----------- firstAddNumber I-----------:
+//! "Сливаем" массив dateOfBirthAsArray (Дня рождения) и ВСЕ промежуточные массивы  ****AddNumberArray в один массив allAsArray:
 
 //! ----------- fourthAddNumber IV -----------:
 
 //! ----------- secondAddNumber II -----------:
 
 //! ----------- thirdAddNumber III -----------:
+
+//! ----------- Преобразуем все  for****AddNumber (стейты) в строки а затем в массивы -----------:
 
 //! -------------------------------- JS_3-6 (5 вопрос)---------------------------------------------
 
@@ -198,13 +198,11 @@
 
 //! Получаем ссылку на функцию отправки экшенов
 
-//! Преобразовываем все элементы массива allAddNumberAsArray в число и записываем в новый массив allAddNumberAsArrayNumber:
-
-//! Преобразуем все стейты ****AddNumber в строки а затем в массивы:
+//! Преобразовываем все элементы массива allAsArray в число и записываем в новый массив allAsArrayNumber:
 
 //! Преобразуем все стейты в строки а затем в массивы строк:
 
-//! Преобразуем число forFirstAddNumber I в строку а затем в массив:
+//! Преобразуем число forFirstAddNumber в строку а затем в массив:
 
 //! Преобразуем число forThirdAddNumber в строку а затем в массив:
 
@@ -222,11 +220,9 @@
 
 //! Создаем объект даты рождения --> dateOfBirthObj
 
-//! Суммируем ВСЕ цифры массива dateOfBirthAsArray (дата рождения) и записываем в стейт setFirstAddNumber:
-
 //! Суммируем цифры массива forThirdAddNumberAsArray и записываем в стейт setFourthAddNumber
 
-//! Суммируем цифры массива secondAddNumberAsArray и записываем в стейт setSecondAddNumber
+//! Суммируем цифры массива secondAddNumberAsArray и записываем в стейт secondAddNumber
 
 //! Удаление задачи
 
