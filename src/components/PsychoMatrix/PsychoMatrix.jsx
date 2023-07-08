@@ -40,6 +40,7 @@ export const PsychoMatrix = () => {
     // const [quantity9, setQuantity9] = useState(0);
     // const [quantity0, setQuantity0] = useState(0);
 
+
     //*------------------ ВСПОМОГАТЕЛЬНЫЕ ФУНКЦИИ ------------------
     //! Преобразование числа в строку а затем в массив строк:
     const convertNumberToArray = (arr) => arr.toString().split("");
@@ -49,9 +50,8 @@ export const PsychoMatrix = () => {
 
     //! Преобразование всех элементов массива (строк) в ЧИСЛО и запись в новый массив:
     const convertToNumber = (arr) => arr.map(element => Number(element));
-
-
     //*__________________ ВСПОМОГАТЕЛЬНЫЕ ФУНКЦИИ __________________
+
 
     const handleChangeDay = evt => {
         setDay(evt.target.value);
@@ -127,26 +127,31 @@ export const PsychoMatrix = () => {
             ...yearAsArray
         ];
         // console.log("dateOfBirthAsArray:", dateOfBirthAsArray); //!
+
+        //todo ПОКА НЕ НАДО:
         //! Преобразовываем все элементы массива dateOfBirthAsArray (строки) в число и записываем в новый массив dateOfBirthAsArrayNumber:
         // const dateOfBirthAsArrayNumber = dateOfBirthAsArray.map(element => Number(element)); //todo OLD
-        const dateOfBirthAsArrayNumber = convertToNumber(dateOfBirthAsArray);
-        console.log("dateOfBirthAsArrayNumber:", dateOfBirthAsArrayNumber); //!
+        // const dateOfBirthAsArrayNumber = convertToNumber(dateOfBirthAsArray);
+        // console.log("dateOfBirthAsArrayNumber:", dateOfBirthAsArrayNumber); //!
 
 
         //! ----------- firstAddNumber I-----------:
-        //! Суммируем ВСЕ цифры массива dateOfBirthAsArray (дата рождения) и записываем в стейт setFirstAddNumber:
+        //! Суммируем ВСЕ цифры массива dateOfBirthAsArray (дата рождения) и записываем в стейт firstAddNumber:
         // const forFirstAddNumber = dateOfBirthAsArray.reduce((accumulator, currentValue) => accumulator + Number(currentValue), 0); //todo OLD
         const forFirstAddNumber = convertToNumberAndSum(dateOfBirthAsArray);
         console.log("forFirstAddNumber:", forFirstAddNumber); //!
         setFirstAddNumber(forFirstAddNumber);
 
         //! ----------- secondAddNumber II -----------:
-        //! Преобразуем число forFirstAddNumber I в строку а затем в массив:
-        const secondAddNumberAsArray = forFirstAddNumber.toString().split("");
+        //! Преобразуем число forFirstAddNumber в строку а затем в массив:
+        // const secondAddNumberAsArray = forFirstAddNumber.toString().split(""); //todo OLD
+        const secondAddNumberAsArray = convertNumberToArray(forFirstAddNumber);
         console.log("secondAddNumberAsArray:", secondAddNumberAsArray); //!
 
-        //! Суммируем цифры массива secondAddNumberAsArray и записываем в стейт setSecondAddNumber
-        const forSecondAddNumber = secondAddNumberAsArray.reduce((accumulator, currentValue) => accumulator + Number(currentValue), 0)
+        //! Суммируем цифры массива secondAddNumberAsArray и записываем в стейт secondAddNumber
+        // const forSecondAddNumber = secondAddNumberAsArray.reduce((accumulator, currentValue) => accumulator + Number(currentValue), 0); //todo OLD
+        const forSecondAddNumber = convertToNumberAndSum(secondAddNumberAsArray);
+        console.log("forSecondAddNumber:", forSecondAddNumber); //!
         setSecondAddNumber(forSecondAddNumber);
 
 
@@ -159,49 +164,57 @@ export const PsychoMatrix = () => {
 
         //! ----------- fourthAddNumber IV -----------:
         //! Преобразуем число forThirdAddNumber в строку а затем в массив:
-        const forFourthAddNumberAsArray = forThirdAddNumber.toString().split("");
-        console.log("forFourthAddNumberAsArray:", forFourthAddNumberAsArray); //!
+        // const fourthAddNumberAsArray = forThirdAddNumber.toString().split(""); //todo OLD
+        const fourthAddNumberAsArray = convertNumberToArray(forThirdAddNumber);
+        console.log("fourthAddNumberAsArray:", fourthAddNumberAsArray); //!
 
         //! Суммируем цифры массива forThirdAddNumberAsArray и записываем в стейт setFourthAddNumber
-        const forFourthAddNumber = forFourthAddNumberAsArray.reduce((accumulator, currentValue) => accumulator + Number(currentValue), 0)
+        // const forFourthAddNumber = fourthAddNumberAsArray.reduce((accumulator, currentValue) => accumulator + Number(currentValue), 0); //todo OLD
+        const forFourthAddNumber = convertToNumberAndSum(fourthAddNumberAsArray);
+        console.log("forFourthAddNumber:", forFourthAddNumber); //!
         setFourthAddNumber(forFourthAddNumber);
 
-        //! Преобразуем все стейты ****AddNumber в строки а затем в массивы:
-        const firstAddNumberArray = forFirstAddNumber.toString().split("");
-        const secondAddNumberArray = forSecondAddNumber.toString().split("");
-        const thirdAddNumberArray = forThirdAddNumber.toString().split("");
-        const fourthAddNumberArray = forFourthAddNumber.toString().split("");
+        //! ----------- Преобразуем все  for****AddNumber (стейты) в строки а затем в массивы -----------:
+        //todo OLD
+        // const firstAddNumberArray = forFirstAddNumber.toString().split("");
+        // const secondAddNumberArray = forSecondAddNumber.toString().split("");
+        // const thirdAddNumberArray = forThirdAddNumber.toString().split("");
+        // const fourthAddNumberArray = forFourthAddNumber.toString().split("");
+
+        const firstAddNumberArray = convertNumberToArray(forFirstAddNumber);
+        const secondAddNumberArray = convertNumberToArray(forSecondAddNumber);
+        const thirdAddNumberArray = convertNumberToArray(forThirdAddNumber);
+        const fourthAddNumberArray = convertNumberToArray(forFourthAddNumber);
 
         console.log("firstAddNumberArray I:", firstAddNumberArray); //!
         console.log("secondAddNumberArray II:", secondAddNumberArray); //!
         console.log("thirdAddNumberArray III:", thirdAddNumberArray); //!
         console.log("fourthAddNumberArray IV:", fourthAddNumberArray); //!
 
-        //! "Сливаем" все массивы стейтов ****AddNumberAsArray и Дня рождения (dateOfBirthAsArray) в один массив allAddNumberAsArray:
-        const allArray = [
+        //! "Сливаем" массив dateOfBirthAsArray (Дня рождения) и ВСЕ промежуточные массивы  ****AddNumberArray в один массив allAsArray:
+        const allAsArray = [
             ...dateOfBirthAsArray,
             ...firstAddNumberArray,
             ...secondAddNumberArray,
             ...thirdAddNumberArray,
             ...fourthAddNumberArray
-        ]
-        console.log("allArray:", allArray); //!
+        ];
+        console.log("allAsArray:", allAsArray); //!
 
-        //! Преобразовываем все элементы массива allAddNumberAsArray в число и записываем в новый массив allAddNumberAsArrayNumber:
-        const allNumberAsArrayNumber = allArray.map(element => Number(element));
-        console.log("allNumberAsArrayNumber:", allNumberAsArrayNumber); //!
+        //! Преобразовываем все элементы массива allAsArray в число и записываем в новый массив allAsArrayNumber:
+        // const allAsArrayNumber = allAsArray.map(element => Number(element)); //todo OLD
+        const allAsArrayNumber = convertToNumber(allAsArray);
+        console.log("allAsArrayNumber:", allAsArrayNumber); //!
 
         //! Подсчитываем количество цифр в массиве dateOfBirthAsArrayNumber и записывем эти данные в объект countObj:
         const count = {};
 
-        for (let i = 0; i < allNumberAsArrayNumber.length; i++) {
-            const num = allNumberAsArrayNumber[i];
+        for (let i = 0; i < allAsArrayNumber.length; i++) {
+            const num = allAsArrayNumber[i];
             count[num] = count[num] ? count[num] + 1 : 1;
         };
-        setCountObj(count);
         console.log("count:", count); //!
-
-
+        setCountObj(count);
 
 
         setDay(0);
@@ -226,7 +239,7 @@ export const PsychoMatrix = () => {
 
     console.log("FINAL--> countObj:", countObj); //!
 
-
+    //* ---------------------------------------------------------------------------------
 
 
     return (
@@ -243,11 +256,7 @@ export const PsychoMatrix = () => {
                     Число:
                     <input
                         className={css.inputForm}
-                        // type="text"
-                        // minLength="2"
-                        // maxLength="4"
                         type="number"
-                        // name="module"
                         name="day"
                         placeholder="День"
                         required
