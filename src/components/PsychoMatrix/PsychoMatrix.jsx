@@ -21,6 +21,10 @@ export const PsychoMatrix = () => {
     const [year, setYear] = useState(0);
     const [dateOfBirth, setDateOfBirth] = useState({});
 
+    const [firstAddNumber, setFirstAddNumber] = useState(0);
+    const [secondAddNumber, setSecondAddNumber] = useState(0);
+    const [thirdAddNumber, setThirdAddNumber] = useState(0);
+    const [fourthAddNumber, setFourthAddNumber] = useState(0);
 
     const handleChangeDay = evt => {
         setDay(evt.target.value);
@@ -52,13 +56,37 @@ export const PsychoMatrix = () => {
         //     year: form.elements.year.value
         // });
 
-        //! NEW
+        //! NEW --> setDateOfBirth- объект даты рождения
         setDateOfBirth({
             day,
             month,
             year
         });
         console.log(`SUBMIT--> День:${day}, Месяц:${month}, Год:${year}`); //!
+
+        // //! Преобразуем все стейты в строки:
+        // const dayAsString = day.toString();
+        // const monthAsString = month.toString();
+        // const yearAsString = year.toString();
+
+        // //! Преобразуем все строки в массивы:
+        // const dayAsArray = dayAsString.split("");
+        // const monthAsArray = monthAsString.split("");
+        // const yearAsArray = yearAsString.split("");
+
+        //! Преобразуем все стейты в строкиа затем в массивы:
+        const dayAsArray = day.toString().split("");
+        const monthAsArray = month.toString().split("");
+        const yearAsArray = year.toString().split("");
+
+        console.log("dayAsArray:", dayAsArray); //!
+        console.log("monthAsArray:", monthAsArray); //!
+        console.log("yearAsArray:", yearAsArray); //!
+
+
+
+
+
         setDay(0);
         setMonth(0);
         setYear(0);
@@ -71,6 +99,8 @@ export const PsychoMatrix = () => {
 
     console.log(`After SUBMIT--> День:${day}, Месяц:${month}, Год:${year}`); //!
     console.log("After SUBMIT--> dateOfBirth:", dateOfBirth); //!
+
+
 
 
 
