@@ -86,6 +86,7 @@ export const PsychoMatrix = () => {
         // console.log("forFirstAddNumber:", forFirstAddNumber); //!
         setFirstAddNumber(forFirstAddNumber);
 
+
         //! ----------- secondAddNumber II -----------:
         //! Преобразуем число forFirstAddNumber в строку а затем в массив:
         const secondAddNumberAsArray = convertNumberToArray(forFirstAddNumber);
@@ -114,6 +115,7 @@ export const PsychoMatrix = () => {
         // console.log("forFourthAddNumber:", forFourthAddNumber); //!
         setFourthAddNumber(forFourthAddNumber);
 
+
         //! ----------- Преобразуем все  for****AddNumber (стейты) в строки а затем в массивы -----------:
         const firstAddNumberArray = convertNumberToArray(forFirstAddNumber);
         const secondAddNumberArray = convertNumberToArray(forSecondAddNumber);
@@ -125,6 +127,7 @@ export const PsychoMatrix = () => {
         // console.log("thirdAddNumberArray III:", thirdAddNumberArray); //!
         // console.log("fourthAddNumberArray IV:", fourthAddNumberArray); //!
 
+
         //! "Сливаем" массив dateOfBirthAsArray (Дня рождения) и ВСЕ промежуточные массивы  ****AddNumberArray в один массив allAsArray:
         const allAsArray = [
             ...dateOfBirthAsArray,
@@ -135,9 +138,11 @@ export const PsychoMatrix = () => {
         ];
         console.log("allAsArray:", allAsArray); //!
 
+
         //! Преобразовываем все элементы массива allAsArray в число и записываем в новый массив allAsArrayNumber:
         const allAsArrayNumber = convertToNumber(allAsArray);
         // console.log("allAsArrayNumber:", allAsArrayNumber); //!
+
 
         //! Подсчитываем количество цифр в массиве dateOfBirthAsArrayNumber и записывем эти данные в объект countObj:
         const count = {};
