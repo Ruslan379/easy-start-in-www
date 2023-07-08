@@ -26,6 +26,8 @@ export const PsychoMatrix = () => {
     const [thirdAddNumber, setThirdAddNumber] = useState(0);
     const [fourthAddNumber, setFourthAddNumber] = useState(0);
 
+    const [countObj, setCountObj] = useState({});
+
     // const [quantity1, setQuantity1] = useState(0);
     // const [quantity2, setQuantity2] = useState(0);
     // const [quantity3, setQuantity3] = useState(0);
@@ -105,39 +107,50 @@ export const PsychoMatrix = () => {
         const allAsArrayNumber = allAsArray.map(element => Number(element));
         console.log("allAsArrayNumber:", allAsArrayNumber); //!
 
-        //! firstAddNumber I:
-        //! Посчитаем сумму в каждом из массивов:
-        const sumAll = allAsArray.reduce((accumulator, currentValue) => accumulator + Number(currentValue), 0);
-        console.log("sumAll:", sumAll); //!
-        setFirstAddNumber(sumAll);
+        //! Подсчитываем количество цифр в массиве allAsArrayNumber и записывем эти данные в объект countObj:
+        const count = {};
 
-        //! secondAddNumber II:
-        //! Преобразуем число firstAddNumber I в строку а затем в массив:
-        const secondAddNumberAsArray = sumAll.toString().split("");
+        for (let i = 0; i < allAsArrayNumber.length; i++) {
+            const num = allAsArrayNumber[i];
+            count[num] = count[num] ? count[num] + 1 : 1;
+        };
+        setCountObj(count);
+        console.log("count:", count); //!
+
+
+        //! ----------- firstAddNumber I-----------:
+        //! Суммируем цифры массива allAsArray (дата рождения) и записываем в стейт setFirstAddNumber:
+        const forFirstAddNumber = allAsArray.reduce((accumulator, currentValue) => accumulator + Number(currentValue), 0);
+        console.log("forFirstAddNumber:", forFirstAddNumber); //!
+        setFirstAddNumber(forFirstAddNumber);
+
+        //! ----------- secondAddNumber II -----------:
+        //! Преобразуем число forFirstAddNumber I в строку а затем в массив:
+        const secondAddNumberAsArray = forFirstAddNumber.toString().split("");
         console.log("secondAddNumberAsArray:", secondAddNumberAsArray); //!
 
-        //! Суммируем цифры массива, если их больше 1
-        if (secondAddNumberAsArray.length > 1) {
-            setSecondAddNumber(secondAddNumberAsArray.reduce((accumulator, currentValue) => accumulator + Number(currentValue), 0))
-        }
+        //! Суммируем цифры массива secondAddNumberAsArray и записываем в стейт setSecondAddNumber
+        const forSecondAddNumber = secondAddNumberAsArray.reduce((accumulator, currentValue) => accumulator + Number(currentValue), 0)
+        setSecondAddNumber(forSecondAddNumber);
 
-        //! thirdAddNumber III:
+
+        //! ----------- thirdAddNumber III -----------:
         console.log("day:", Number(day)); //!
-        const forThirdAddNumber = sumAll - 2 * Number(day);
+        const forThirdAddNumber = forFirstAddNumber - 2 * Number(day);
         console.log("forThirdAddNumber:", forThirdAddNumber); //!
         setThirdAddNumber(forThirdAddNumber);
 
-        //! fourthAddNumber IV:
-        //! Преобразуем forThirdAddNumber в строку а затем в массив:
-        const forThirdAddNumberAsArray = forThirdAddNumber.toString().split("");
-        console.log("forThirdAddNumberAsArray:", forThirdAddNumberAsArray); //!
 
-        //! Суммируем цифры массива forThirdAddNumberAsArray, если их больше 1
-        if (forThirdAddNumberAsArray.length > 1) {
-            setFourthAddNumber(forThirdAddNumberAsArray.reduce((accumulator, currentValue) => accumulator + Number(currentValue), 0));
-        } else {
-            setFourthAddNumber(Number(forThirdAddNumberAsArray[0]))
-        };
+        //! ----------- fourthAddNumber IV -----------:
+        //! Преобразуем число forThirdAddNumber в строку а затем в массив:
+        const forFourthAddNumberAsArray = forThirdAddNumber.toString().split("");
+        console.log("forFourthAddNumberAsArray:", forFourthAddNumberAsArray); //!
+
+        //! Суммируем цифры массива forThirdAddNumberAsArray и записываем в стейт setFourthAddNumber
+        const forFourthAddNumber = secondAddNumberAsArray.reduce((accumulator, currentValue) => accumulator + Number(currentValue), 0)
+        setFourthAddNumber(forFourthAddNumber);
+
+
 
 
         setDay(0);
@@ -145,10 +158,12 @@ export const PsychoMatrix = () => {
         setYear(0);
 
         // console.log("dateOfBirth:", dateOfBirth);
-
         // evt.currentTarget.reset();
         form.reset();
     };
+
+
+    //* ---------------------------------------------------------------------------------
 
     console.log(`After SUBMIT--> День:${day}, Месяц:${month}, Год:${year}`); //!
     console.log("After SUBMIT--> dateOfBirth:", dateOfBirth); //!
@@ -158,6 +173,33 @@ export const PsychoMatrix = () => {
     console.log("thirdAddNumber III:", thirdAddNumber); //!
     console.log("fourthAddNumber IV:", fourthAddNumber); //!
 
+    //! Преобразуем все стейты ****AddNumber в строки а затем в массивы:
+    const firstAddNumberAsArray = firstAddNumber.toString().split("");
+    const secondAddNumberAsArray = secondAddNumber.toString().split("");
+    const thirdAddNumberAsArray = thirdAddNumber.toString().split("");
+    const fourthAddNumberAsArray = fourthAddNumber.toString().split("");
+
+    console.log("firstAddNumberAsArray I:", firstAddNumberAsArray); //!
+    console.log("secondAddNumberAsArray II:", secondAddNumberAsArray); //!
+    console.log("thirdAddNumberAsArray III:", thirdAddNumberAsArray); //!
+    console.log("fourthAddNumberAsArray IV:", fourthAddNumberAsArray); //!
+
+    //! "Сливаем" все массивы стейтов ****AddNumberAsArray в один массив allAddNumberAsArray:
+    const allAddNumberAsArray = [...firstAddNumberAsArray, ...secondAddNumberAsArray, ...thirdAddNumberAsArray, ...fourthAddNumberAsArray]
+    console.log("allAddNumberAsArray:", allAddNumberAsArray); //!
+    //! Преобразовываем все элементы массива allAddNumberAsArray в число и записываем в новый массив allAddNumberAsArrayNumber:
+    const allAddNumberAsArrayNumber = allAddNumberAsArray.map(element => Number(element));
+    console.log("allAddNumberAsArrayNumber:", allAddNumberAsArrayNumber); //!
+
+    console.log("FINAL1--> countObj:", countObj); //!
+    //! Подсчитываем и ДОБАВЛЯЕМ количество цифр в массиве allAddNumberAsArrayNumber и ДОБАВЛЯЕМ эти данные в объект countObj:
+    // if (!allAddNumberAsArrayNumber[0] === 0) {
+    //     for (let i = 0; i < allAddNumberAsArrayNumber.length; i++) {
+    //         const num = allAddNumberAsArrayNumber[i];
+    //         setCountObj(countObj[num] = countObj[num] ? countObj[num] + 1 : 1);
+    //     };
+    // }
+    console.log("FINAL2--> countObj:", countObj); //!
 
 
 
