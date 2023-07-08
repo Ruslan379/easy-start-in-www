@@ -114,8 +114,6 @@
 
 //!
 
-//! "Сливаем" массив dateOfBirthAsArray (Дня рождения) и ВСЕ промежуточные массивы  ****AddNumberArray в один массив allAsArray:
-
 //! ----------- fourthAddNumber IV -----------:
 
 //! ----------- secondAddNumber II -----------:
