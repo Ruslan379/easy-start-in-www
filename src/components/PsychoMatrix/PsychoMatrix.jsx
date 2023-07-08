@@ -104,18 +104,18 @@ export const PsychoMatrix = () => {
         const allAsArray = [...dayAsArray, ...monthAsArray, ...yearAsArray]
         console.log("allAsArray:", allAsArray); //!
         //! Преобразовываем все элементы массива allAsArray в число и записываем в новый массив allAsArrayNumber:
-        const allAsArrayNumber = allAsArray.map(element => Number(element));
-        console.log("allAsArrayNumber:", allAsArrayNumber); //!
+        // const allAsArrayNumber = allAsArray.map(element => Number(element));
+        // console.log("allAsArrayNumber:", allAsArrayNumber); //!
 
-        //! Подсчитываем количество цифр в массиве allAsArrayNumber и записывем эти данные в объект countObj:
-        const count = {};
+        // //! Подсчитываем количество цифр в массиве allAsArrayNumber и записывем эти данные в объект countObj:
+        // const count = {};
 
-        for (let i = 0; i < allAsArrayNumber.length; i++) {
-            const num = allAsArrayNumber[i];
-            count[num] = count[num] ? count[num] + 1 : 1;
-        };
-        setCountObj(count);
-        console.log("count:", count); //!
+        // for (let i = 0; i < allAsArrayNumber.length; i++) {
+        //     const num = allAsArrayNumber[i];
+        //     count[num] = count[num] ? count[num] + 1 : 1;
+        // };
+        // setCountObj(count);
+        // console.log("count:", count); //!
 
 
         //! ----------- firstAddNumber I-----------:
@@ -150,6 +150,40 @@ export const PsychoMatrix = () => {
         const forFourthAddNumber = secondAddNumberAsArray.reduce((accumulator, currentValue) => accumulator + Number(currentValue), 0)
         setFourthAddNumber(forFourthAddNumber);
 
+        //! Преобразуем все стейты ****AddNumber в строки а затем в массивы:
+        const firstAddNumberArray = forFirstAddNumber.toString().split("");
+        const secondAddNumberArray = forSecondAddNumber.toString().split("");
+        const thirdAddNumberArray = forThirdAddNumber.toString().split("");
+        const fourthAddNumberArray = forFourthAddNumber.toString().split("");
+
+        console.log("firstAddNumberArray I:", firstAddNumberArray); //!
+        console.log("secondAddNumberArray II:", secondAddNumberArray); //!
+        console.log("thirdAddNumberArray III:", thirdAddNumberArray); //!
+        console.log("fourthAddNumberArray IV:", fourthAddNumberArray); //!
+
+        //! "Сливаем" все массивы стейтов ****AddNumberAsArray и Дня рождения (allAsArray) в один массив allAddNumberAsArray:
+        const allArray = [
+            ...allAsArray,
+            ...firstAddNumberArray,
+            ...secondAddNumberArray,
+            ...thirdAddNumberArray,
+            ...fourthAddNumberArray
+        ]
+        console.log("allArray:", allArray); //!
+        //! Преобразовываем все элементы массива allAddNumberAsArray в число и записываем в новый массив allAddNumberAsArrayNumber:
+        const allNumberAsArrayNumber = allArray.map(element => Number(element));
+        console.log("allNumberAsArrayNumber:", allNumberAsArrayNumber); //!
+
+        //! Подсчитываем количество цифр в массиве allAsArrayNumber и записывем эти данные в объект countObj:
+        const count = {};
+
+        for (let i = 0; i < allNumberAsArrayNumber.length; i++) {
+            const num = allNumberAsArrayNumber[i];
+            count[num] = count[num] ? count[num] + 1 : 1;
+        };
+        setCountObj(count);
+        console.log("count:", count); //!
+
 
 
 
@@ -173,25 +207,25 @@ export const PsychoMatrix = () => {
     console.log("thirdAddNumber III:", thirdAddNumber); //!
     console.log("fourthAddNumber IV:", fourthAddNumber); //!
 
-    //! Преобразуем все стейты ****AddNumber в строки а затем в массивы:
-    const firstAddNumberAsArray = firstAddNumber.toString().split("");
-    const secondAddNumberAsArray = secondAddNumber.toString().split("");
-    const thirdAddNumberAsArray = thirdAddNumber.toString().split("");
-    const fourthAddNumberAsArray = fourthAddNumber.toString().split("");
+    // //! Преобразуем все стейты ****AddNumber в строки а затем в массивы:
+    // const firstAddNumberAsArray = firstAddNumber.toString().split("");
+    // const secondAddNumberAsArray = secondAddNumber.toString().split("");
+    // const thirdAddNumberAsArray = thirdAddNumber.toString().split("");
+    // const fourthAddNumberAsArray = fourthAddNumber.toString().split("");
 
-    console.log("firstAddNumberAsArray I:", firstAddNumberAsArray); //!
-    console.log("secondAddNumberAsArray II:", secondAddNumberAsArray); //!
-    console.log("thirdAddNumberAsArray III:", thirdAddNumberAsArray); //!
-    console.log("fourthAddNumberAsArray IV:", fourthAddNumberAsArray); //!
+    // console.log("firstAddNumberAsArray I:", firstAddNumberAsArray); //!
+    // console.log("secondAddNumberAsArray II:", secondAddNumberAsArray); //!
+    // console.log("thirdAddNumberAsArray III:", thirdAddNumberAsArray); //!
+    // console.log("fourthAddNumberAsArray IV:", fourthAddNumberAsArray); //!
 
-    //! "Сливаем" все массивы стейтов ****AddNumberAsArray в один массив allAddNumberAsArray:
-    const allAddNumberAsArray = [...firstAddNumberAsArray, ...secondAddNumberAsArray, ...thirdAddNumberAsArray, ...fourthAddNumberAsArray]
-    console.log("allAddNumberAsArray:", allAddNumberAsArray); //!
-    //! Преобразовываем все элементы массива allAddNumberAsArray в число и записываем в новый массив allAddNumberAsArrayNumber:
-    const allAddNumberAsArrayNumber = allAddNumberAsArray.map(element => Number(element));
-    console.log("allAddNumberAsArrayNumber:", allAddNumberAsArrayNumber); //!
+    // //! "Сливаем" все массивы стейтов ****AddNumberAsArray в один массив allAddNumberAsArray:
+    // const allAddNumberAsArray = [...firstAddNumberAsArray, ...secondAddNumberAsArray, ...thirdAddNumberAsArray, ...fourthAddNumberAsArray]
+    // console.log("allAddNumberAsArray:", allAddNumberAsArray); //!
+    // //! Преобразовываем все элементы массива allAddNumberAsArray в число и записываем в новый массив allAddNumberAsArrayNumber:
+    // const allAddNumberAsArrayNumber = allAddNumberAsArray.map(element => Number(element));
+    // console.log("allAddNumberAsArrayNumber:", allAddNumberAsArrayNumber); //!
 
-    console.log("FINAL1--> countObj:", countObj); //!
+
     //! Подсчитываем и ДОБАВЛЯЕМ количество цифр в массиве allAddNumberAsArrayNumber и ДОБАВЛЯЕМ эти данные в объект countObj:
     // if (!allAddNumberAsArrayNumber[0] === 0) {
     //     for (let i = 0; i < allAddNumberAsArrayNumber.length; i++) {
@@ -199,7 +233,7 @@ export const PsychoMatrix = () => {
     //         setCountObj(countObj[num] = countObj[num] ? countObj[num] + 1 : 1);
     //     };
     // }
-    console.log("FINAL2--> countObj:", countObj); //!
+    console.log("FINAL--> countObj:", countObj); //!
 
 
 
