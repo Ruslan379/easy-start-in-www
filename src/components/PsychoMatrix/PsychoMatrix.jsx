@@ -26,6 +26,19 @@ export const PsychoMatrix = () => {
     const [thirdAddNumber, setThirdAddNumber] = useState(0);
     const [fourthAddNumber, setFourthAddNumber] = useState(0);
 
+    // const [quantity1, setQuantity1] = useState(0);
+    // const [quantity2, setQuantity2] = useState(0);
+    // const [quantity3, setQuantity3] = useState(0);
+    // const [quantity4, setQuantity4] = useState(0);
+    // const [quantity5, setQuantity5] = useState(0);
+    // const [quantity6, setQuantity6] = useState(0);
+    // const [quantity7, setQuantity7] = useState(0);
+    // const [quantity8, setQuantity8] = useState(0);
+    // const [quantity9, setQuantity9] = useState(0);
+    // const [quantity0, setQuantity0] = useState(0);
+
+
+
     const handleChangeDay = evt => {
         setDay(evt.target.value);
     };
@@ -79,24 +92,52 @@ export const PsychoMatrix = () => {
         const monthAsArray = month.toString().split("");
         const yearAsArray = year.toString().split("");
 
+
         console.log("dayAsArray:", dayAsArray); //!
         console.log("monthAsArray:", monthAsArray); //!
         console.log("yearAsArray:", yearAsArray); //!
 
-        //! Посчитаем сумму в каджом массиве:
-        let sumYear = yearAsArray.reduce((accumulator, currentValue) => accumulator + Number(currentValue), 0);
 
-        //! Преобразуем сумму в строку а затем в массив:
-        const sumYearAsArray = sumYear.toString().split("");
-        console.log("sumYearAsArray:", sumYearAsArray); //!
+        //! "Сливаем" все массивы dayAsArray, monthAsArray, yearAsArray в один массив allAsArray:
+        const allAsArray = [...dayAsArray, ...monthAsArray, ...yearAsArray]
+        console.log("allAsArray:", allAsArray); //!
+        //! Преобразовываем все элементы массива allAsArray в число и записываем в новый массив allAsArrayNumber:
+        const allAsArrayNumber = allAsArray.map(element => Number(element));
+        console.log("allAsArrayNumber:", allAsArrayNumber); //!
 
-        //? Суммируем цифры массива, если их больше 1 (пока не надо)
-        if (sumYearAsArray.length > 1) {
-            sumYear = sumYearAsArray.reduce((accumulator, currentValue) => accumulator + Number(currentValue), 0);
+        //! firstAddNumber I:
+        //! Посчитаем сумму в каждом из массивов:
+        const sumAll = allAsArray.reduce((accumulator, currentValue) => accumulator + Number(currentValue), 0);
+        console.log("sumAll:", sumAll); //!
+        setFirstAddNumber(sumAll);
+
+        //! secondAddNumber II:
+        //! Преобразуем число firstAddNumber I в строку а затем в массив:
+        const secondAddNumberAsArray = sumAll.toString().split("");
+        console.log("secondAddNumberAsArray:", secondAddNumberAsArray); //!
+
+        //! Суммируем цифры массива, если их больше 1
+        if (secondAddNumberAsArray.length > 1) {
+            setSecondAddNumber(secondAddNumberAsArray.reduce((accumulator, currentValue) => accumulator + Number(currentValue), 0))
         }
-        console.log("sumYear:", sumYear); //!
 
+        //! thirdAddNumber III:
+        console.log("day:", Number(day)); //!
+        const forThirdAddNumber = sumAll - 2 * Number(day);
+        console.log("forThirdAddNumber:", forThirdAddNumber); //!
+        setThirdAddNumber(forThirdAddNumber);
 
+        //! fourthAddNumber IV:
+        //! Преобразуем forThirdAddNumber в строку а затем в массив:
+        const forThirdAddNumberAsArray = forThirdAddNumber.toString().split("");
+        console.log("forThirdAddNumberAsArray:", forThirdAddNumberAsArray); //!
+
+        //! Суммируем цифры массива forThirdAddNumberAsArray, если их больше 1
+        if (forThirdAddNumberAsArray.length > 1) {
+            setFourthAddNumber(forThirdAddNumberAsArray.reduce((accumulator, currentValue) => accumulator + Number(currentValue), 0));
+        } else {
+            setFourthAddNumber(Number(forThirdAddNumberAsArray[0]))
+        };
 
 
         setDay(0);
@@ -111,6 +152,11 @@ export const PsychoMatrix = () => {
 
     console.log(`After SUBMIT--> День:${day}, Месяц:${month}, Год:${year}`); //!
     console.log("After SUBMIT--> dateOfBirth:", dateOfBirth); //!
+
+    console.log("firstAddNumber I:", firstAddNumber); //!
+    console.log("secondAddNumber II:", secondAddNumber); //!
+    console.log("thirdAddNumber III:", thirdAddNumber); //!
+    console.log("fourthAddNumber IV:", fourthAddNumber); //!
 
 
 
@@ -184,7 +230,7 @@ export const PsychoMatrix = () => {
                     type="submit"
                     disabled={!(day && month && year)}>
                     {/* Submit */}
-                    {day ? 'Submit' : 'Inactive...'}
+                    {(day && month && year) ? 'Submit' : 'Inactive...'}
                 </button>
             </form>
             {/* <Outlet /> */}
