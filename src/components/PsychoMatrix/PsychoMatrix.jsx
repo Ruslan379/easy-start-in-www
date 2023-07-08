@@ -74,7 +74,7 @@ export const PsychoMatrix = () => {
         // const monthAsArray = monthAsString.split("");
         // const yearAsArray = yearAsString.split("");
 
-        //! Преобразуем все стейты в строкиа затем в массивы:
+        //! Преобразуем все стейты в строки а затем в массивы:
         const dayAsArray = day.toString().split("");
         const monthAsArray = month.toString().split("");
         const yearAsArray = year.toString().split("");
@@ -83,6 +83,18 @@ export const PsychoMatrix = () => {
         console.log("monthAsArray:", monthAsArray); //!
         console.log("yearAsArray:", yearAsArray); //!
 
+        //! Посчитаем сумму в каджом массиве:
+        let sumYear = yearAsArray.reduce((accumulator, currentValue) => accumulator + Number(currentValue), 0);
+
+        //! Преобразуем сумму в строку а затем в массив:
+        const sumYearAsArray = sumYear.toString().split("");
+        console.log("sumYearAsArray:", sumYearAsArray); //!
+
+        //? Суммируем цифры массива, если их больше 1 (пока не надо)
+        if (sumYearAsArray.length > 1) {
+            sumYear = sumYearAsArray.reduce((accumulator, currentValue) => accumulator + Number(currentValue), 0);
+        }
+        console.log("sumYear:", sumYear); //!
 
 
 
