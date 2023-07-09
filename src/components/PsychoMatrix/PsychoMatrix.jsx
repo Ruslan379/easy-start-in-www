@@ -248,18 +248,51 @@ export const PsychoMatrix = () => {
                     {(day && month && year) ? 'Submit' : 'Inactive...'}
                 </button>
             </form>
+            {/* //! Дата Рождения */}
+            <h1 className={css.sectionTitle}>Дата Рождения</h1>
+            <div className={css.divColumn}>
+                <div className={css.divLine}>
+                    <div className={`${css.divCell} ${css.divCellSize}`}>Число</div>
+                    <div className={`${css.divCell} ${css.divCellSize}`}>Месяц</div>
+                    <div className={`${css.divCell} ${css.divCellSize}`}>Год</div>
+
+                </div>
+                <div className={css.divLine}>
+                    <div className={`${css.divCell} ${css.divCellSize}`}>{dateOfBirthObj.day ? dateOfBirthObj.day : '-'}</div>
+                    <div className={`${css.divCell} ${css.divCellSize}`}>{dateOfBirthObj.month ? dateOfBirthObj.month : '-'}</div>
+                    <div className={`${css.divCell} ${css.divCellSize}`}>{dateOfBirthObj.year ? dateOfBirthObj.year : '-'}</div>
+                </div>
+            </div>
+            {/* //! Доп числа */}
+            <h1 className={css.sectionTitle}>Дополнительные числа</h1>
+            <div className={css.divColumn}>
+                <div className={css.divLine}>
+                    <div className={`${css.divCell} ${css.divCellSize}`}>I - Средства</div>
+                    <div className={`${css.divCell} ${css.divCellSize}`}>II - Цель</div>
+                    <div className={`${css.divCell} ${css.divCellSize}`}>III - Наследство</div>
+                    <div className={`${css.divCell} ${css.divCellSize}`}>IV - Глав. качество</div>
+                </div>
+                <div className={css.divLine}>
+                    <div className={`${css.divCell} ${css.divCellSize}`}>{firstAddNumber ? firstAddNumber : '-'}</div>
+                    <div className={`${css.divCell} ${css.divCellSize}`}>{secondAddNumber ? secondAddNumber : '-'}</div>
+                    <div className={`${css.divCell} ${css.divCellSize}`}>{thirdAddNumber ? thirdAddNumber : '-'}</div>
+                    <div className={`${css.divCell} ${css.divCellSize}`}>{fourthAddNumber ? fourthAddNumber : '-'}</div>
+                </div>
+            </div>
+            {/* //! Психо-матрица */}
+            <h1 className={css.sectionTitle}>Психо-матрица</h1>
             <div className={css.divLine}>
-                <div className={css.divcolumn}>
+                <div className={css.divColumn}>
                     <div className={css.divCell}>{countObj[1] ? countObj[1] : '-'}</div>
                     <div className={css.divCell}>{countObj[2] ? countObj[2] : '-'}</div>
                     <div className={css.divCell}>{countObj[3] ? countObj[3] : '-'}</div>
                 </div>
-                <div className={css.divcolumn}>
+                <div className={css.divColumn}>
                     <div className={css.divCell}>{countObj[4] ? countObj[4] : '-'}</div>
                     <div className={css.divCell}>{countObj[5] ? countObj[5] : '-'}</div>
                     <div className={css.divCell}>{countObj[6] ? countObj[6] : '-'}</div>
                 </div>
-                <div className={css.divcolumn}>
+                <div className={css.divColumn}>
                     <div className={css.divCell}>{countObj[7] ? countObj[7] : '-'}</div>
                     <div className={css.divCell}>{countObj[8] ? countObj[8] : '-'}</div>
                     <div className={css.divCell}>{countObj[9] ? countObj[9] : '-'}</div>

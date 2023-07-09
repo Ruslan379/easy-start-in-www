@@ -7,6 +7,7 @@
     flex-direction: column;
     /* justify-content: center; */
     align-items: center;
+    gap: 20px;
     /* font-size: 40px; */
     /* color: #010101; */
 
@@ -112,7 +113,7 @@
 
 .divLine {
     display: flex;
-    margin-top: 20px;
+    /* margin-top: 20px; */
 }
 
 .divCell {
@@ -129,7 +130,12 @@
     /* font-family: Georgia, 'Times New Roman', Times, serif; */
 }
 
-.divcolumn {
+.divCellSize {
+    width: 170px;
+    font-size: 1.2rem;
+}
+
+.divColumn {
     display: flex;
     flex-direction: column;
     /* gap: 10px; */
@@ -141,6 +147,6 @@
     /* align-items: flex-end; */
     /* outline: 2px solid tomato; */
     /* border: 2px solid blue; */
-    border-radius: 10px;
+    /* border-radius: 10px; */
     font-family: Georgia, 'Times New Roman', Times, serif;
 }
