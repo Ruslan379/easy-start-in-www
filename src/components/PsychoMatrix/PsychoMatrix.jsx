@@ -146,13 +146,16 @@ export const PsychoMatrix = () => {
 
         //! Подсчитываем количество цифр в массиве dateOfBirthAsArrayNumber и записывем эти данные в объект countObj:
         const count = {};
+        const countArr = {};
 
         for (let i = 0; i < allAsArrayNumber.length; i++) {
             const num = allAsArrayNumber[i];
             count[num] = count[num] ? count[num] + 1 : 1;
+            countArr[num] = countArr[num] ? [...countArr[num], num] : [num];
         };
         console.log("count:", count); //!
-        setCountObj(count);
+        console.log("countArr:", countArr); //!
+        setCountObj(countArr);
 
 
         setDay(0);
@@ -179,7 +182,7 @@ export const PsychoMatrix = () => {
 
 
     return (
-        <>
+        <div className={css.matrixContainer}>
             <p style={{ color: "tomato", textAlign: "center" }}>{`<---- ${"PsychoMatrix"} ---->`}</p>
             <p className={css.titleTextBase}>PsychoMatrix</p>
             <form
@@ -245,7 +248,24 @@ export const PsychoMatrix = () => {
                     {(day && month && year) ? 'Submit' : 'Inactive...'}
                 </button>
             </form>
-            {/* <Outlet /> */}
-        </>
+            <div className={css.divLine}>
+                <div className={css.divcolumn}>
+                    <div className={css.divCell}>{countObj[1] ? countObj[1] : '-'}</div>
+                    <div className={css.divCell}>{countObj[2] ? countObj[2] : '-'}</div>
+                    <div className={css.divCell}>{countObj[3] ? countObj[3] : '-'}</div>
+                </div>
+                <div className={css.divcolumn}>
+                    <div className={css.divCell}>{countObj[4] ? countObj[4] : '-'}</div>
+                    <div className={css.divCell}>{countObj[5] ? countObj[5] : '-'}</div>
+                    <div className={css.divCell}>{countObj[6] ? countObj[6] : '-'}</div>
+                </div>
+                <div className={css.divcolumn}>
+                    <div className={css.divCell}>{countObj[7] ? countObj[7] : '-'}</div>
+                    <div className={css.divCell}>{countObj[8] ? countObj[8] : '-'}</div>
+                    <div className={css.divCell}>{countObj[9] ? countObj[9] : '-'}</div>
+                </div>
+            </div>
+
+        </div>
     );
 };

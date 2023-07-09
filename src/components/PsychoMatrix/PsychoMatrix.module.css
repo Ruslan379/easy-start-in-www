@@ -1,5 +1,24 @@
 /* import styled from '@emotion/styled'; */
 
+
+.matrixContainer {
+    /* height: 100vh; */
+    display: flex;
+    flex-direction: column;
+    /* justify-content: center; */
+    align-items: center;
+    /* font-size: 40px; */
+    /* color: #010101; */
+
+    /* padding: 20px; */
+    /* margin-bottom: 20px; */
+
+    /* border: 2px solid #ffad7a; */
+    /* border-radius: 20px; */
+
+    /* background-color: #faebe2; */
+}
+
 .titleTextBase {
     padding-bottom: 20px;
     text-decoration: overline;
@@ -91,5 +110,37 @@
     color: #ffffff;
 }
 
+.divLine {
+    display: flex;
+    margin-top: 20px;
+}
 
+.divCell {
+    min-width: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    /* align-items: flex-end; */
+    /* outline: 2px solid tomato; */
+    border: 1px solid blue;
+    /* border-radius: 10px; */
+    font-size: 2rem;
+    /* font-family: Georgia, 'Times New Roman', Times, serif; */
+}
 
+.divcolumn {
+    display: flex;
+    flex-direction: column;
+    /* gap: 10px; */
+    /* width: 400px; */
+    /* width: 300px; */
+    /* height: 120px; */
+    /* height: 150px; */
+    justify-content: center;
+    /* align-items: flex-end; */
+    /* outline: 2px solid tomato; */
+    /* border: 2px solid blue; */
+    border-radius: 10px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
