@@ -100,7 +100,7 @@ export const PsychoMatrix = () => {
 
         //! ----------- thirdAddNumber III -----------:
         // console.log("Number(dayAsArray[0]):", Number(dayAsArray[0])); //!
-        const forThirdAddNumber = forFirstAddNumber - 2 * Number(dayAsArray[0]);
+        const forThirdAddNumber = Math.abs(forFirstAddNumber - 2 * Number(dayAsArray[0]));
         // console.log("forThirdAddNumber:", forThirdAddNumber); //!
         setThirdAddNumber(forThirdAddNumber);
 
