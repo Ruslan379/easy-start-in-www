@@ -399,7 +399,7 @@ export const App = () => {
         } >
           <Route path="psychomatrix" element={
             <div>
-              <p className={css.titleText}>Psycho-Matrix</p>
+              <p className={css.titleText}>PsychoMatrix</p>
               <PsychoMatrix />
             </div>
           } />

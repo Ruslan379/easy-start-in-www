@@ -183,8 +183,8 @@ export const PsychoMatrix = () => {
 
     return (
         <div className={css.matrixContainer}>
-            <p style={{ color: "tomato", textAlign: "center" }}>{`<---- ${"PsychoMatrix"} ---->`}</p>
-            <p className={css.titleTextBase}>PsychoMatrix</p>
+            {/* <p style={{ color: "tomato", textAlign: "center" }}>{`<---- ${"PsychoMatrix"} ---->`}</p> */}
+            {/* <p className={css.titleTextBase}>PsychoMatrix</p> */}
             <form
                 className={css.globalForm}
                 onSubmit={handleSubmit}
@@ -280,7 +280,7 @@ export const PsychoMatrix = () => {
                 </div>
             </div>
             {/* //! Психо-матрица */}
-            <h1 className={css.sectionTitle}>Психо-матрица</h1>
+            <h1 className={css.sectionTitle}>ПсихоМатрица</h1>
             <div className={css.divLine}>
                 <div className={css.divColumn}>
                     <div className={`${css.divCell} ${css.divCellGray}`}>{'*'}</div>
