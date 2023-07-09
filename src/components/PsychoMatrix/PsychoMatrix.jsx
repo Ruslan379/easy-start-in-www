@@ -269,13 +269,13 @@ export const PsychoMatrix = () => {
                 <div className={css.divLine}>
                     <div className={`${css.divCell} ${css.divCellSize}`}>I - Средства</div>
                     <div className={`${css.divCell} ${css.divCellSize}`}>II - Цель</div>
-                    <div className={`${css.divCell} ${css.divCellSize}`}>III - Наследство</div>
+                    <div className={`${css.divCell} ${css.divCellSize} `}>III - Наследство</div>
                     <div className={`${css.divCell} ${css.divCellSize}`}>IV - Глав. качество</div>
                 </div>
                 <div className={css.divLine}>
                     <div className={`${css.divCell} ${css.divCellSize}`}>{firstAddNumber ? firstAddNumber : '-'}</div>
                     <div className={`${css.divCell} ${css.divCellSize}`}>{secondAddNumber ? secondAddNumber : '-'}</div>
-                    <div className={`${css.divCell} ${css.divCellSize}`}>{thirdAddNumber ? thirdAddNumber : '-'}</div>
+                    <div className={`${css.divCell} ${css.divCellSize} ${css.divCellYellow}`}>{thirdAddNumber ? thirdAddNumber : '-'}</div>
                     <div className={`${css.divCell} ${css.divCellSize}`}>{fourthAddNumber ? fourthAddNumber : '-'}</div>
                 </div>
             </div>
@@ -283,24 +283,65 @@ export const PsychoMatrix = () => {
             <h1 className={css.sectionTitle}>Психо-матрица</h1>
             <div className={css.divLine}>
                 <div className={css.divColumn}>
-                    <div className={css.divCell}>{'*'}</div>
-                    <div className={css.divCell}>{'*'}</div>
-                    <div className={css.divCell}>{countObj[0] ? countObj[0] : '-'}</div>
+                    <div className={`${css.divCell} ${css.divCellGray}`}>{'*'}</div>
+                    <div className={`${css.divCell} ${css.divCellGray}`}>{'*'}</div>
+                    {/* <div className={css.divCell}>{countObj[0] ? countObj[0] : '-'}</div> */}
+                    <div
+                        className={`${countObj[0] ? `${css.divCell}` : `${css.divCell} ${css.divCellNull}`}`}
+                    >
+                        {countObj[0] ? countObj[0] : ['-', <span className={css.divCellNumberNull}>0</span>]}
+                    </div>
                 </div>
                 <div className={css.divColumn}>
-                    <div className={css.divCell}>{countObj[1] ? countObj[1] : '-'}</div>
-                    <div className={css.divCell}>{countObj[2] ? countObj[2] : '-'}</div>
-                    <div className={css.divCell}>{countObj[3] ? countObj[3] : '-'}</div>
+                    <div
+                        className={`${countObj[1] ? `${css.divCell}` : `${css.divCell} ${css.divCellNull}`}`}
+                    >
+                        {countObj[1] ? countObj[1] : ['-', <span className={css.divCellNumberNull}>1</span>]}
+                    </div>
+                    <div
+                        className={`${countObj[2] ? `${css.divCell}` : `${css.divCell} ${css.divCellNull}`}`}
+                    >
+                        {countObj[2] ? countObj[2] : ['-', <span className={css.divCellNumberNull}>2</span>]}
+                    </div>
+                    <div
+                        className={`${countObj[3] ? `${css.divCell}` : `${css.divCell} ${css.divCellNull}`}`}
+                    >
+                        {countObj[3] ? countObj[3] : ['-', <span className={css.divCellNumberNull}>3</span>]}
+                    </div>
                 </div>
                 <div className={css.divColumn}>
-                    <div className={css.divCell}>{countObj[4] ? countObj[4] : '-'}</div>
-                    <div className={css.divCell}>{countObj[5] ? countObj[5] : '-'}</div>
-                    <div className={css.divCell}>{countObj[6] ? countObj[6] : '-'}</div>
+                    <div
+                        className={`${countObj[4] ? `${css.divCell}` : `${css.divCell} ${css.divCellNull}`}`}
+                    >
+                        {countObj[4] ? countObj[4] : ['-', <span className={css.divCellNumberNull}>4</span>]}
+                    </div>
+                    <div
+                        className={`${countObj[5] ? `${css.divCell}` : `${css.divCell} ${css.divCellNull}`}`}
+                    >
+                        {countObj[5] ? countObj[5] : ['-', <span className={css.divCellNumberNull}>5</span>]}
+                    </div>
+                    <div
+                        className={`${countObj[6] ? `${css.divCell}` : `${css.divCell} ${css.divCellNull}`}`}
+                    >
+                        {countObj[6] ? countObj[6] : ['-', <span className={css.divCellNumberNull}>6</span>]}
+                    </div>
                 </div>
                 <div className={css.divColumn}>
-                    <div className={css.divCell}>{countObj[7] ? countObj[7] : '-'}</div>
-                    <div className={css.divCell}>{countObj[8] ? countObj[8] : '-'}</div>
-                    <div className={css.divCell}>{countObj[9] ? countObj[9] : '-'}</div>
+                    <div
+                        className={`${countObj[7] ? `${css.divCell}` : `${css.divCell} ${css.divCellNull}`}`}
+                    >
+                        {countObj[7] ? countObj[7] : ['-', <span className={css.divCellNumberNull}>7</span>]}
+                    </div>
+                    <div
+                        className={`${countObj[8] ? `${css.divCell}` : `${css.divCell} ${css.divCellNull}`}`}
+                    >
+                        {countObj[8] ? countObj[8] : ['-', <span className={css.divCellNumberNull}>8</span>]}
+                    </div>
+                    <div
+                        className={`${countObj[9] ? `${css.divCell}` : `${css.divCell} ${css.divCellNull}`}`}
+                    >
+                        {countObj[9] ? countObj[9] : ['-', <span className={css.divCellNumberNull}>9</span>]}
+                    </div>
                 </div>
             </div>
 

@@ -114,9 +114,11 @@
 .divLine {
     display: flex;
     /* margin-top: 20px; */
+    /* border: 1px solid blue; */
 }
 
 .divCell {
+    position: relative;
     min-width: 50px;
     display: flex;
     justify-content: center;
@@ -129,10 +131,26 @@
     font-size: 2rem;
     /* font-family: Georgia, 'Times New Roman', Times, serif; */
 }
-
+.divCellYellow {
+    background-color: #ffffcb
+}
+.divCellGray {
+    background-color: #dadada;
+}
 .divCellSize {
     width: 170px;
     font-size: 1.2rem;
+}
+.divCellNull {
+    background-color: #ffcdcd;
+}
+.divCellNumberNull {
+    font-size: 1.1rem;
+    color: #777777;
+    position: absolute;
+    bottom: 5px;
+    right: 5px;
+
 }
 
 .divColumn {
