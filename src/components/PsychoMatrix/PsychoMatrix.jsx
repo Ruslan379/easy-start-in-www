@@ -99,8 +99,8 @@ export const PsychoMatrix = () => {
 
 
         //! ----------- thirdAddNumber III -----------:
-        console.log("day:", Number(day)); //!
-        const forThirdAddNumber = forFirstAddNumber - 2 * Number(day);
+        // console.log("Number(dayAsArray[0]):", Number(dayAsArray[0])); //!
+        const forThirdAddNumber = forFirstAddNumber - 2 * Number(dayAsArray[0]);
         // console.log("forThirdAddNumber:", forThirdAddNumber); //!
         setThirdAddNumber(forThirdAddNumber);
 
@@ -282,6 +282,11 @@ export const PsychoMatrix = () => {
             {/* //! Психо-матрица */}
             <h1 className={css.sectionTitle}>Психо-матрица</h1>
             <div className={css.divLine}>
+                <div className={css.divColumn}>
+                    <div className={css.divCell}>{'*'}</div>
+                    <div className={css.divCell}>{'*'}</div>
+                    <div className={css.divCell}>{countObj[0] ? countObj[0] : '-'}</div>
+                </div>
                 <div className={css.divColumn}>
                     <div className={css.divCell}>{countObj[1] ? countObj[1] : '-'}</div>
                     <div className={css.divCell}>{countObj[2] ? countObj[2] : '-'}</div>
