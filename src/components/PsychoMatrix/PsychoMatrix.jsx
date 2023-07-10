@@ -3,6 +3,12 @@ import {
     useEffect
 } from 'react';
 
+// import ringtone1 from 'sound/55031879babb424.mp3';
+// import ringtone2 from 'sound/car-alarm-deluxe-2.mp3';
+// import ringtone3 from 'sound/chime-alarm.mp3';
+// import ringtone4 from 'sound/button-digital_gkap8d4_.mp3';
+import ringtone5 from 'sound/button-tonal_gydmp_eu.mp3';
+
 import css from './PsychoMatrix.module.css';
 
 //-----------------------------------------------------
@@ -46,23 +52,27 @@ export const PsychoMatrix = () => {
     const convertToNumber = (arr) => arr.map(element => Number(element));
     //*__________________ ВСПОМОГАТЕЛЬНЫЕ ФУНКЦИИ __________________
 
-    //! Для отрисовки компонентов с задержкой
+    //! ------- Для отрисовки компонентов с задержкой -------
     useEffect(() => {
         const timer1 = setTimeout(() => {
             setShowComponent1(true);
-        }, 500); //! Задержка в миллисекундах (1 секунда в данном примере)
+            if (firstAddNumber) playSound();
+        }, 250); //! Задержка в миллисекундах (1 секунда в данном примере)
 
         const timer2 = setTimeout(() => {
             setShowComponent2(true);
-        }, 1000); //! Задержка в миллисекундах (2 секунды в данном примере)
+            if (firstAddNumber) playSound();
+        }, 500); //! Задержка в миллисекундах (2 секунды в данном примере)
 
         const timer3 = setTimeout(() => {
             setShowComponent3(true);
-        }, 1500); //! Задержка в миллисекундах (3 секунды в данном примере)
+            if (firstAddNumber) playSound();
+        }, 750); //! Задержка в миллисекундах (3 секунды в данном примере)
 
         const timer4 = setTimeout(() => {
             setShowComponent4(true);
-        }, 2000); //! Задержка в миллисекундах (4 секунды в данном примере)
+            if (firstAddNumber) playSound();
+        }, 1000); //! Задержка в миллисекундах (4 секунды в данном примере)
 
         return () => {
             clearTimeout(timer1);
@@ -74,7 +84,13 @@ export const PsychoMatrix = () => {
             setShowComponent3(false);
             setShowComponent4(false);
         }; //! Очистка таймеров при размонтировании компонента
-    }, [trigger]);
+    }, [firstAddNumber]);
+
+    const playSound = () => {
+        const audio = new Audio(ringtone5);
+        audio.play();
+    };
+    //! _______ Для отрисовки компонентов с задержкой _______
 
     const handleChangeDay = evt => {
         setDay(evt.target.value);
