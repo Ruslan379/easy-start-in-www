@@ -337,10 +337,10 @@ export const PsychoMatrix = () => {
                     <div className={`${css.divCell} ${css.divCellSize}`}>IV - Глав. качество</div>
                 </div>
                 <div className={css.divLine}>
-                    <div className={`${css.divCell} ${css.divCellSize}`}>{(showComponent1 && firstAddNumber) ? firstAddNumber : '-'}</div>
-                    <div className={`${css.divCell} ${css.divCellSize}`}>{(showComponent2 && secondAddNumber) ? secondAddNumber : '-'}</div>
-                    <div className={`${css.divCell} ${css.divCellSize} ${css.divCellYellow}`}>{(showComponent3 && thirdAddNumber) ? thirdAddNumber : '-'}</div>
-                    <div className={`${css.divCell} ${css.divCellSize}`}>{(showComponent4 && fourthAddNumber) ? fourthAddNumber : '-'}</div>
+                    <div className={`${css.divCell} ${css.divCellSize}`}>{showComponent1 && firstAddNumber ? firstAddNumber : '-'}</div>
+                    <div className={`${css.divCell} ${css.divCellSize}`}>{showComponent2 && secondAddNumber ? secondAddNumber : '-'}</div>
+                    <div className={`${css.divCell} ${css.divCellSize} ${css.divCellYellow}`}>{showComponent3 && thirdAddNumber ? thirdAddNumber : '-'}</div>
+                    <div className={`${css.divCell} ${css.divCellSize}`}>{showComponent4 && fourthAddNumber ? fourthAddNumber : '-'}</div>
                 </div>
             </div>
             {/* //! Психо-матрица */}
