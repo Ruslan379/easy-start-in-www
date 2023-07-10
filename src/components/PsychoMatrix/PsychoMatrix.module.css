@@ -117,6 +117,19 @@
     /* border: 1px solid blue; */
 }
 
+.emptyContainer {
+    height: 1090px;
+    display: flex;
+    flex-direction: column;
+    /* justify-content: center; */
+    align-items: center;
+    /* gap: 20px; */
+    /* font-size: 40px; */
+    /* color: #010101; */
+
+    padding-bottom: 40px;
+}
+
 .divCell {
     position: relative;
     min-width: 50px;

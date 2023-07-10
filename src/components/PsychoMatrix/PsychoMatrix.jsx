@@ -1,6 +1,6 @@
 import {
     useState,
-    // useEffect
+    useEffect
 } from 'react';
 
 import css from './PsychoMatrix.module.css';
@@ -9,11 +9,18 @@ import css from './PsychoMatrix.module.css';
 export const PsychoMatrix = () => {
     console.log('PsychoMatrix:');
 
+    const [trigger, setTrigger] = useState(false);
+
+    const toggleTrigger = () => {
+        setTrigger(!trigger);
+    }
+
     const [day, setDay] = useState(0);
     const [month, setMonth] = useState(0);
     const [year, setYear] = useState(0);
 
     const [dateOfBirthObj, setDateOfBirthObj] = useState({});
+    // const [dateOfBirthObj, setDateOfBirthObj] = useState(null);
 
     const [firstAddNumber, setFirstAddNumber] = useState(0);
     const [secondAddNumber, setSecondAddNumber] = useState(0);
@@ -21,6 +28,11 @@ export const PsychoMatrix = () => {
     const [fourthAddNumber, setFourthAddNumber] = useState(0);
 
     const [countObj, setCountObj] = useState({});
+
+    const [showComponent1, setShowComponent1] = useState(false);
+    const [showComponent2, setShowComponent2] = useState(false);
+    const [showComponent3, setShowComponent3] = useState(false);
+    const [showComponent4, setShowComponent4] = useState(false);
 
 
     //*------------------ ВСПОМОГАТЕЛЬНЫЕ ФУНКЦИИ ------------------
@@ -34,6 +46,35 @@ export const PsychoMatrix = () => {
     const convertToNumber = (arr) => arr.map(element => Number(element));
     //*__________________ ВСПОМОГАТЕЛЬНЫЕ ФУНКЦИИ __________________
 
+    //! Для отрисовки компонентов с задержкой
+    useEffect(() => {
+        const timer1 = setTimeout(() => {
+            setShowComponent1(true);
+        }, 500); //! Задержка в миллисекундах (1 секунда в данном примере)
+
+        const timer2 = setTimeout(() => {
+            setShowComponent2(true);
+        }, 1000); //! Задержка в миллисекундах (2 секунды в данном примере)
+
+        const timer3 = setTimeout(() => {
+            setShowComponent3(true);
+        }, 1500); //! Задержка в миллисекундах (3 секунды в данном примере)
+
+        const timer4 = setTimeout(() => {
+            setShowComponent4(true);
+        }, 2000); //! Задержка в миллисекундах (4 секунды в данном примере)
+
+        return () => {
+            clearTimeout(timer1);
+            clearTimeout(timer2);
+            clearTimeout(timer3);
+            clearTimeout(timer4);
+            setShowComponent1(false);
+            setShowComponent2(false);
+            setShowComponent3(false);
+            setShowComponent4(false);
+        }; //! Очистка таймеров при размонтировании компонента
+    }, [trigger]);
 
     const handleChangeDay = evt => {
         setDay(evt.target.value);
@@ -164,6 +205,7 @@ export const PsychoMatrix = () => {
         setYear(0);
 
         form.reset();
+        toggleTrigger();
     };
 
 
@@ -185,7 +227,9 @@ export const PsychoMatrix = () => {
     return (
         <div className={css.matrixContainer}>
             {/* <p style={{ color: "tomato", textAlign: "center" }}>{`<---- ${"PsychoMatrix"} ---->`}</p> */}
+            {/* {showComponent1 && <p style={{ color: "tomato", textAlign: "center" }}>{`<---- ${"PsychoMatrix"} ---->`}</p>} */}
             {/* <p className={css.titleTextBase}>PsychoMatrix</p> */}
+            {/* {showComponent2 && <p className={css.titleTextBase}>PsychoMatrix</p>} Компонент будет отображаться после задержки */}
             <form
                 className={css.globalForm}
                 onSubmit={handleSubmit}
@@ -249,103 +293,118 @@ export const PsychoMatrix = () => {
                     {(day && month && year) ? 'Submit' : 'Inactive...'}
                 </button>
             </form>
-            {/* //! Дата Рождения */}
-            <h1 className={css.sectionTitle}>Дата Рождения</h1>
-            <div className={css.divColumn}>
-                <div className={css.divLine}>
-                    <div className={`${css.divCell} ${css.divCellSize}`}>Число</div>
-                    <div className={`${css.divCell} ${css.divCellSize}`}>Месяц</div>
-                    <div className={`${css.divCell} ${css.divCellSize}`}>Год</div>
+            <div className={css.emptyContainer}>
+                {/* {dateOfBirthObj && ( */}
+                {/* <> */}
+                {/* //! Дата Рождения */}
+                <h1 className={css.sectionTitle}>Дата Рождения</h1>
+                <div className={css.divColumn}>
+                    <div className={css.divLine}>
+                        <div className={`${css.divCell} ${css.divCellSize}`}>Число</div>
+                        <div className={`${css.divCell} ${css.divCellSize}`}>Месяц</div>
+                        <div className={`${css.divCell} ${css.divCellSize}`}>Год</div>
 
+                    </div>
+                    <div className={css.divLine}>
+                        <div className={`${css.divCell} ${css.divCellSize}`}>{dateOfBirthObj.day ? dateOfBirthObj.day : '-'}</div>
+                        <div className={`${css.divCell} ${css.divCellSize}`}>{dateOfBirthObj.month ? dateOfBirthObj.month : '-'}</div>
+                        <div className={`${css.divCell} ${css.divCellSize}`}>{dateOfBirthObj.year ? dateOfBirthObj.year : '-'}</div>
+                    </div>
                 </div>
-                <div className={css.divLine}>
-                    <div className={`${css.divCell} ${css.divCellSize}`}>{dateOfBirthObj.day ? dateOfBirthObj.day : '-'}</div>
-                    <div className={`${css.divCell} ${css.divCellSize}`}>{dateOfBirthObj.month ? dateOfBirthObj.month : '-'}</div>
-                    <div className={`${css.divCell} ${css.divCellSize}`}>{dateOfBirthObj.year ? dateOfBirthObj.year : '-'}</div>
-                </div>
-            </div>
-            {/* //! Доп числа */}
-            <h1 className={css.sectionTitle}>Дополнительные числа</h1>
-            <div className={css.divColumn}>
-                <div className={css.divLine}>
-                    <div className={`${css.divCell} ${css.divCellSize}`}>I - Средства</div>
-                    <div className={`${css.divCell} ${css.divCellSize}`}>II - Цель</div>
-                    <div className={`${css.divCell} ${css.divCellSize} `}>III - Наследство</div>
-                    <div className={`${css.divCell} ${css.divCellSize}`}>IV - Глав. качество</div>
-                </div>
-                <div className={css.divLine}>
-                    <div className={`${css.divCell} ${css.divCellSize}`}>{firstAddNumber ? firstAddNumber : '-'}</div>
-                    <div className={`${css.divCell} ${css.divCellSize}`}>{secondAddNumber ? secondAddNumber : '-'}</div>
-                    <div className={`${css.divCell} ${css.divCellSize} ${css.divCellYellow}`}>{thirdAddNumber ? thirdAddNumber : '-'}</div>
-                    <div className={`${css.divCell} ${css.divCellSize}`}>{fourthAddNumber ? fourthAddNumber : '-'}</div>
-                </div>
-            </div>
-            {/* //! Психо-матрица */}
-            <h1 className={css.sectionTitle}>ПсихоМатрица</h1>
-            <div className={css.divLine}>
+                {/* //! Доп числа */}
+                <h1 className={css.sectionTitle}>Дополнительные числа</h1>
                 <div className={css.divColumn}>
-                    <div className={`${css.divCell} ${css.divCellGray}`}>{'*'}</div>
-                    <div className={`${css.divCell} ${css.divCellGray}`}>{'*'}</div>
-                    {/* <div className={css.divCell}>{countObj[0] ? countObj[0] : '-'}</div> */}
-                    <div
-                        className={`${countObj[0] ? `${css.divCell}` : `${css.divCell} ${css.divCellNull}`}`}
-                    >
-                        {countObj[0] ? countObj[0] : ['-', <span className={css.divCellNumberNull}>0</span>]}
+                    <div className={css.divLine}>
+                        <div className={`${css.divCell} ${css.divCellSize}`}>I - Средства</div>
+                        <div className={`${css.divCell} ${css.divCellSize}`}>II - Цель</div>
+                        <div className={`${css.divCell} ${css.divCellSize} `}>III - Наследство</div>
+                        <div className={`${css.divCell} ${css.divCellSize}`}>IV - Глав. качество</div>
                     </div>
-                </div>
-                <div className={css.divColumn}>
-                    <div
-                        className={`${countObj[1] ? `${css.divCell}` : `${css.divCell} ${css.divCellNull}`}`}
-                    >
-                        {countObj[1] ? countObj[1] : ['-', <span className={css.divCellNumberNull}>1</span>]}
-                    </div>
-                    <div
-                        className={`${countObj[2] ? `${css.divCell}` : `${css.divCell} ${css.divCellNull}`}`}
-                    >
-                        {countObj[2] ? countObj[2] : ['-', <span className={css.divCellNumberNull}>2</span>]}
-                    </div>
-                    <div
-                        className={`${countObj[3] ? `${css.divCell}` : `${css.divCell} ${css.divCellNull}`}`}
-                    >
-                        {countObj[3] ? countObj[3] : ['-', <span className={css.divCellNumberNull}>3</span>]}
-                    </div>
-                </div>
-                <div className={css.divColumn}>
-                    <div
-                        className={`${countObj[4] ? `${css.divCell}` : `${css.divCell} ${css.divCellNull}`}`}
-                    >
-                        {countObj[4] ? countObj[4] : ['-', <span className={css.divCellNumberNull}>4</span>]}
-                    </div>
-                    <div
-                        className={`${countObj[5] ? `${css.divCell}` : `${css.divCell} ${css.divCellNull}`}`}
-                    >
-                        {countObj[5] ? countObj[5] : ['-', <span className={css.divCellNumberNull}>5</span>]}
-                    </div>
-                    <div
-                        className={`${countObj[6] ? `${css.divCell}` : `${css.divCell} ${css.divCellNull}`}`}
-                    >
-                        {countObj[6] ? countObj[6] : ['-', <span className={css.divCellNumberNull}>6</span>]}
-                    </div>
-                </div>
-                <div className={css.divColumn}>
-                    <div
-                        className={`${countObj[7] ? `${css.divCell}` : `${css.divCell} ${css.divCellNull}`}`}
-                    >
-                        {countObj[7] ? countObj[7] : ['-', <span className={css.divCellNumberNull}>7</span>]}
-                    </div>
-                    <div
-                        className={`${countObj[8] ? `${css.divCell}` : `${css.divCell} ${css.divCellNull}`}`}
-                    >
-                        {countObj[8] ? countObj[8] : ['-', <span className={css.divCellNumberNull}>8</span>]}
-                    </div>
-                    <div
-                        className={`${countObj[9] ? `${css.divCell}` : `${css.divCell} ${css.divCellNull}`}`}
-                    >
-                        {countObj[9] ? countObj[9] : ['-', <span className={css.divCellNumberNull}>9</span>]}
-                    </div>
-                </div>
-            </div>
+                    <div className={css.divLine}>
+                        {/* <div className={`${css.divCell} ${css.divCellSize}`}>{showComponent1 && firstAddNumber}</div> */}
+                        {/* <div className={`${css.divCell} ${css.divCellSize}`}>{showComponent2 && secondAddNumber}</div> */}
+                        {/* <div className={`${css.divCell} ${css.divCellSize} ${css.divCellYellow}`}>{showComponent3 && thirdAddNumber}</div> */}
+                        {/* <div className={`${css.divCell} ${css.divCellSize}`}>{showComponent4 && fourthAddNumber}</div> */}
 
+                        {/* <div className={`${css.divCell} ${css.divCellSize}`}>{firstAddNumber ? firstAddNumber : '-'}</div> */}
+                        {/* <div className={`${css.divCell} ${css.divCellSize}`}>{secondAddNumber ? secondAddNumber : '-'}</div> */}
+                        {/* <div className={`${css.divCell} ${css.divCellSize} ${css.divCellYellow}`}>{thirdAddNumber ? thirdAddNumber : '-'}</div> */}
+                        {/* <div className={`${css.divCell} ${css.divCellSize}`}>{fourthAddNumber ? fourthAddNumber : '-'}</div> */}
+
+                        <div className={`${css.divCell} ${css.divCellSize}`}>{(showComponent1 && firstAddNumber) ? firstAddNumber : '-'}</div>
+                        <div className={`${css.divCell} ${css.divCellSize}`}>{(showComponent2 && secondAddNumber) ? secondAddNumber : '-'}</div>
+                        <div className={`${css.divCell} ${css.divCellSize} ${css.divCellYellow}`}>{(showComponent3 && thirdAddNumber) ? thirdAddNumber : '-'}</div>
+                        <div className={`${css.divCell} ${css.divCellSize}`}>{(showComponent4 && fourthAddNumber) ? fourthAddNumber : '-'}</div>
+                    </div>
+                </div>
+                {/* //! Психо-матрица */}
+                <h1 className={css.sectionTitle}>ПсихоМатрица</h1>
+                <div className={css.divLine}>
+                    <div className={css.divColumn}>
+                        <div className={`${css.divCell} ${css.divCellGray}`}>{'*'}</div>
+                        <div className={`${css.divCell} ${css.divCellGray}`}>{'*'}</div>
+                        {/* <div className={css.divCell}>{countObj[0] ? countObj[0] : '-'}</div> */}
+                        <div
+                            className={`${countObj[0] ? `${css.divCell}` : `${css.divCell} ${css.divCellNull}`}`}
+                        >
+                            {countObj[0] ? countObj[0] : ['-', <span className={css.divCellNumberNull}>0</span>]}
+                        </div>
+                    </div>
+                    <div className={css.divColumn}>
+                        <div
+                            className={`${countObj[1] ? `${css.divCell}` : `${css.divCell} ${css.divCellNull}`}`}
+                        >
+                            {countObj[1] ? countObj[1] : ['-', <span className={css.divCellNumberNull}>1</span>]}
+                        </div>
+                        <div
+                            className={`${countObj[2] ? `${css.divCell}` : `${css.divCell} ${css.divCellNull}`}`}
+                        >
+                            {countObj[2] ? countObj[2] : ['-', <span className={css.divCellNumberNull}>2</span>]}
+                        </div>
+                        <div
+                            className={`${countObj[3] ? `${css.divCell}` : `${css.divCell} ${css.divCellNull}`}`}
+                        >
+                            {countObj[3] ? countObj[3] : ['-', <span className={css.divCellNumberNull}>3</span>]}
+                        </div>
+                    </div>
+                    <div className={css.divColumn}>
+                        <div
+                            className={`${countObj[4] ? `${css.divCell}` : `${css.divCell} ${css.divCellNull}`}`}
+                        >
+                            {countObj[4] ? countObj[4] : ['-', <span className={css.divCellNumberNull}>4</span>]}
+                        </div>
+                        <div
+                            className={`${countObj[5] ? `${css.divCell}` : `${css.divCell} ${css.divCellNull}`}`}
+                        >
+                            {countObj[5] ? countObj[5] : ['-', <span className={css.divCellNumberNull}>5</span>]}
+                        </div>
+                        <div
+                            className={`${countObj[6] ? `${css.divCell}` : `${css.divCell} ${css.divCellNull}`}`}
+                        >
+                            {countObj[6] ? countObj[6] : ['-', <span className={css.divCellNumberNull}>6</span>]}
+                        </div>
+                    </div>
+                    <div className={css.divColumn}>
+                        <div
+                            className={`${countObj[7] ? `${css.divCell}` : `${css.divCell} ${css.divCellNull}`}`}
+                        >
+                            {countObj[7] ? countObj[7] : ['-', <span className={css.divCellNumberNull}>7</span>]}
+                        </div>
+                        <div
+                            className={`${countObj[8] ? `${css.divCell}` : `${css.divCell} ${css.divCellNull}`}`}
+                        >
+                            {countObj[8] ? countObj[8] : ['-', <span className={css.divCellNumberNull}>8</span>]}
+                        </div>
+                        <div
+                            className={`${countObj[9] ? `${css.divCell}` : `${css.divCell} ${css.divCellNull}`}`}
+                        >
+                            {countObj[9] ? countObj[9] : ['-', <span className={css.divCellNumberNull}>9</span>]}
+                        </div>
+                    </div>
+                </div>
+                {/* </> */}
+                {/* )} */}
+            </div>
         </div>
     );
 };
