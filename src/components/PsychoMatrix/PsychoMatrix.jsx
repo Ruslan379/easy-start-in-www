@@ -4,7 +4,7 @@ import {
 } from 'react';
 
 // import ringtone1 from 'sound/55031879babb424.mp3';
-// import ringtone2 from 'sound/car-alarm-deluxe-2.mp3';
+import ringtone2 from 'sound/car-alarm-deluxe-2.mp3';
 // import ringtone3 from 'sound/chime-alarm.mp3';
 // import ringtone4 from 'sound/button-digital_gkap8d4_.mp3';
 import ringtone5 from 'sound/button-tonal_gydmp_eu.mp3';
@@ -40,6 +40,18 @@ export const PsychoMatrix = () => {
     const [showComponent3, setShowComponent3] = useState(false);
     const [showComponent4, setShowComponent4] = useState(false);
 
+    const [showComponent10, setShowComponent10] = useState(false);
+    const [showComponent11, setShowComponent11] = useState(false);
+    const [showComponent12, setShowComponent12] = useState(false);
+    const [showComponent13, setShowComponent13] = useState(false);
+    const [showComponent14, setShowComponent14] = useState(false);
+    const [showComponent15, setShowComponent15] = useState(false);
+    const [showComponent16, setShowComponent16] = useState(false);
+    const [showComponent17, setShowComponent17] = useState(false);
+    const [showComponent18, setShowComponent18] = useState(false);
+    const [showComponent19, setShowComponent19] = useState(false);
+
+
 
     //*------------------ ВСПОМОГАТЕЛЬНЫЕ ФУНКЦИИ ------------------
     //! Преобразование числа в строку а затем в массив строк:
@@ -54,27 +66,80 @@ export const PsychoMatrix = () => {
 
     //! ------- Для отрисовки компонентов с задержкой -------
     useEffect(() => {
+        //! Доп числа
         const timer1 = setTimeout(() => {
             setShowComponent1(true);
-            if (firstAddNumber) playSound();
-        }, 250); //! Задержка в миллисекундах (1 секунда в данном примере)
+            if (firstAddNumber) playSound2();
+        }, 250);
 
         const timer2 = setTimeout(() => {
             setShowComponent2(true);
-            if (firstAddNumber) playSound();
-        }, 500); //! Задержка в миллисекундах (2 секунды в данном примере)
+            if (firstAddNumber) playSound2();
+        }, 500);
 
         const timer3 = setTimeout(() => {
             setShowComponent3(true);
-            if (firstAddNumber) playSound();
-        }, 750); //! Задержка в миллисекундах (3 секунды в данном примере)
+            if (firstAddNumber) playSound2();
+        }, 750);
 
         const timer4 = setTimeout(() => {
             setShowComponent4(true);
-            if (firstAddNumber) playSound();
-        }, 1000); //! Задержка в миллисекундах (4 секунды в данном примере)
+            if (firstAddNumber) playSound2();
+        }, 1000);
+
+        //! Психо-матрица
+        const timer10 = setTimeout(() => {
+            setShowComponent10(true);
+            if (countObj[0]) playSound5();
+        }, 1100);
+
+        const timer11 = setTimeout(() => {
+            setShowComponent11(true);
+            if (countObj[1]) playSound5();
+        }, 1200);
+
+        const timer12 = setTimeout(() => {
+            setShowComponent12(true);
+            if (countObj[2]) playSound5();
+        }, 1300);
+
+        const timer13 = setTimeout(() => {
+            setShowComponent13(true);
+            if (countObj[3]) playSound5();
+        }, 1400);
+
+        const timer14 = setTimeout(() => {
+            setShowComponent14(true);
+            if (countObj[4]) playSound5();
+        }, 1500);
+
+        const timer15 = setTimeout(() => {
+            setShowComponent15(true);
+            if (countObj[5]) playSound5();
+        }, 1600);
+
+        const timer16 = setTimeout(() => {
+            setShowComponent16(true);
+            if (countObj[6]) playSound5();
+        }, 1700);
+
+        const timer17 = setTimeout(() => {
+            setShowComponent17(true);
+            if (countObj[7]) playSound5();
+        }, 1800);
+
+        const timer18 = setTimeout(() => {
+            setShowComponent18(true);
+            if (countObj[8]) playSound5();
+        }, 1900);
+
+        const timer19 = setTimeout(() => {
+            setShowComponent19(true);
+            if (countObj[9]) playSound5();
+        }, 2000);
 
         return () => {
+            //! Доп числа
             clearTimeout(timer1);
             clearTimeout(timer2);
             clearTimeout(timer3);
@@ -83,10 +148,38 @@ export const PsychoMatrix = () => {
             setShowComponent2(false);
             setShowComponent3(false);
             setShowComponent4(false);
-        }; //! Очистка таймеров при размонтировании компонента
-    }, [trigger, firstAddNumber]);
+            //! Психо-матрица
+            clearTimeout(timer10);
+            clearTimeout(timer11);
+            clearTimeout(timer12);
+            clearTimeout(timer13);
+            clearTimeout(timer14);
+            clearTimeout(timer15);
+            clearTimeout(timer16);
+            clearTimeout(timer17);
+            clearTimeout(timer18);
+            clearTimeout(timer19);
+            setShowComponent10(false);
+            setShowComponent11(false);
+            setShowComponent12(false);
+            setShowComponent13(false);
+            setShowComponent14(false);
+            setShowComponent15(false);
+            setShowComponent16(false);
+            setShowComponent17(false);
+            setShowComponent18(false);
+            setShowComponent19(false);
 
-    const playSound = () => {
+
+
+        }; //! Очистка таймеров при размонтировании компонента
+    }, [trigger, firstAddNumber, countObj]);
+
+    const playSound2 = () => {
+        const audio = new Audio(ringtone2);
+        audio.play();
+    };
+    const playSound5 = () => {
         const audio = new Audio(ringtone5);
         audio.play();
     };
@@ -353,58 +446,58 @@ export const PsychoMatrix = () => {
                     <div
                         className={`${countObj[0] ? `${css.divCell}` : `${css.divCell} ${css.divCellNull}`}`}
                     >
-                        {countObj[0] ? countObj[0] : ['-', <span className={css.divCellNumberNull}>0</span>]}
+                        {showComponent10 && countObj[0] ? countObj[0] : ['-', <span className={css.divCellNumberNull}>0</span>]}
                     </div>
                 </div>
                 <div className={css.divColumn}>
                     <div
                         className={`${countObj[1] ? `${css.divCell}` : `${css.divCell} ${css.divCellNull}`}`}
                     >
-                        {countObj[1] ? countObj[1] : ['-', <span className={css.divCellNumberNull}>1</span>]}
+                        {showComponent11 && countObj[1] ? countObj[1] : ['-', <span className={css.divCellNumberNull}>1</span>]}
                     </div>
                     <div
                         className={`${countObj[2] ? `${css.divCell}` : `${css.divCell} ${css.divCellNull}`}`}
                     >
-                        {countObj[2] ? countObj[2] : ['-', <span className={css.divCellNumberNull}>2</span>]}
+                        {showComponent12 && countObj[2] ? countObj[2] : ['-', <span className={css.divCellNumberNull}>2</span>]}
                     </div>
                     <div
                         className={`${countObj[3] ? `${css.divCell}` : `${css.divCell} ${css.divCellNull}`}`}
                     >
-                        {countObj[3] ? countObj[3] : ['-', <span className={css.divCellNumberNull}>3</span>]}
+                        {showComponent13 && countObj[3] ? countObj[3] : ['-', <span className={css.divCellNumberNull}>3</span>]}
                     </div>
                 </div>
                 <div className={css.divColumn}>
                     <div
                         className={`${countObj[4] ? `${css.divCell}` : `${css.divCell} ${css.divCellNull}`}`}
                     >
-                        {countObj[4] ? countObj[4] : ['-', <span className={css.divCellNumberNull}>4</span>]}
+                        {showComponent14 && countObj[4] ? countObj[4] : ['-', <span className={css.divCellNumberNull}>4</span>]}
                     </div>
                     <div
                         className={`${countObj[5] ? `${css.divCell}` : `${css.divCell} ${css.divCellNull}`}`}
                     >
-                        {countObj[5] ? countObj[5] : ['-', <span className={css.divCellNumberNull}>5</span>]}
+                        {showComponent15 && countObj[5] ? countObj[5] : ['-', <span className={css.divCellNumberNull}>5</span>]}
                     </div>
                     <div
                         className={`${countObj[6] ? `${css.divCell}` : `${css.divCell} ${css.divCellNull}`}`}
                     >
-                        {countObj[6] ? countObj[6] : ['-', <span className={css.divCellNumberNull}>6</span>]}
+                        {showComponent16 && countObj[6] ? countObj[6] : ['-', <span className={css.divCellNumberNull}>6</span>]}
                     </div>
                 </div>
                 <div className={css.divColumn}>
                     <div
                         className={`${countObj[7] ? `${css.divCell}` : `${css.divCell} ${css.divCellNull}`}`}
                     >
-                        {countObj[7] ? countObj[7] : ['-', <span className={css.divCellNumberNull}>7</span>]}
+                        {showComponent17 && countObj[7] ? countObj[7] : ['-', <span className={css.divCellNumberNull}>7</span>]}
                     </div>
                     <div
                         className={`${countObj[8] ? `${css.divCell}` : `${css.divCell} ${css.divCellNull}`}`}
                     >
-                        {countObj[8] ? countObj[8] : ['-', <span className={css.divCellNumberNull}>8</span>]}
+                        {showComponent18 && countObj[8] ? countObj[8] : ['-', <span className={css.divCellNumberNull}>8</span>]}
                     </div>
                     <div
                         className={`${countObj[9] ? `${css.divCell}` : `${css.divCell} ${css.divCellNull}`}`}
                     >
-                        {countObj[9] ? countObj[9] : ['-', <span className={css.divCellNumberNull}>9</span>]}
+                        {showComponent19 && countObj[9] ? countObj[9] : ['-', <span className={css.divCellNumberNull}>9</span>]}
                     </div>
                 </div>
             </div>
