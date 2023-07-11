@@ -1,16 +1,16 @@
 {
   "files": {
-    "main.css": "/easy-start-in-www/static/css/main.9ad4e675.css",
-    "main.js": "/easy-start-in-www/static/js/main.0ef99538.js",
+    "main.css": "/easy-start-in-www/static/css/main.a61e2bb0.css",
+    "main.js": "/easy-start-in-www/static/js/main.5f12cc72.js",
     "static/media/roulette-wheel.png": "/easy-start-in-www/static/media/roulette-wheel.4474b774ebe43239b1c9.png",
     "static/media/car-alarm-deluxe-2.mp3": "/easy-start-in-www/static/media/car-alarm-deluxe-2.73cb38c864dc8bb038f7.mp3",
     "static/media/button-tonal_gydmp_eu.mp3": "/easy-start-in-www/static/media/button-tonal_gydmp_eu.e825d30cd4c408067f4d.mp3",
     "index.html": "/easy-start-in-www/index.html",
-    "main.9ad4e675.css.map": "/easy-start-in-www/static/css/main.9ad4e675.css.map",
-    "main.0ef99538.js.map": "/easy-start-in-www/static/js/main.0ef99538.js.map"
+    "main.a61e2bb0.css.map": "/easy-start-in-www/static/css/main.a61e2bb0.css.map",
+    "main.5f12cc72.js.map": "/easy-start-in-www/static/js/main.5f12cc72.js.map"
   },
   "entrypoints": [
-    "static/css/main.9ad4e675.css",
-    "static/js/main.0ef99538.js"
+    "static/css/main.a61e2bb0.css",
+    "static/js/main.5f12cc72.js"
   ]
 }
