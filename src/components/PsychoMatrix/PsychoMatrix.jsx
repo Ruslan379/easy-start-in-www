@@ -445,58 +445,58 @@ export const PsychoMatrix = () => {
                     <div
                         className={`${countObj[0] ? `${css.divCell}` : `${css.divCell} ${css.divCellNull}`}`}
                     >
-                        {showComponent10 && countObj[0] ? countObj[0] : ['-', <span className={css.divCellNumberNull}>0</span>]}
+                        {showComponent10 && countObj[0] ? countObj[0] : ['-', <span className={css.divCellNumber}>0</span>]}
                     </div>
                 </div>
                 <div className={css.divColumn}>
                     <div
                         className={`${countObj[1] ? `${css.divCell}` : `${css.divCell} ${css.divCellNull}`}`}
                     >
-                        {showComponent11 && countObj[1] ? countObj[1] : ['-', <span className={css.divCellNumberNull}>1</span>]}
+                        {showComponent11 && countObj[1] ? countObj[1] : ['-', <span className={css.divCellNumber}>1</span>]}
                     </div>
                     <div
                         className={`${countObj[2] ? `${css.divCell}` : `${css.divCell} ${css.divCellNull}`}`}
                     >
-                        {showComponent12 && countObj[2] ? countObj[2] : ['-', <span className={css.divCellNumberNull}>2</span>]}
+                        {showComponent12 && countObj[2] ? countObj[2] : ['-', <span className={css.divCellNumber}>2</span>]}
                     </div>
                     <div
                         className={`${countObj[3] ? `${css.divCell}` : `${css.divCell} ${css.divCellNull}`}`}
                     >
-                        {showComponent13 && countObj[3] ? countObj[3] : ['-', <span className={css.divCellNumberNull}>3</span>]}
+                        {showComponent13 && countObj[3] ? countObj[3] : ['-', <span className={css.divCellNumber}>3</span>]}
                     </div>
                 </div>
                 <div className={css.divColumn}>
                     <div
                         className={`${countObj[4] ? `${css.divCell}` : `${css.divCell} ${css.divCellNull}`}`}
                     >
-                        {showComponent14 && countObj[4] ? countObj[4] : ['-', <span className={css.divCellNumberNull}>4</span>]}
+                        {showComponent14 && countObj[4] ? countObj[4] : ['-', <span className={css.divCellNumber}>4</span>]}
                     </div>
                     <div
                         className={`${countObj[5] ? `${css.divCell}` : `${css.divCell} ${css.divCellNull}`}`}
                     >
-                        {showComponent15 && countObj[5] ? countObj[5] : ['-', <span className={css.divCellNumberNull}>5</span>]}
+                        {showComponent15 && countObj[5] ? countObj[5] : ['-', <span className={css.divCellNumber}>5</span>]}
                     </div>
                     <div
                         className={`${countObj[6] ? `${css.divCell}` : `${css.divCell} ${css.divCellNull}`}`}
                     >
-                        {showComponent16 && countObj[6] ? countObj[6] : ['-', <span className={css.divCellNumberNull}>6</span>]}
+                        {showComponent16 && countObj[6] ? countObj[6] : ['-', <span className={css.divCellNumber}>6</span>]}
                     </div>
                 </div>
                 <div className={css.divColumn}>
                     <div
                         className={`${countObj[7] ? `${css.divCell}` : `${css.divCell} ${css.divCellNull}`}`}
                     >
-                        {showComponent17 && countObj[7] ? countObj[7] : ['-', <span className={css.divCellNumberNull}>7</span>]}
+                        {showComponent17 && countObj[7] ? countObj[7] : ['-', <span className={css.divCellNumber}>7</span>]}
                     </div>
                     <div
                         className={`${countObj[8] ? `${css.divCell}` : `${css.divCell} ${css.divCellNull}`}`}
                     >
-                        {showComponent18 && countObj[8] ? countObj[8] : ['-', <span className={css.divCellNumberNull}>8</span>]}
+                        {showComponent18 && countObj[8] ? countObj[8] : ['-', <span className={css.divCellNumber}>8</span>]}
                     </div>
                     <div
                         className={`${countObj[9] ? `${css.divCell}` : `${css.divCell} ${css.divCellNull}`}`}
                     >
-                        {showComponent19 && countObj[9] ? countObj[9] : ['-', <span className={css.divCellNumberNull}>9</span>]}
+                        {showComponent19 && countObj[9] ? countObj[9] : ['-', <span className={css.divCellNumber}>9</span>]}
                     </div>
                 </div>
             </div>
@@ -505,17 +505,17 @@ export const PsychoMatrix = () => {
             <h1 className={css.sectionTitle}>Матрица Судьбы</h1>
             <div className={css.divMainFate}>
                 <div className={css.divCubeFate}>
-                    <div className={css.divCellCube}></div>
-                    <div className={css.divCellCube}></div>
-                    <div className={css.divCellCube}></div>
-                    <div className={css.divCellCube}></div>
+                    <div className={css.divCellCube}>1</div>
+                    <div className={css.divCellCube}>2</div>
+                    <div className={css.divCellCube}>3</div>
+                    <div className={css.divCellCube}>4</div>
                 </div>
                 {/* <div className={css.divRhombusFate}> */}
                 <div className={`${css.divRhombusFate} ${css.rotated45}`}>
-                    <div className={css.divCellRhombus}></div>
-                    <div className={css.divCellRhombus}></div>
-                    <div className={css.divCellRhombus}></div>
-                    <div className={css.divCellRhombus}></div>
+                    <div className={css.divCellRhombus}>11</div>
+                    <div className={css.divCellRhombus}>22</div>
+                    <div className={css.divCellRhombus}><span className={css.divCellRhombusNumber1}>33</span></div>
+                    <div className={css.divCellRhombus}>44</div>
                 </div>
             </div>
             {/* </> */}

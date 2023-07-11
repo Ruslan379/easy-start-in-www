@@ -157,7 +157,7 @@
 .divCellNull {
     background-color: #ffcdcd;
 }
-.divCellNumberNull {
+.divCellNumber {
     font-size: 1.1rem;
     color: #777777;
     position: absolute;
@@ -225,6 +225,7 @@
 }
 
 .divCellRhombus {
+    position: relative;
     width: 250px;
         height: 250px;
     display: flex;
@@ -234,3 +235,12 @@
     outline: 1px solid green;
 }
 
+.divCellRhombusNumber1 {
+    position: absolute;
+        bottom: -35px;
+        left: -35px;
+    transform: rotate(-45deg);
+    font-size: 2rem;
+    font-weight: 700;
+        color: green;
+}
