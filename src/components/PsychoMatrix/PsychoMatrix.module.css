@@ -181,8 +181,10 @@
     font-family: Georgia, 'Times New Roman', Times, serif;
 }
 
+/* ! Матрица Судьбы */
 .divMainFate {
     position: relative;
+    margin-top: 150px;
 }
 
 .divCubeFate {
@@ -192,8 +194,8 @@
         flex-wrap: wrap;
     align-items: center;
     
-    /* border: 2px solid green; */
-    outline: 2px solid green;
+    /* border: 2px solid tomato; */
+    outline: 2px solid tomato;
 }
 
 .divCellCube {
@@ -202,8 +204,8 @@
     display: flex;
         justify-content: center;
         align-items: center;
-    /* border: 1px solid green; */
-    outline: 1px solid green;
+    /* border: 1px solid tomato; */
+    outline: 1px solid tomato;
 }
 
 .divRhombusFate {
@@ -215,8 +217,8 @@
         display: flex;
         flex-wrap: wrap;
         align-items: center;
-    /* border: 1px solid tomato; */
-    outline: 2px solid tomato;
+    /* border: 1px solid green; */
+    outline: 2px solid green;
 }
 .rotated45 {
     transform: rotate(45deg);
@@ -228,9 +230,7 @@
     display: flex;
         justify-content: center;
         align-items: center;
-    /* border: 1px solid tomato; */
-    outline: 1px solid tomato;
+    /* border: 1px solid green; */
+    outline: 1px solid green;
 }
-
-
 
