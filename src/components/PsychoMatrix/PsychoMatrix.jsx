@@ -503,18 +503,20 @@ export const PsychoMatrix = () => {
 
             {/* //! Матрица Судьбы */}
             <h1 className={css.sectionTitle}>Матрица Судьбы</h1>
-            <div className={css.divCubeFate}>
-                <div className={css.divCellCube}>0</div>
-                <div className={css.divCellCube}>1</div>
-                <div className={css.divCellCube}>2</div>
-                <div className={css.divCellCube}>3</div>
-            </div>
-            {/* <div className={css.divRhombusFate}> */}
-            <div className={`${css.divRhombusFate} ${css.rotated45}`}>
-                <div className={css.divCellRhombus}>0</div>
-                <div className={css.divCellRhombus}>1</div>
-                <div className={css.divCellRhombus}>2</div>
-                <div className={css.divCellRhombus}>3</div>
+            <div className={css.divMainFate}>
+                <div className={css.divCubeFate}>
+                    <div className={css.divCellCube}></div>
+                    <div className={css.divCellCube}></div>
+                    <div className={css.divCellCube}></div>
+                    <div className={css.divCellCube}></div>
+                </div>
+                {/* <div className={css.divRhombusFate}> */}
+                <div className={`${css.divRhombusFate} ${css.rotated45}`}>
+                    <div className={css.divCellRhombus}></div>
+                    <div className={css.divCellRhombus}></div>
+                    <div className={css.divCellRhombus}></div>
+                    <div className={css.divCellRhombus}></div>
+                </div>
             </div>
             {/* </> */}
             {/* )} */}

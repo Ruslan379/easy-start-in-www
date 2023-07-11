@@ -181,6 +181,10 @@
     font-family: Georgia, 'Times New Roman', Times, serif;
 }
 
+.divMainFate {
+    position: relative;
+}
+
 .divCubeFate {
     width: 500px;
         height: 500px;
@@ -203,6 +207,9 @@
 }
 
 .divRhombusFate {
+    position: absolute;
+        top: 0;
+        right: 0;
     width: 500px;
         height: 500px;
         display: flex;
