@@ -163,7 +163,6 @@
     position: absolute;
     bottom: 5px;
     right: 5px;
-
 }
 
 .divColumn {
@@ -181,3 +180,38 @@
     /* border-radius: 10px; */
     font-family: Georgia, 'Times New Roman', Times, serif;
 }
+
+.divCubeFate {
+    width: 500px;
+        height: 500px;
+    display: flex;
+    flex-wrap: wrap;
+
+    align-items: center;
+    
+    /* border: 2px solid green; */
+    outline: 2px solid green;
+}
+
+.divCellCube {
+    width: 250px;
+        height: 250px;
+    display: flex;
+        justify-content: center;
+        align-items: center;
+    /* border: 1px solid green; */
+    outline: 1px solid green;
+}
+
+.divRhombusFate {
+    /* border: 1px solid tomato; */
+    outline: 1px solid tomato;
+}
+
+.divCellRhombus{
+    width: 250px;
+        height: 250px;
+    /* border: 1px solid tomato; */
+    outline: 2px solid tomato;
+}
+

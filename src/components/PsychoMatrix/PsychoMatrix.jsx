@@ -412,7 +412,6 @@ export const PsychoMatrix = () => {
                     <div className={`${css.divCell} ${css.divCellSize}`}>Число</div>
                     <div className={`${css.divCell} ${css.divCellSize}`}>Месяц</div>
                     <div className={`${css.divCell} ${css.divCellSize}`}>Год</div>
-
                 </div>
                 <div className={css.divLine}>
                     <div className={`${css.divCell} ${css.divCellSize}`}>{dateOfBirthObj.day ? dateOfBirthObj.day : '-'}</div>
@@ -436,7 +435,7 @@ export const PsychoMatrix = () => {
                     <div className={`${css.divCell} ${css.divCellSize}`}>{showComponent4 && fourthAddNumber ? fourthAddNumber : '-'}</div>
                 </div>
             </div>
-            {/* //! Психо-матрица */}
+            {/* //! ПсихоМатрица */}
             <h1 className={css.sectionTitle}>ПсихоМатрица</h1>
             <div className={css.divLine}>
                 <div className={css.divColumn}>
@@ -501,6 +500,16 @@ export const PsychoMatrix = () => {
                     </div>
                 </div>
             </div>
+
+            {/* //! Матрица Судьбы */}
+            <h1 className={css.sectionTitle}>Матрица Судьбы</h1>
+            <div className={css.divCubeFate}>
+                <div className={css.divCellCube}>0</div>
+                <div className={css.divCellCube}>1</div>
+                <div className={css.divCellCube}>2</div>
+                <div className={css.divCellCube}>3</div>
+            </div>
+            {/* <div className={css.divRhombusFate}></div> */}
             {/* </> */}
             {/* )} */}
             {/* </div> */}
