@@ -506,10 +506,10 @@ export const PsychoMatrix = () => {
             <div className={css.divMainFate}>
                 {/* //! ДОПОЛНИТЕЛЬНЫЕ цифры Матрицы Судьбы */}
                 <div className={css.divCubeFate}>
-                    <div className={css.divCellCube}>11</div>
-                    <div className={css.divCellCube}>22</div>
-                    <div className={css.divCellCube}>33</div>
-                    <div className={css.divCellCube}>44</div>
+                    <div className={css.divCellCube}>11<div className={css.divCellCubeNumber1}>11</div></div>
+                    <div className={css.divCellCube}>22<div className={css.divCellCubeNumber2}>22</div></div>
+                    <div className={css.divCellCube}>33<div className={css.divCellCubeNumber3}>33</div></div>
+                    <div className={css.divCellCube}>44<div className={css.divCellCubeNumber4}>44</div></div>
                 </div>
                 {/* //! ОСНОВНЫЕ цифры Матрицы Судьбы */}
                 <div className={`${css.divRhombusFate} ${css.rotated45}`}>
