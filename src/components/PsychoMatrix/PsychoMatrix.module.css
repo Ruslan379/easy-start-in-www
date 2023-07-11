@@ -185,8 +185,7 @@
     width: 500px;
         height: 500px;
     display: flex;
-    flex-wrap: wrap;
-
+        flex-wrap: wrap;
     align-items: center;
     
     /* border: 2px solid green; */
@@ -204,14 +203,27 @@
 }
 
 .divRhombusFate {
+    width: 500px;
+        height: 500px;
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+    /* border: 1px solid tomato; */
+    outline: 2px solid tomato;
+}
+.rotated45 {
+    transform: rotate(45deg);
+}
+
+.divCellRhombus {
+    width: 250px;
+        height: 250px;
+    display: flex;
+        justify-content: center;
+        align-items: center;
     /* border: 1px solid tomato; */
     outline: 1px solid tomato;
 }
 
-.divCellRhombus{
-    width: 250px;
-        height: 250px;
-    /* border: 1px solid tomato; */
-    outline: 2px solid tomato;
-}
+
 

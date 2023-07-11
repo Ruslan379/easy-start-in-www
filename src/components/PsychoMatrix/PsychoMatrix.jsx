@@ -509,7 +509,13 @@ export const PsychoMatrix = () => {
                 <div className={css.divCellCube}>2</div>
                 <div className={css.divCellCube}>3</div>
             </div>
-            {/* <div className={css.divRhombusFate}></div> */}
+            {/* <div className={css.divRhombusFate}> */}
+            <div className={`${css.divRhombusFate} ${css.rotated45}`}>
+                <div className={css.divCellRhombus}>0</div>
+                <div className={css.divCellRhombus}>1</div>
+                <div className={css.divCellRhombus}>2</div>
+                <div className={css.divCellRhombus}>3</div>
+            </div>
             {/* </> */}
             {/* )} */}
             {/* </div> */}
