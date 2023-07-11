@@ -236,11 +236,17 @@
 }
 
 .divCellRhombusNumber1 {
+    width: 50px;
+        height: 50px;
     position: absolute;
-        bottom: -35px;
-        left: -35px;
+        bottom: -45px;
+        left: -45px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     transform: rotate(-45deg);
     font-size: 2rem;
     font-weight: 700;
         color: green;
+        outline: 1px solid blue;
 }
