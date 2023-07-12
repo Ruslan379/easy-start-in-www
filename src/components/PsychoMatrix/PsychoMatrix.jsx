@@ -506,18 +506,21 @@ export const PsychoMatrix = () => {
             <div className={css.divMainFate}>
                 {/* //! ДОПОЛНИТЕЛЬНЫЕ цифры Матрицы Судьбы */}
                 <div className={css.divCubeFate}>
-                    <div className={css.divCellCube}>11<div className={css.divCellCubeNumber1}>11</div></div>
-                    <div className={css.divCellCube}>22<div className={css.divCellCubeNumber2}>22</div></div>
-                    <div className={css.divCellCube}>33<div className={css.divCellCubeNumber3}>33</div></div>
-                    <div className={css.divCellCube}>44<div className={css.divCellCubeNumber4}>44</div></div>
+                    <div className={css.divCellCube}><div className={css.divCellCubeNumber1}>11</div></div>
+                    <div className={css.divCellCube}><div className={css.divCellCubeNumber2}>22</div></div>
+                    <div className={css.divCellCube}><div className={css.divCellCubeNumber3}>33</div></div>
+                    <div className={css.divCellCube}><div className={css.divCellCubeNumber4}>44</div></div>
                 </div>
                 {/* //! ОСНОВНЫЕ цифры Матрицы Судьбы */}
                 <div className={`${css.divRhombusFate} ${css.rotated45}`}>
-                    <div className={css.divCellRhombus}>1<div className={css.divCellRhombusNumber2}>2</div></div>
-                    <div className={css.divCellRhombus}>2<div className={css.divCellRhombusNumber3}>3</div></div>
-                    <div className={css.divCellRhombus}>3<div className={css.divCellRhombusNumber1}>1</div></div>
-                    <div className={css.divCellRhombus}>4<div className={css.divCellRhombusNumber4}>4</div></div>
+                    <div className={css.divCellRhombus}><div className={css.divCellRhombusNumber1}>1</div></div>
+                    <div className={css.divCellRhombus}><div className={css.divCellRhombusNumber2}>2</div></div>
+                    <div className={css.divCellRhombus}><div className={css.divCellRhombusNumber4}>4</div></div>
+                    <div className={css.divCellRhombus}><div className={css.divCellRhombusNumber3}>3</div></div>
                 </div>
+                {/* //! ЦЕНТРАЛЬНЫЕ цифры Матрицы Судьбы */}
+                <div className={css.divCellRhombusCenter}>RC</div>
+                <div className={css.divCellCubeCenter}>CC</div>
             </div>
             {/* </> */}
             {/* )} */}
