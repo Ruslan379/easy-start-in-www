@@ -583,6 +583,11 @@ export const PsychoMatrix = () => {
                 {/* //! ЦЕНТРАЛЬНЫЕ цифры Матрицы Судьбы */}
                 <div className={css.divCellRhombusCenter}>{centralPersonalNumber ? centralPersonalNumber : '-'}</div>
                 <div className={css.divCellCubeCenter}>{centralAncestralNumber ? centralAncestralNumber : '-'}</div>
+                {/* //! Диагонали Матрицы Судьбы */}
+                <div className={css.divCubeFateDiagonal1}></div>
+                <div className={css.divCubeFateDiagonal2}></div>
+                <div className={css.divRhombusFateDiagonal1}></div>
+                <div className={css.divRhombusFateDiagonal2}></div>
             </div>
             {/* </> */}
             {/* )} */}

@@ -197,6 +197,24 @@
     /* border: 2px solid tomato; */
     outline: 2px solid tomato;
 }
+.divCubeFateDiagonal1 {
+    width: 707px;
+    height: 0px;
+    position: absolute;
+        top: 250px;
+        right: -104px;
+    transform: rotate(-45deg);
+    outline: 1px solid tomato;
+}
+.divCubeFateDiagonal2 {
+    width: 707px;
+        height: 0px;
+    position: absolute;
+        top: 250px;
+        right: -104px;
+    transform: rotate(45deg);
+    outline: 1px solid tomato;
+}
 
 .divCellCube {
     width: 250px;
@@ -223,7 +241,25 @@
 .rotated45 {
     transform: rotate(-45deg);
 }
+.divRhombusFateDiagonal1 {
+    width: 707px;
+    height: 0px;
+    position: absolute;
+    top: 250px;
+    right: -104px;
+    /* transform: rotate(-45deg); */
+    outline: 1px solid green;
+}
 
+.divRhombusFateDiagonal2 {
+    width: 707px;
+    height: 0px;
+    position: absolute;
+    top: 250px;
+    right: -104px;
+    transform: rotate(90deg);
+    outline: 1px solid green;
+}
 .divCellRhombus {
     position: relative;
     width: 250px;
@@ -232,7 +268,7 @@
         justify-content: center;
         align-items: center;
     /* border: 1px solid green; */
-    outline: 1px solid green;
+    /* outline: 1px solid green; */
 }
 
 /* ! ОСНОВНЫЕ цифры Матрицы Судьбы (ЛИЧНАЯ Карма - Personal Karma) */
