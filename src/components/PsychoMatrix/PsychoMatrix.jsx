@@ -387,7 +387,12 @@ export const PsychoMatrix = () => {
     console.log("ancestralNumber3", ancestralNumber3); //!
     console.log("ancestralNumber4", ancestralNumber4); //!
 
+    //! Central Karma
+    const centralPersonalNumber = convertNumberToSum22(personalNumber1 + personalNumber2 + personalNumber3 + personalNumber4);
+    const centralAncestralNumber = convertNumberToSum22(ancestralNumber1 + ancestralNumber2 + ancestralNumber3 + ancestralNumber4);
 
+    console.log("centralPersonalNumber", centralPersonalNumber); //!
+    console.log("centralAncestralNumber", centralAncestralNumber); //!
 
 
     return (
@@ -576,8 +581,8 @@ export const PsychoMatrix = () => {
                     <div className={css.divCellRhombus}><div className={css.divCellRhombusNumber3}>{personalNumber3 ? personalNumber3 : '-'}</div></div>
                 </div>
                 {/* //! ЦЕНТРАЛЬНЫЕ цифры Матрицы Судьбы */}
-                <div className={css.divCellRhombusCenter}>RC</div>
-                <div className={css.divCellCubeCenter}>CC</div>
+                <div className={css.divCellRhombusCenter}>{centralPersonalNumber ? centralPersonalNumber : '-'}</div>
+                <div className={css.divCellCubeCenter}>{centralAncestralNumber ? centralAncestralNumber : '-'}</div>
             </div>
             {/* </> */}
             {/* )} */}
