@@ -285,7 +285,7 @@
     font-size: 2rem;
         font-weight: 700;
     color: green;
-    outline: 1px solid blue;
+    outline: 1px solid green;
 }
 
 .divCellRhombusNumber2 {
@@ -301,7 +301,7 @@
     font-size: 2rem;
         font-weight: 700;
     color: green;
-    outline: 1px solid blue;
+    outline: 1px solid green;
 }
 .divCellRhombusNumber3 {
     width: 50px;
@@ -316,7 +316,7 @@
     font-size: 2rem;
         font-weight: 700;
     color: green;
-    outline: 1px solid blue;
+    outline: 1px solid green;
 }
 .divCellRhombusNumber4 {
     width: 50px;
@@ -331,7 +331,7 @@
     font-size: 2rem;
         font-weight: 700;
     color: green;
-    outline: 1px solid blue;
+    outline: 1px solid green;
 }
 
 /* ! ДОПОЛНИТЕЛЬНЫЕ цифры Матрицы Судьбы (РОДОВАЯ Карма - Ancestral Karma)*/
@@ -347,7 +347,8 @@
     font-size: 2rem;
         font-weight: 700;
     color: tomato;
-    outline: 1px solid green;
+    /* border-radius: 50%; */
+    outline: 1px solid tomato;
 }
 
 .divCellCubeNumber2 {
@@ -362,7 +363,8 @@
     font-size: 2rem;
         font-weight: 700;
     color: tomato;
-    outline: 1px solid green;
+    /* border-radius: 50%; */
+    outline: 1px solid tomato;
 }
 
 .divCellCubeNumber3 {
@@ -377,7 +379,8 @@
     font-size: 2rem;
         font-weight: 700;
     color: tomato;
-    outline: 1px solid green;
+    /* border-radius: 50%; */
+    outline: 1px solid tomato;
 }
 
 .divCellCubeNumber4 {
@@ -392,7 +395,8 @@
     font-size: 2rem;
         font-weight: 700;
     color: tomato;
-    outline: 1px solid green;
+    /* border-radius: 50%; */
+    outline: 1px solid tomato;
 }
 
 /* ! ЦЕНТРАЛЬНЫЕ цифры Матрицы Судьбы */
@@ -409,7 +413,8 @@
     font-size: 2rem;
         font-weight: 700;
     color: green;
-    outline: 1px solid blue;
+    background-color: white;
+    outline: 1px solid green;
 }
 
 .divCellCubeCenter {
@@ -425,5 +430,6 @@
     font-size: 2rem;
         font-weight: 700;
     color: tomato;
-    outline: 1px solid green;
+    background-color: white;
+    outline: 1px solid tomato;
 }
