@@ -51,6 +51,19 @@ export const PsychoMatrix = () => {
     const [showComponent18, setShowComponent18] = useState(false);
     const [showComponent19, setShowComponent19] = useState(false);
 
+    //! Матрица Судьбы
+    // const [personalNumber1, setPersonalNumber1] = useState(0);
+    // const [personalNumber2, setPersonalNumber2] = useState(0);
+    // const [personalNumber3, setPersonalNumber3] = useState(0);
+    // const [personalNumber4, setPersonalNumber4] = useState(0);
+
+    // const [ancestralNumber1, setAncestralNumber1] = useState(0);
+    // const [ancestralNumber2, setAncestralNumber2] = useState(0);
+    // const [ancestralNumber3, setAncestralNumber3] = useState(0);
+    // const [ancestralNumber4, setAncestralNumber4] = useState(0);
+
+    // const [centralPersonalNumber, setCentralPersonalNumber] = useState(0);
+    // const [centralAncestralNumber, setCentralAncestralNumber] = useState(0);
 
 
     //*------------------ ВСПОМОГАТЕЛЬНЫЕ ФУНКЦИИ ------------------
@@ -504,14 +517,14 @@ export const PsychoMatrix = () => {
             {/* //! Матрица Судьбы */}
             <h1 className={css.sectionTitle}>Матрица Судьбы</h1>
             <div className={css.divMainFate}>
-                {/* //! ДОПОЛНИТЕЛЬНЫЕ цифры Матрицы Судьбы (РОДОВАЯ Карма)*/}
+                {/* //! ДОПОЛНИТЕЛЬНЫЕ цифры Матрицы Судьбы (РОДОВАЯ Карма - Ancestral Karma)*/}
                 <div className={css.divCubeFate}>
                     <div className={css.divCellCube}><div className={css.divCellCubeNumber1}>11</div></div>
                     <div className={css.divCellCube}><div className={css.divCellCubeNumber2}>22</div></div>
                     <div className={css.divCellCube}><div className={css.divCellCubeNumber3}>33</div></div>
                     <div className={css.divCellCube}><div className={css.divCellCubeNumber4}>44</div></div>
                 </div>
-                {/* //! ОСНОВНЫЕ цифры Матрицы Судьбы (ЛИЧНАЯ Карма) */}
+                {/* //! ОСНОВНЫЕ цифры Матрицы Судьбы (ЛИЧНАЯ Карма - Personal Karma) */}
                 <div className={`${css.divRhombusFate} ${css.rotated45}`}>
                     <div className={css.divCellRhombus}><div className={css.divCellRhombusNumber1}>1</div></div>
                     <div className={css.divCellRhombus}><div className={css.divCellRhombusNumber2}>2</div></div>
