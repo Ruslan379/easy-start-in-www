@@ -235,7 +235,7 @@
     outline: 1px solid green;
 }
 
-/* ! ОСНОВНЫЕ цифры Матрицы Судьбы */
+/* ! ОСНОВНЫЕ цифры Матрицы Судьбы (ЛИЧНАЯ Карма) */
 .divCellRhombusNumber1 {
     width: 50px;
         height: 50px;
@@ -298,7 +298,7 @@
     outline: 1px solid blue;
 }
 
-/* ! ДОПОЛНИТЕЛЬНЫЕ цифры Матрицы Судьбы */
+/* ! ДОПОЛНИТЕЛЬНЫЕ цифры Матрицы Судьбы (РОДОВАЯ Карма)*/
 .divCellCubeNumber1 {
     width: 50px;
         height: 50px;
