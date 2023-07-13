@@ -138,6 +138,8 @@
 
 //! Ancestral Karma
 
+//! Central Karma
+
 //! IIFE - работает
 
 //! Line 81:12:  'green' is already defined  no-redeclare
