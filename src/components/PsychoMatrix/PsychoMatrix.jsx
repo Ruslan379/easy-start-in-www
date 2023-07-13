@@ -345,25 +345,50 @@ export const PsychoMatrix = () => {
 
     //* ---------------------------------------------------------------------------------
 
+    //! Матрицы Судьбы
     //*------------------ ВСПОМОГАТЕЛЬНЫЕ ФУНКЦИИ Матрицы Судьбы ------------------
-    //! Преобразование числа в строку а затем в массив строк:
-    //! Преобразование всех элементов массива (строк) в ЧИСЛО и запись в новый массив convertArrToNumber:
-    //! СУММИРОВАНИЕ всех єлементов массива:
-    const convertNumberToSum = (num = 0,) => {
-        const arrString = num.toString().split("");
-        const convertArrToNumber = arrString.map(element => Number(element));
-        const convertToNumberAndSum = convertArrToNumber.reduce((accumulator, currentValue) => accumulator + currentValue, 0);
+    //! Преобразование строки в ЧИСЛО
+    //! Если ЧИСЛО > 22, то:
+    //!    Преобразование числа в строку а затем в массив строк:
+    //!    Преобразование всех элементов массива (строк) в ЧИСЛО и запись в новый массив convertArrToNumber:
+    //!    СУММИРОВАНИЕ всех элементов массива:
+    const convertNumberToSum22 = (num = 0,) => {
+        console.log("num", num); //!
+        let convertToNumberAndSum = Number(num);
+        if (convertToNumberAndSum > 22) {
+            const arrString = num.toString().split("");
+            const convertArrToNumber = arrString.map(element => Number(element));
+            convertToNumberAndSum = convertArrToNumber.reduce((accumulator, currentValue) => accumulator + currentValue, 0);
+        }
         console.log("convertToNumberAndSum", convertToNumberAndSum); //!
         return convertToNumberAndSum;
     };
     //*__________________ ВСПОМОГАТЕЛЬНЫЕ ФУНКЦИИ Матрицы Судьбы __________________
 
+    //! Personal Karma
+    const personalNumber1 = convertNumberToSum22(dateOfBirthObj.day);
+    const personalNumber2 = convertNumberToSum22(dateOfBirthObj.month);
+    const personalNumber3 = convertNumberToSum22(dateOfBirthObj.year);
+    const personalNumber4 = convertNumberToSum22(personalNumber1 + personalNumber2 + personalNumber3);
 
-    // if (dateOfBirthObj.day) setPersonalNumber1(convertNumberToSum(dateOfBirthObj.day));
-    const personalNumber = convertNumberToSum(dateOfBirthObj.day);
-    // setPersonalNumber1(personalNumber);
-    console.log("personalNumber", personalNumber); //!
-    // console.log("personalNumber1", personalNumber1); //!
+    console.log("personalNumber1", personalNumber1); //!
+    console.log("personalNumber2", personalNumber2); //!
+    console.log("personalNumber3", personalNumber3); //!
+    console.log("personalNumber4", personalNumber4); //!
+
+    //! Ancestral Karma
+    const ancestralNumber1 = convertNumberToSum22(personalNumber1 + personalNumber2);
+    const ancestralNumber2 = convertNumberToSum22(personalNumber2 + personalNumber3);
+    const ancestralNumber3 = convertNumberToSum22(personalNumber3 + personalNumber4);
+    const ancestralNumber4 = convertNumberToSum22(personalNumber4 + personalNumber1);
+
+    console.log("ancestralNumber1", ancestralNumber1); //!
+    console.log("ancestralNumber2", ancestralNumber2); //!
+    console.log("ancestralNumber3", ancestralNumber3); //!
+    console.log("ancestralNumber4", ancestralNumber4); //!
+
+
+
 
     return (
         <div className={css.matrixContainer}>
@@ -538,17 +563,17 @@ export const PsychoMatrix = () => {
             <div className={css.divMainFate}>
                 {/* //! ДОПОЛНИТЕЛЬНЫЕ цифры Матрицы Судьбы (РОДОВАЯ Карма - Ancestral Karma)*/}
                 <div className={css.divCubeFate}>
-                    <div className={css.divCellCube}><div className={css.divCellCubeNumber1}>11</div></div>
-                    <div className={css.divCellCube}><div className={css.divCellCubeNumber2}>22</div></div>
-                    <div className={css.divCellCube}><div className={css.divCellCubeNumber3}>33</div></div>
-                    <div className={css.divCellCube}><div className={css.divCellCubeNumber4}>44</div></div>
+                    <div className={css.divCellCube}><div className={css.divCellCubeNumber1}>{ancestralNumber1 ? ancestralNumber1 : '-'}</div></div>
+                    <div className={css.divCellCube}><div className={css.divCellCubeNumber2}>{ancestralNumber2 ? ancestralNumber2 : '-'}</div></div>
+                    <div className={css.divCellCube}><div className={css.divCellCubeNumber3}>{ancestralNumber3 ? ancestralNumber3 : '-'}</div></div>
+                    <div className={css.divCellCube}><div className={css.divCellCubeNumber4}>{ancestralNumber4 ? ancestralNumber4 : '-'}</div></div>
                 </div>
                 {/* //! ОСНОВНЫЕ цифры Матрицы Судьбы (ЛИЧНАЯ Карма - Personal Karma) */}
                 <div className={`${css.divRhombusFate} ${css.rotated45}`}>
-                    <div className={css.divCellRhombus}><div className={css.divCellRhombusNumber1}>1</div></div>
-                    <div className={css.divCellRhombus}><div className={css.divCellRhombusNumber2}>2</div></div>
-                    <div className={css.divCellRhombus}><div className={css.divCellRhombusNumber4}>4</div></div>
-                    <div className={css.divCellRhombus}><div className={css.divCellRhombusNumber3}>3</div></div>
+                    <div className={css.divCellRhombus}><div className={css.divCellRhombusNumber1}>{personalNumber1 ? personalNumber1 : '-'}</div></div>
+                    <div className={css.divCellRhombus}><div className={css.divCellRhombusNumber2}>{personalNumber2 ? personalNumber2 : '-'}</div></div>
+                    <div className={css.divCellRhombus}><div className={css.divCellRhombusNumber4}>{personalNumber4 ? personalNumber4 : '-'}</div></div>
+                    <div className={css.divCellRhombus}><div className={css.divCellRhombusNumber3}>{personalNumber3 ? personalNumber3 : '-'}</div></div>
                 </div>
                 {/* //! ЦЕНТРАЛЬНЫЕ цифры Матрицы Судьбы */}
                 <div className={css.divCellRhombusCenter}>RC</div>
