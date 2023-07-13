@@ -345,6 +345,25 @@ export const PsychoMatrix = () => {
 
     //* ---------------------------------------------------------------------------------
 
+    //*------------------ ВСПОМОГАТЕЛЬНЫЕ ФУНКЦИИ Матрицы Судьбы ------------------
+    //! Преобразование числа в строку а затем в массив строк:
+    //! Преобразование всех элементов массива (строк) в ЧИСЛО и запись в новый массив convertArrToNumber:
+    //! СУММИРОВАНИЕ всех єлементов массива:
+    const convertNumberToSum = (num = 0,) => {
+        const arrString = num.toString().split("");
+        const convertArrToNumber = arrString.map(element => Number(element));
+        const convertToNumberAndSum = convertArrToNumber.reduce((accumulator, currentValue) => accumulator + currentValue, 0);
+        console.log("convertToNumberAndSum", convertToNumberAndSum); //!
+        return convertToNumberAndSum;
+    };
+    //*__________________ ВСПОМОГАТЕЛЬНЫЕ ФУНКЦИИ Матрицы Судьбы __________________
+
+
+    // if (dateOfBirthObj.day) setPersonalNumber1(convertNumberToSum(dateOfBirthObj.day));
+    const personalNumber = convertNumberToSum(dateOfBirthObj.day);
+    // setPersonalNumber1(personalNumber);
+    console.log("personalNumber", personalNumber); //!
+    // console.log("personalNumber1", personalNumber1); //!
 
     return (
         <div className={css.matrixContainer}>
