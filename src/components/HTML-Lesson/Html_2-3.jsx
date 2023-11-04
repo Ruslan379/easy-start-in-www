@@ -29,11 +29,12 @@ export const HTML_2_3 = () => {
     return (
         <>
             <p style={{ color: "tomato" }}>{`<--+-- ${"HTML_2-3"} --+-->`}</p>
-            <br />
+            {/* <br /> */}
+            <p style={{ color: "tomato" }}>{`В этом примере текст "Введите ваше имя: " является кликабельным, и при нажатии на него фокус перейдет на поле ввода с идентификатором "myInput"`}</p>
             <label for="myInput">Введите ваше имя: </label>
             <input type="text" id="myInput" name="name" />
-            <p style={{ color: "red" }}>{`<--+-- ${"ooooooooo"} --+-->`}</p>
-            <br />
+            <p style={{ color: "red" }}>{`<---- ${"final"} ---->`}</p>
+            {/* <br /> */}
             <div>
                 <span className={css.spanBlock}>Это строковый элемент-1 (span)</span>
                 <span className={css.spanBlock}>Это строковый элемент-2 (span)</span>
