@@ -15,25 +15,25 @@ export const HtmlQuestion3Julia = () => {
                     <li className={css.socialItems}>
                         <p className={css.socialText}>Twitter</p>
                         <a href="https://www.google.com.ua">Twitter-1</a>
-                        <br/>
+                        <br />
                         <a href="https://www.google.com.ua">Twitter-2</a>
-                        <br/>
+                        <br />
                         <a href="https://www.google.com.ua">Twitter-3</a>
                     </li>
                     <li>
                         <p className={css.socialText}>Instagram</p>
                         <a href="https://www.google.com.ua">Instagram-1</a>
-                        <br/>
+                        <br />
                         <a href="https://www.google.com.ua">Instagram-2</a>
-                        <br/>
+                        <br />
                         <a href="https://www.google.com.ua">Instagram-3</a>
                     </li>
                     <li>
                         <p className={css.socialText}>Facebook</p>
                         <a href="https://www.google.com.ua">Facebook-1</a>
-                        <br/>
+                        <br />
                         <a href="https://www.google.com.ua">Facebook-2</a>
-                        <br/>
+                        <br />
                         <a href="https://www.google.com.ua">Facebook-3</a>
                     </li>
                 </ul>
