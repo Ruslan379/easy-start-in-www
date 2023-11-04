@@ -33,6 +33,7 @@ export const HTML_2_3 = () => {
             <label for="myInput">Введите ваше имя: </label>
             <input type="text" id="myInput" name="name" />
             <p style={{ color: "red" }}>{`<--+-- ${"ooooooooo"} --+-->`}</p>
+            <br />
             <div>
                 <span className={css.spanBlock}>Это строковый элемент-1 (span)</span>
                 <span className={css.spanBlock}>Это строковый элемент-2 (span)</span>
