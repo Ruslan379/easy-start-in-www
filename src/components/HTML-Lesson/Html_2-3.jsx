@@ -28,7 +28,11 @@ export const HTML_2_3 = () => {
 
     return (
         <>
-            <p style={{ color: "tomato" }}>{`<---- ${"HTML_2-3"} ---->`}</p>
+            <p style={{ color: "tomato" }}>{`<--+-- ${"HTML_2-3"} --+-->`}</p>
+            <br />
+            <label for="myInput">Введите ваше имя: </label>
+            <input type="text" id="myInput" name="name" />
+            <p style={{ color: "red" }}>{`<--+-- ${"ooooooooo"} --+-->`}</p>
             <div>
                 <span className={css.spanBlock}>Это строковый элемент-1 (span)</span>
                 <span className={css.spanBlock}>Это строковый элемент-2 (span)</span>
@@ -41,14 +45,13 @@ export const HTML_2_3 = () => {
             <br />
             <button
                 className={
-                    `${css.buttonAlert} ${css.alert} ${
-                        isSuccess
+                    `${css.buttonAlert} ${css.alert} ${isSuccess
                         ?
                         `${css.success} ${css.successBackgroundColor} ${css.buttonAlertBefore}`
                         :
                         // css.error
                         `${css.error} ${css.errorBackgroundColor}`
-                        }
+                    }
                     `
                 }
                 onClick={toggleTrigger}
@@ -56,7 +59,7 @@ export const HTML_2_3 = () => {
                 {isSuccess ? "Пополнение счёта выполнено" : "Пополнение счёта НЕ выполнено"}
             </button>
             {/* <p className={`${css.alert} ${css.success}`}>Пополнение счёта выполнено</p> */}
-            
+
             <p
                 className={`${css.alert} ${isSuccess ? css.success : css.error}`}
             >
