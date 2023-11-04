@@ -9,6 +9,16 @@ export const HtmlQuestion3Julia = () => {
     return (
         <>
             <p style={{ color: "tomato" }}>{`<---- ${"HtmlQuestion3Julia"} ---->`}</p>
+            {/* Чи є дана розмітка дійсною? - НЕТ*/}
+            {/* <div>
+                    <p>
+                        <div>
+                        <p>
+                        </p>
+                    </p>
+                        </div>
+                </div > */}
+
             <div className={css.mainLinks}>
                 <a href="https://www.google.com.ua">Читайте наш блог!</a>
                 <ul className={css.socialLinks}>
